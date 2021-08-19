@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tengjun的个人技术博客">
+    <meta name="keyword"  content="BMI">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Markdown的基本语法（英文稿） - Tengjun的个人技术博客 | 脑机接口-BMI
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 记录自己在探索脑机接口技术中的点滴成长 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Tengjun Liu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Header"><span class="toc-text">1. Header:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#first-level-header"><span class="toc-text">first-level header</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#second-level-header"><span class="toc-text">second-level header</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#fifth-level-Header"><span class="toc-text">fifth-level Header</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Typeface"><span class="toc-text">2. Typeface:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Quotation"><span class="toc-text">3. Quotation:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Split-Line"><span class="toc-text">4. Split Line:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Figure"><span class="toc-text">5.Figure:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Hyperlink"><span class="toc-text">6. Hyperlink:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-List"><span class="toc-text">7. List:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Table"><span class="toc-text">8. Table:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-Code"><span class="toc-text">9. Code:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Formula"><span class="toc-text">10. Formula:</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 记录自己在探索脑机接口技术中的点滴成长 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Markdown的基本语法（英文稿）
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-03-11 00:46:48</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#科研基本技能" title="科研基本技能">科研基本技能</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="1-Header"><a href="#1-Header" class="headerlink" title="1. Header:"></a>1. Header:</h1><p>  The symbol “#” indicates the level of a header, which is shown as follows:</p>
+<h1 id="first-level-header"><a href="#first-level-header" class="headerlink" title="first-level header"></a>first-level header</h1><blockquote>
+<p>“# first-level header”: first-level header</p>
+</blockquote>
+<h2 id="second-level-header"><a href="#second-level-header" class="headerlink" title="second-level header"></a>second-level header</h2><blockquote>
+<p>“## second-level header”: second-level header</p>
+</blockquote>
+<h5 id="fifth-level-Header"><a href="#fifth-level-Header" class="headerlink" title="fifth-level Header"></a>fifth-level Header</h5><blockquote>
+<p>“##### fifth-level header”: fifth-level header</p>
+</blockquote>
+<p>  And so on.</p>
+<h1 id="2-Typeface"><a href="#2-Typeface" class="headerlink" title="2. Typeface:"></a>2. Typeface:</h1><ul>
+<li><p>Bold: *<em>The text to be bold</em>*</p>
+<p>Result: <strong>The text to be bold</strong></p>
+</li>
+<li><p>Italic: *The test to be italic*</p>
+<p>Result: <em>The text to be italic</em></p>
+</li>
+<li><p>Bold and Italic: ***The test to be bold and italic<em>*</em></p>
+<p>Result: <em><strong>The test to be bold and italic</strong></em></p>
+</li>
+<li><p>Strikethrough: ~~The test to be strikethrough~~</p>
+<p>Result: <del>The test to be trikethough</del></p>
+</li>
+<li><p>Newline: two ‘ ‘ in the gap between the 2 texts. Or &lt; br&gt; (No ‘ ‘).</p>
+<p>Result:<br><strong>Tip:</strong><br>  If you want share your library by copying the files, you need to copy both the .data file and the .enl file. They need to work together.</p>
+  <br></li>
+<li><p>Be placed in the middle: &lt; center&gt;markdown&lt; /center&gt; (No ‘ ‘).</p>
+<center>markdown</center></li>
+</ul>
+<h1 id="3-Quotation"><a href="#3-Quotation" class="headerlink" title="3. Quotation:"></a>3. Quotation:</h1><p>  The symbol “&gt;” indicates the level of a quotation just as what “#” does.</p>
+<p>  Grammar: &gt; the quotation</p>
+<pre><code>&gt;This is the first-level quotation
+</code></pre>
+<p>  And so on.</p>
+<h1 id="4-Split-Line"><a href="#4-Split-Line" class="headerlink" title="4. Split Line:"></a>4. Split Line:</h1><p>  Symbol: more than 3 “-“ or “*“, the results are shown as follows:</p>
+<hr>
+<hr>
+<h1 id="5-Figure"><a href="#5-Figure" class="headerlink" title="5.Figure:"></a>5.Figure:</h1><p>  Grammar: ![the caption(shown below the figure)](the address of the figure (can be online or offline)”the title of the figure (shown when the mouse is over the figure)”)</p>
+<p>  <img src="https://pic.36krcnd.com/201801/25121602/9hk589zocc2etptd!heading" alt="Online" title="BCI1"></p>
+<p>  <img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/BCI2.jpg" alt="Offline" title="BCI2"></p>
+<p>  However, the offline way is not recommended. (Offline way cannot be use in deployment of a website)</p>
+<p>  Place the figure in the middle:<br>  &lt; div align=center&gt; (No the first ‘ ‘).</p>
+<p>  ![  ](   )</p>
+<p>  &lt; div align=left&gt; (No the first ‘ ‘)</p>
+<p>  Result:</p>
+  <div align=center>
+
+<p>  <img src="https://latex.codecogs.com/gif.latex?X%5Ccdot%20%5Cfrac%7BX%7D%7BY%7D"></p>
+<div align=left>
+
+<p>  set the figure’s size:<br> &lt; img **width=200** src=”the link of the figure.png” &gt;</p>
+<p>  Result:</p>
+<p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS6.png"></p>
+  <img width=200 src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS6.png" >
+
+
+<h1 id="6-Hyperlink"><a href="#6-Hyperlink" class="headerlink" title="6. Hyperlink:"></a>6. Hyperlink:</h1><p>  Grammar: [Hyperlink’s name](Address “title”)</p>
+<p>  <a target="_blank" rel="noopener" href="https://www.webfx.com/tools/emoji-cheat-sheet/" title="Emoji&#39;s website">Emoji’s website</a></p>
+<h1 id="7-List"><a href="#7-List" class="headerlink" title="7. List:"></a>7. List:</h1><ul>
+<li>Unordered: symbol ‘-’ or ‘+’ or ‘*‘, the result is just like this line.</li>
+</ul>
+<ol>
+<li>Ordered: 1. or 2. or 3. and so on, the result is just like this line.</li>
+</ol>
+<ul>
+<li>nesting: three ‘ ‘(blank) between the indexes.</li>
+</ul>
+<h1 id="8-Table"><a href="#8-Table" class="headerlink" title="8. Table:"></a>8. Table:</h1><p>Grammar:(No blank line!)</p>
+<p>header 1|header 2|deader 3</p>
+<p>—|:–:|—:</p>
+<p>content 11|content 21|content 31</p>
+<p>content 12|content 22|content 32</p>
+<p>The result is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>header 1</th>
+<th align="center">header 2</th>
+<th align="right">deader 3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>content 11</td>
+<td align="center">content 21</td>
+<td align="right">content 31</td>
+</tr>
+<tr>
+<td>content 12</td>
+<td align="center">content 22</td>
+<td align="right">content 32</td>
+</tr>
+</tbody></table>
+<h1 id="9-Code"><a href="#9-Code" class="headerlink" title="9. Code:"></a>9. Code:</h1><p>Grammar:</p>
+<ul>
+<li><p>‘One-line code’</p>
+<p><code>create database hero;</code></p>
+</li>
+<li><p>‘’’ A passage of code’’’</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function <span class="function"><span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">     echo <span class="string">&quot;Hello world!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">fun</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="10-Formula"><a href="#10-Formula" class="headerlink" title="10. Formula:"></a>10. Formula:</h1><p>  Use the website: <a target="_blank" rel="noopener" href="https://www.codecogs.com/latex/eqneditor.php">LateXFormula</a><br>  Create the formula and then Choose ‘URL Encoded’ option below.<br>  Copy the URL and then paste it in Markdown.</p>
+<p>  Example: <img src="https://latex.codecogs.com/gif.latex?X%5Ccdot%20%5Cfrac%7BX%7D%7BY%7D"><br>  <br/></p>
+<p>  Formula Grammar:<br>    <a target="_blank" rel="noopener" href="https://www.cnblogs.com/xym4869/p/11282586.html">Markdown数学公式语法</a><br>    Example:$${x_1+x_2 = 1}$$</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/腾俊-刘-08bb61180">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81Mzc3MS8zMDI0NA==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
