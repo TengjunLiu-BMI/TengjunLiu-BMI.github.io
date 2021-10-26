@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E7%9A%84%E6%95%B0%E5%AD%A6%E6%A1%86%E6%9E%B6"><span class="toc-text">1. 最优控制的数学框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="toc-text">1 数学公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E8%81%94%E5%85%AC%E5%BC%8F"><span class="toc-text">1.1 内联公式</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E7%9A%84%E6%95%B0%E5%AD%A6%E6%A1%86%E6%9E%B6"><span class="toc-text">1. 最优控制的数学框架</span></a></li></ol>
 </div>
     
 </div>
@@ -149,16 +149,16 @@
     <div class="post-content ">
         <p>生物要有大脑就是因为需要运动！但大脑怎么计划、协调、执行运动命令呢？最优控制（Optimal Control）是一种可能的解释。但在开始深入讨论之前，我们需要先定下一个数学框架以便讨论。</p>
 <h2 id="最优控制的数学框架">1. 最优控制的数学框架</h2>
-<p>假设有一个动力系统，它的状态为<span class="math inline">\((s)\)</span>特特特 啊实打实的 <span class="math display">\[ \left ( \frac{a}{b}\right )^{n}= \frac{a^{n}}{b^{n}} \]</span> 啊十大算法 <span class="math display">\[ f(x) = a+b \]</span> 啊士大夫</p>
-<h2 id="数学公式">1 数学公式</h2>
-<h3 id="内联公式">1.1 内联公式</h3>
-<p><strong>开头的<code>$</code>必须在其右边紧跟一个非空格字符，而结尾的<code>$</code>必须在其左边紧接一个非空格字符，并且不能紧跟一个数字。</strong> - 勾股定理: <span class="math inline">\(a^2+b^2=c^2\)</span> - 等差数列求和公式: <span class="math inline">\(S_{n}=n a_{1}+\frac{n(n-1)}{2} d, n \in N^{*}\)</span> - 牛顿-莱布尼茨公式: <span class="math inline">\(\int_{a}^{b} f(x) d x=F(b)-F(a)=\left.F(x)\right|_{a} ^{b}\)</span> - 二项分布: <span class="math inline">\(P_{n}(k)=C_{n}^{k} p^{k} q^{n-k} \quad k=0,1,2 \ldots \ldots, n\)</span> ### 1.2 块公式 正态分布<span class="math inline">\(X \sim N(\mu,\sigma^2)\)</span>: <span class="math display">\[f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]</span></p>
-<p>斐波那契数列<span class="math inline">\(A_n=A_{n-1}+A_{n-2}\)</span>,前后两项的比值逐渐收敛到黄金分割比例 <span class="math display">\[\lim_{n\to \infty}\frac{A_{n-1}}{A_n}=\frac{\sqrt{5}-1}{2}.\]</span></p>
-<p>因式分解 <span class="math display">\[\begin{split}(x−1)(x−3)&amp;=x^2−4x+3 \\
-&amp;=x^2−4x+4−1 \\
-&amp;=(x−2)^2−1
-\end{split}
-\]</span></p>
+<p>假设有一个动力系统，它的 <strong>状态</strong> 为 <span class="math inline">\((s)\)</span> ，这里的状态指的是：用于描述、决定系统行为的变量的集合。</p>
+<p>如果这个动力系统中，状态的变化只由状态本身决定，一个通用的描述此动力系统的方程如下：</p>
+<p><span class="math display">\[ \dot{s}(t) = \frac{\mathrm{d}s}{\mathrm{d}t} = D(s(t)) \]</span></p>
+<p>如果简化为线性动力系统，则可以描述为：</p>
+<p><span class="math display">\[ \dot{s}(t) = \frac{\mathrm{d}s}{\mathrm{d}t} = D·s(t) \]</span></p>
+<p>那么这个动力系统即被称为 <strong>自治动力系统（Autonomous Dynamical System)</strong> 。</p>
+<p>然而这是非常简单的形式，现实中我们经常遇到的动力系统都会接收外部的输入,记为 <span class="math inline">\((a)\)</span> (action, action taken on the system)， 那么类似地， <strong>有外部输入 <span class="math inline">\((a)\)</span> 的动力系统</strong> 的通用描述方程和线性描述方程分别为：</p>
+<p><span class="math display">\[ \dot{s}(t) = \frac{\mathrm{d}s}{\mathrm{d}t} = D(s(t), a(t)) \]</span></p>
+<p><span class="math display">\[ \dot{s}(t) = \frac{\mathrm{d}s}{\mathrm{d}t} = D·s(t) + B·a(t)\]</span></p>
+<p><img src="SquirrelJump.jpg" /></p>
 
         
             <div class="donate-container">
