@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E8%A8%80"><span class="toc-text">序言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%99%E5%AD%A6%E5%BB%BA%E8%AE%AE"><span class="toc-text">教学建议：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-text">资源：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E4%BB%8B"><span class="toc-text">第一章 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E8%BF%9E%E6%8E%A5%E5%AF%BC%E8%87%B4%E7%9A%84%E8%84%86%E5%BC%B1%E6%80%A7-vulnerability-due-to-interconnectivity"><span class="toc-text">1. 相互连接导致的脆弱性 （Vulnerability Due to Interconnectivity）</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E8%A8%80"><span class="toc-text">序言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%99%E5%AD%A6%E5%BB%BA%E8%AE%AE"><span class="toc-text">教学建议：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-text">资源：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E4%BB%8B"><span class="toc-text">第一章 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E8%BF%9E%E6%8E%A5%E5%AF%BC%E8%87%B4%E7%9A%84%E8%84%86%E5%BC%B1%E6%80%A7-vulnerability-due-to-interconnectivity"><span class="toc-text">1. 相互连接导致的脆弱性 （Vulnerability Due to Interconnectivity）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%98%AF%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A0%B8%E5%BF%83networks-at-the-heart-of-complex-systems"><span class="toc-text">2. 网络是复杂系统的核心（Networks at the Heart of Complex Systems）</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -144,18 +144,17 @@
         <h2 id="序言">序言</h2>
 <p>在正式介绍书的内容之前，作者首先对如何使用这本书提出了自己的教学建议，也给了一些线上的资源以供参考。</p>
 <h3 id="教学建议">教学建议：</h3>
-<p>书里首先给出了一些《网络科学》教学的建议，建议包括内容为作业（Homework Problems）、Wiki任务（Wiki Assignment）、社交网络分析（Social Network Analysis）、终期研究项目（Final Research Project）、软件使用（Software）、电影夜（Movie Night）以及客座讲授（Guest Speakers）等。 课程可分为14周，具体安排如下表所示： <img src="&#39;syllabus.jpg&#39;" /></p>
+<p>书里首先给出了一些《网络科学》教学的建议，建议包括内容为作业（Homework Problems）、Wiki任务（Wiki Assignment）、社交网络分析（Social Network Analysis）、终期研究项目（Final Research Project）、软件使用（Software）、电影夜（Movie Night）以及客座讲授（Guest Speakers）等。 课程可分为14周，具体安排如下表所示： <img src="syllabus.jpg" /></p>
 <h3 id="资源">资源：</h3>
 <p><a target="_blank" rel="noopener" href="http://barabasi.com/NetworkScienceBook" title="快点我学习">在线电子书及配套资源</a> ：网站上的资源包括：在线电子书、PPT Slides、数据集等。</p>
 <h2 id="第一章-简介">第一章 简介</h2>
 <h3 id="相互连接导致的脆弱性-vulnerability-due-to-interconnectivity">1. 相互连接导致的脆弱性 （Vulnerability Due to Interconnectivity）</h3>
-<p>我们生活中何处会有网络科学的身影？让我们首先从2003年北美大规模断电(blackout)的故事讲起。 <img src="&#39;2003blackout.png&#39;" /> 这是当时大断电前（左）后（右）的卫星图，仔细看的话，会发现，大断电后，Toronto, Detroit, Cleveland, Columbus, Long Island几个城市/地区在卫星图上看不到了，换句话说，这些城市断电了，这也导致了当时北美几百万人回归无电时代。但这件事是怎么发生的？以后又要怎么避免类似的事情发生呢？ 在电力<strong>网络</strong>系统中，一个局部的电力过载（失败）会转移到其他<strong>结点</strong>上，如果这个系统过载结点外的其他部分能够“消化”掉这个过载，那么这个过载就是无所谓的，这个系统就是鲁棒（Robust）的；而如果这个过载（失败）太强，当前过载结点的相邻结点也无法承载，那么相邻结点也会过载，进而造成连锁反应，使得整片的电力网络瘫痪，而这就是上述事件发生的原因。更一般地说，相互连接引起了足够大的非局部性（Non-locality），它允许了如电力等能够在其所在网络上进行传播，不管距离有多远。一句话概之：这反映了网络中相互连接导致的脆弱性。 而如何避免这种情况呢？这与网络结构有关。而什么样的网络结构会更鲁棒、稳健呢？此处先不具体回答，具体会在之后的章节讨论到。</p>
+<p>我们生活中何处会有网络科学的身影？让我们首先从2003年北美大规模断电(blackout)的故事讲起。 <img src="2003blackout.png" /> 这是当时大断电前（左）后（右）的卫星图，仔细看的话，会发现，大断电后，Toronto, Detroit, Cleveland, Columbus, Long Island几个城市/地区在卫星图上看不到了，换句话说，这些城市断电了，这也导致了当时北美几百万人回归无电时代。但这件事是怎么发生的？以后又要怎么避免类似的事情发生呢？ 在电力<strong>网络</strong>系统中，一个局部的电力过载（失败）会转移到其他<strong>结点</strong>上，如果这个系统过载结点外的其他部分能够“消化”掉这个过载，那么这个过载就是无所谓的，这个系统就是鲁棒（Robust）的；而如果这个过载（失败）太强，当前过载结点的相邻结点也无法承载，那么相邻结点也会过载，进而造成连锁反应，使得整片的电力网络瘫痪，而这就是上述事件发生的原因。更一般地说，相互连接引起了足够大的非局部性（Non-locality），它允许了如电力等能够在其所在网络上进行传播，不管距离有多远。一句话概之：这反映了网络中相互连接导致的脆弱性。 而如何避免这种情况呢？这与网络结构有关。而什么样的网络结构会更鲁棒、稳健呢？此处先不具体回答，具体会在之后的章节讨论到。</p>
 <p>连锁反应的失败（Cascading failure）其实在大多<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F" title="复杂系统-维基百科">复杂系统</a>中都可能存在，如互联网中的网络过载、金融网络连锁崩溃（金融危机）、社交网络中的谣言传播等等，可见网络科学其实广泛存在于我们的生活中。</p>
+<h3 id="网络是复杂系统的核心networks-at-the-heart-of-complex-systems">2. 网络是复杂系统的核心（Networks at the Heart of Complex Systems）</h3>
 <hr />
 <blockquote>
-<figure>
-<img src="http://networksciencebook.com/" alt="Network Science - by Albert-Laszlo Barabasi" /><figcaption aria-hidden="true">Network Science - by Albert-Laszlo Barabasi</figcaption>
-</figure>
+<p>参考书籍：Network Science - by Albert-Laszlo Barabasi (http://networksciencebook.com/)</p>
 </blockquote>
 
         
