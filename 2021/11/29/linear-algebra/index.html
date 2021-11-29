@@ -11,7 +11,7 @@
 
     <title>
         
-        Tengjun的个人技术博客 | 脑机接口-BMI
+        线性代数中的几何 - Tengjun的个人技术博客 | 脑机接口-BMI
         
     </title>
 
@@ -57,7 +57,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -92,6 +92,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rn-%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8F"><span class="toc-text">1. \(R^n\) 中的向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%BF%90%E7%AE%97%E5%8F%8A%E5%85%B6%E5%87%A0%E4%BD%95%E8%A1%A8%E7%A4%BA"><span class="toc-text">2. 向量的运算及其几何表示</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -116,139 +120,55 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 576px">
-    
-    <div class="post-preview">
-        <div class="post-time">2021-11-29</div>
-        <div class="post-info">
-            <a href="/2021/11/29/linear-algebra/">
-                <h3>
-                    线性代数中的几何
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#基本数学" title="基本数学">基本数学</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+<div class="post-container">
+    <div class="post-title">
+        线性代数中的几何
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-11-24</div>
-        <div class="post-info">
-            <a href="/2021/11/24/network-science-2/">
-                <h3>
-                    《网络科学》 第二章 图论 - Albert-Laszlo Barabasi （TBD）
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#网络科学" title="网络科学">网络科学</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-29 20:13:29</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#基本数学" title="基本数学">基本数学</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-11-23</div>
-        <div class="post-info">
-            <a href="/2021/11/23/network-science-1/">
-                <h3>
-                    《网络科学》 序言 &amp; 第一章 简介 - Albert-Laszlo Barabasi
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#网络科学" title="网络科学">网络科学</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+    <div class="post-content ">
+        <h2 id="前置知识">前置知识</h2>
+<p>理解 <span class="math inline">\(R^n\)</span> （n维向量空间），标量与向量的区别，知道向量如何运算。<br></p>
+<h2 id="rn-中的向量">1. <span class="math inline">\(R^n\)</span> 中的向量</h2>
+<p>首先从最基本的概念讲起。一个n维向量在几何上有两种解释：一种是它是n维空间里的一个点（point），另一种则是向量（<strong>vector</strong>），如下图所示。<br> <img src="la-1.png" /> <img src="la-2.png" /> <br> 在之后的描述中，除非特别声明，否则默认向量起始于原点。但需要注意的是，这只是为了描述的方便，向量在可以在空间中任意位置，它并不一定要以原点为起点。换句话说，一个向量只由它的长度和方向决定，与其位置无关。<br> 当然，向量也可以表示两个点之间的距离，如下图所示。<br> <img src="la-3.png" /> <br></p>
+<h2 id="向量的运算及其几何表示">2. 向量的运算及其几何表示</h2>
+<p>向量的相加减结果可由向量间各个维度数值各自相加减得到，如下图所示。<br> <img src="la-4.png" /> <img src="la-5.png" /> <br> 而标量与向量的乘法结果可由标量与向量各个维度数值相乘得到，如下图所示。<br> <img src="la-6.png" /> <br> 所以，从几何角度上看，向量间的线性组合，由各个向量各自的缩放（与标量相乘），再将它们相加得到。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-10-26</div>
-        <div class="post-info">
-            <a href="/2021/10/26/Optimal-control/">
-                <h3>
-                    最优控制（Optimal Control) - Maurice Smith (Harvard University) NMA
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#计算神经科学" title="计算神经科学">计算神经科学</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#运动理论" title="运动理论">运动理论</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Neuromatch Academy (NMA)" title="Neuromatch Academy (NMA)">Neuromatch Academy (NMA)</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-08-21</div>
-        <div class="post-info">
-            <a href="/2021/08/21/基于智能计算的脑机制研究-邬霞/">
-                <h3>
-                    基于智能计算的脑机制研究-邬霞
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#讲座记录" title="讲座记录">讲座记录</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-03-11</div>
-        <div class="post-info">
-            <a href="/2019/03/11/Basic-grammar-of-Markdown/">
-                <h3>
-                    Markdown的基本语法（英文稿）
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#科研基本技能" title="科研基本技能">科研基本技能</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
 </div>
-<ul class="pager">
-    
-    
-</ul>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
 
     </div>
 </div>
@@ -300,6 +220,31 @@
 
   
 
+    
+      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+        });
+      </script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+          var all = MathJax.Hub.getAllJax(), i;
+          for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+          }
+        });
+      </script>
+    
+
+    
+
+  
+
 
 </body>
 
@@ -307,7 +252,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
@@ -317,5 +262,24 @@
 
 
 
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81Mzc3MS8zMDI0NA==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
 
 </html>

@@ -11,7 +11,7 @@
 
     <title>
         
-        network-science-2 - Tengjun的个人技术博客 | 脑机接口-BMI
+        《网络科学》 第二章 图论 - Albert-Laszlo Barabasi （TBD） - Tengjun的个人技术博客 | 脑机接口-BMI
         
     </title>
 
@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E6%A1%A5%E9%97%AE%E9%A2%98the-bridges-of-konigsberg"><span class="toc-text">1. 七桥问题(The Bridges of Konigsberg)</span></a></li></ol>
 </div>
     
 </div>
@@ -123,11 +123,17 @@
 
 <div class="post-container">
     <div class="post-title">
-        network-science-2
+        《网络科学》 第二章 图论 - Albert-Laszlo Barabasi （TBD）
     </div>
 
     <div class="post-meta">
         <span class="attr">发布于：<span>2021-11-24 17:29:30</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#网络科学" title="网络科学">网络科学</a>
+        <span>/</span>
+        
         
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
@@ -135,7 +141,9 @@
 </span>
     </div>
     <div class="post-content ">
-        
+        <h2 id="七桥问题the-bridges-of-konigsberg">1. 七桥问题(The Bridges of Konigsberg)</h2>
+<p>在真正开始讲解图论的内容之前，我们可以先回答一个问题：图论起源于什么？这可以追溯到1975年的Konigsberg这座当时的大都市。当时的政府想要在几片不相连的土地（下图中的A、B、C和D）上建造7座桥，以方便居民们的生活，如下图所示。<br> <img src="figure-2-1.jpg" /><br> 而当时爱思考的人就提出了这么一个问题：一个人有没有可能经过所有七座桥，但过程中不经过任何一座桥两次呢？针对这个问题，尽管有许多人做了尝试，但都以失败告终。最后是欧拉（对，就是那个大名鼎鼎的数学家）从数学上证明了这样的路径根本不存在，而这也意味着图论的诞生。<br> 为什么这么说呢？欧拉是这么解构这个问题的。<br></p>
+<p>上面的问题构成了一个经典的图论问题，用现在图论的语言来说，当时欧拉给出的结论是： - 如果一个图中有大于两个结点的度是奇数，那么这样的路径不存在； - 如果一个图中没有一个结点的度为奇数，那么至少有一条这样的路径。<br></p>
 
         
             <div class="donate-container">
@@ -206,6 +214,31 @@
 
 
 
+
+  
+
+    
+      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+        });
+      </script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+          var all = MathJax.Hub.getAllJax(), i;
+          for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+          }
+        });
+      </script>
+    
+
+    
 
   
 
