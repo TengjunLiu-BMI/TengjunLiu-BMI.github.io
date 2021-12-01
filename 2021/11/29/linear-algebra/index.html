@@ -11,7 +11,7 @@
 
     <title>
         
-        线性代数中的几何 - Tengjun的个人技术博客 | 脑机接口-BMI
+        线性代数中的几何 （长文..., TBD) - Tengjun的个人技术博客 | 脑机接口-BMI
         
     </title>
 
@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rn-%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8Fvector"><span class="toc-text">1. \(R^n\) 中的向量（vector）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%BF%90%E7%AE%97%E5%8F%8A%E5%85%B6%E5%87%A0%E4%BD%95%E8%A1%A8%E7%A4%BA"><span class="toc-text">2. 向量的运算及其几何表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A9%BA%E9%97%B4-span"><span class="toc-text">3. 生成空间 （span）</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rn-%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8Fvector"><span class="toc-text">1. \(R^n\) 中的向量（vector）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%BF%90%E7%AE%97%E5%8F%8A%E5%85%B6%E5%87%A0%E4%BD%95%E8%A1%A8%E7%A4%BA"><span class="toc-text">2. 向量的运算及其几何表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A9%BA%E9%97%B4-span"><span class="toc-text">3. 生成空间 （span）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B-matrix-equations"><span class="toc-text">4. 矩阵方程 （Matrix Equations）</span></a></li></ol>
 </div>
     
 </div>
@@ -123,7 +123,7 @@
 
 <div class="post-container">
     <div class="post-title">
-        线性代数中的几何
+        线性代数中的几何 （长文..., TBD)
     </div>
 
     <div class="post-meta">
@@ -142,13 +142,46 @@
     </div>
     <div class="post-content ">
         <h2 id="前置知识">前置知识</h2>
-<p>理解 <span class="math inline">\(R^n\)</span> （n维向量空间）、增广矩阵（augmented matrix）、基向量（basis），标量（scalar）与向量（vector）的区别，知道向量如何运算。<br></p>
+<p>理解 <span class="math inline">\(R^n\)</span> （n维向量空间）、增广矩阵（augmented matrix）、基向量（basis），标量（scalar）与向量（vector）的区别，知道向量、矩阵运算规则。<br></p>
 <h2 id="rn-中的向量vector">1. <span class="math inline">\(R^n\)</span> 中的向量（<strong>vector</strong>）</h2>
 <p>首先从最基本的概念讲起。一个n维向量在几何上有两种解释：一种是它是n维空间里的一个点（point），另一种则是向量（vector），如下图所示。<br> <img src="la-1.png" /><br> 在之后的描述中，除非特别声明，否则默认向量起始于原点。但需要注意的是，这只是为了描述的方便，向量在可以在空间中任意位置，它并不一定要以原点为起点。换句话说，一个向量只由它的长度和方向决定，与其位置无关。<br> 当然，向量也可以表示两个点之间的距离，如下图所示。<br> <img src="la-2.png" /><br></p>
 <h2 id="向量的运算及其几何表示">2. 向量的运算及其几何表示</h2>
-<p>向量的相加减结果可由向量间各个维度数值各自相加减得到，如下图所示。<br> <img src="la-3.png" /><br> 而标量与向量的乘法结果可由标量与向量各个维度数值相乘得到，如下图所示。<br> <img src="la-4.png" /><br> 所以，从几何角度上看，向量间的线性组合，由各个向量各自的缩放（与标量相乘），再将它们相加得到。 而向量的线性组合又能反映代数上的什么东西呢？假设有这么一个方程（向量方程，即由向量构成的方程，等价于一个线性代数方程）：<br> <img src="la-5.png" /><br> 那么我们所要求的解（ <span class="math inline">\(x\)</span> 与 <span class="math inline">\(y\)</span> ），是不是就是两个向量的缩放因子？换句话说，一个向量方程（线性代数方程）有解即意味着等号右边的向量是等号左边向量们的线性组合，而解就是线性组合中的缩放因子。<br> 总结一下，结合代数中的内容，我们就有三种方式来思考一个线性系统：<br> - 线性代数方程组（代数角度）； - 增广矩阵（代数角度）； - 向量方程（几何角度）。</p>
+<p>向量的相加减结果可由向量间各个维度数值各自相加减得到，如下图所示。<br> <img src="la-3.png" /><br> 而标量与向量的乘法结果可由标量与向量各个维度数值相乘得到，如下图所示。<br> <img src="la-4.png" /><br> 所以，从几何角度上看，向量间的线性组合，由各个向量各自的缩放（与标量相乘），再将它们相加得到。 而向量的线性组合又能反映代数上的什么东西呢？假设有这么一个方程（向量方程，即由向量构成的方程，等价于一个线性代数方程）：<br> <img src="la-5.png" /><br> 那么我们所要求的解（ <span class="math inline">\(x\)</span> 与 <span class="math inline">\(y\)</span> ），是不是就是两个向量的缩放因子？换句话说，一个向量方程（线性代数方程）有解即意味着等号右边的向量是等号左边向量们的线性组合，而解就是线性组合中的缩放因子。<br></p>
 <h2 id="生成空间-span">3. 生成空间 （<strong>span</strong>）</h2>
-<p>生成空间是一个很重要的概念。简单来说，对于一组向量，以他们为基能张成（线性组合而成）的空间就称为它们的生成空间，可记为：<br> <img src="la-6.png" /><br> 其中 <span class="math inline">\(x_1\)</span> 到 <span class="math inline">\(x_k\)</span>为标量（缩放因子），<span class="math inline">\(v_1\)</span> 到 <span class="math inline">\(v_k\)</span> 为基向量。<br> 以在 <span class="math inline">\(R^3\)</span> 中为例，一个向量张成的生成空间为一条一维直线，两个不共线的向量张成的生成空间为一个二维平面，三个不共线且不都在一个平面上的向量张成的生成空间则为一个三维空间，而三个不共线但在一个平面内的向量张成的生成空间则为一个二维平面，如下图所示。<br> <img src="la-7.png" /><br></p>
+<p>生成空间是一个很重要的概念。简单来说，对于一组向量，以他们为基能张成（线性组合而成）的空间就称为它们的生成空间，可记为：<br> <img src="la-6.png" /><br> 其中 <span class="math inline">\(x_1\)</span> 到 <span class="math inline">\(x_k\)</span> 为标量（缩放因子），<strong><span class="math inline">\(v_1\)</span></strong> 到 <strong><span class="math inline">\(v_k\)</span></strong> 为基向量。<br> 以在 <span class="math inline">\(R^3\)</span> 中为例，一个向量张成的生成空间为一条一维直线，两个不共线的向量张成的生成空间为一个二维平面，三个不共线且不都在一个平面上的向量张成的生成空间则为一个三维空间，而三个不共线但在一个平面内的向量张成的生成空间则为一个二维平面，如下图所示。<br> <img src="la-7.png" /><br> 结合上面线性组合相关的讨论，我们又可知道由一组基向量以及它们的生成空间中的任意向量组成的向量方程（代表着一个线性代数方程）有解。<br></p>
+<h2 id="矩阵方程-matrix-equations">4. 矩阵方程 （Matrix Equations）</h2>
+<p>首先回忆一下，一个矩阵 <strong><span class="math inline">\(A\)</span></strong> 乘上一个向量 <strong><span class="math inline">\(x\)</span></strong> ，可以视为矩阵 <strong><span class="math inline">\(A\)</span></strong> 中各向量与向量 <strong><span class="math inline">\(x\)</span></strong> 中各元素的线性组合，如下公式所示。<br> <img src="la-8.png" /><br> 其中 <span class="math inline">\(x_1\)</span> 到 <span class="math inline">\(x_k\)</span> 为标量（缩放因子），<strong><span class="math inline">\(v_1\)</span></strong> 到 <strong><span class="math inline">\(v_k\)</span></strong> 为向量。所以显然，向量 <strong><span class="math inline">\(x\)</span></strong> 中元素的数目应与矩阵 <strong><span class="math inline">\(A\)</span></strong> 中向量的数目相等，即对于 <strong><span class="math inline">\(Ax = b\)</span></strong> 而言，矩阵 <strong><span class="math inline">\(A\)</span></strong> 的列数应与 <strong><span class="math inline">\(x\)</span></strong> 维度一致。而这个 <strong><span class="math inline">\(Ax = b\)</span></strong> 就被定义为<strong>矩阵方程</strong> （<strong>Matrix Equation</strong>)，其中向量 <strong><span class="math inline">\(x\)</span></strong> 中各元素大小未知（想想与向量方程的关系？是不是两者是等价且可以相互转换的？）。这也是线性系统的另一种表达方式。<br> 总结一下，目前为止，结合代数中的内容，我们就有四种方式来思考一个线性系统：<br> - 线性代数方程组（代数角度）； - 增广矩阵（代数角度）； - 向量方程（几何角度）； - 矩阵方程（几何角度）。<br></p>
+<p>上面我们解释了矩阵方程与向量线性组合的关系，再回头看我们之前讨论的线性组合与生成空间的关系，是不是发现又可以串起来了？也就是说，当且仅当向量 <strong><span class="math inline">\(b\)</span></strong> 在矩阵 <strong><span class="math inline">\(A\)</span></strong> 中各向量张成的生成空间里， <strong><span class="math inline">\(Ax = b\)</span></strong> 有解。其实这就搭起了代数中方程有解与几何中生成空间的桥梁。下面给一个直观的例子。<br> 假如我们要求 <strong><span class="math inline">\(Ax = b\)</span></strong> 是否有解？对于： <span class="math display">\[
+ \mathbf{A}  = \begin{pmatrix}
+ 2 &amp; 1\\
+ -1 &amp; 0\\
+ 1 &amp; -1
+\end{pmatrix},
+\mathbf{B} = \begin{pmatrix}
+ 0\\
+ 2\\
+2
+\end{pmatrix}
+\]</span> 由上面我们的讨论可知，当且仅当向量 <strong><span class="math inline">\(b\)</span></strong> 在矩阵 <strong><span class="math inline">\(A\)</span></strong> 中各向量张成的生成空间里， <strong><span class="math inline">\(Ax = b\)</span></strong> 有解。所以我们将 <strong><span class="math inline">\(A\)</span></strong> 中各向量张成的生成空间（紫色）与 <strong><span class="math inline">\(b\)</span></strong> （黑色箭头）画出，可见 <strong><span class="math inline">\(b\)</span></strong> 并不在 <strong><span class="math inline">\(A\)</span></strong> 中各向量张成的生成空间中，所以方程无解。<br> 接下来我们考虑 <strong><span class="math inline">\(Ax = b\)</span></strong> 有解的情况，怎么从几何上去表示其解呢？在回答这个问题之前，我们先考虑一个简单一点的例子：如果 <strong><span class="math inline">\(b\)</span></strong> 为零向量时解是什么呢？考虑下面的情况：<br> 假设我们要求 <strong><span class="math inline">\(Ax = 0\)</span></strong> 的解（这类方程至少有一个平凡解(trivial solution) <strong><span class="math inline">\(x=0\)</span></strong> ），对于： <span class="math display">\[
+ \mathbf{A}  = \begin{pmatrix}
+ 1 &amp; -1 &amp; 2\\
+ -2 &amp; 2 &amp; -4
+\end{pmatrix}
+\]</span> 我们用参数化的形式表示它的解，如下所示：<br> <img src="la-9.png" /><br> 显然我们可以将其转换为向量方程的形式：<br> <img src="la-10.png" /><br> 所以显然，方程的解为上述两个向量张成的生成空间：<br> <img src="la-11.png" /><br> 将其可视化如下图所示： <img src="la-12.png" /><br> 所以从几何角度上看，方程 <strong><span class="math inline">\(Ax = 0\)</span></strong> 的解可以表示为某个/组向量张成的生成空间，注意区分好与上文中对于 <strong><span class="math inline">\(Ax = b\)</span></strong> 讨论的区别（“解是一个生成空间（解是什么）”与“解在生成空间中（有解的条件）”的区别）。顺带回顾一下变量数目与空间维度的关系：在这个例子中，一共有三个变量（构成 <strong><span class="math inline">\(x\)</span></strong> ），那么方程的解集必在 <span class="math inline">\(R^3\)</span> 或其子空间，而这个例子中只有两个自由变量（free variable），则解集是在一个二维平面上（自由变量的数目等于解集空间的维度）。<br></p>
+<p>接着回到我们之前的问题：假设 <strong><span class="math inline">\(Ax = b\)</span></strong> 有解，那么它的解如何在几何上表示？它与 <strong><span class="math inline">\(b\)</span></strong> 为零向量时有什么不同呢？考虑下面情况：<br> <span class="math display">\[
+ \mathbf{A}  = \begin{pmatrix}
+ 1 &amp; -1 &amp; 2\\
+ -2 &amp; 2 &amp; -4
+\end{pmatrix}，
+\mathbf{B} = \begin{pmatrix}
+ 1\\
+ -2
+\end{pmatrix}
+\]</span> 类似地，我们可以得到其解为：<br> <img src="la-13.png" /><br> 对比这个结果与上面 <strong><span class="math inline">\(b\)</span></strong> 为零向量时的结果，显然可以看出，两者相差的只是一个位移( <span class="math inline">\(x_2\)</span> 与 <span class="math inline">\(x_3\)</span> 为0时的特解) <strong><span class="math inline">\(p\)</span></strong> ，如下图所示：<br> <img src="la-14.png" /><br> 当然，这里举的例子是方程不是有唯一解的情况，而如果方程只有唯一解，其解在空间上表示就只是一个点了。<br></p>
+<hr />
+<blockquote>
+<p>参考书籍：Interactive Linear Algebra - by Dan Margalit, Joseph Rabinoff (https://textbooks.math.gatech.edu/ila/index2.html)</p>
+</blockquote>
 
         
             <div class="donate-container">
