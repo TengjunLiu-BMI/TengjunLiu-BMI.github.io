@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#header"><span class="toc-text">1. Header:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#typeface"><span class="toc-text">2. Typeface:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#quotation"><span class="toc-text">3. Quotation:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#split-line"><span class="toc-text">4. Split Line:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#figure"><span class="toc-text">5.Figure:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hyperlink"><span class="toc-text">6. Hyperlink:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#list"><span class="toc-text">7. List:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#table"><span class="toc-text">8. Table:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#code"><span class="toc-text">9. Code:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#formula"><span class="toc-text">10. Formula:</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">1. Header:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">first-level header</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#second-level-header"><span class="toc-text">second-level header</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#fifth-level-Header"><span class="toc-text">fifth-level Header</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">2. Typeface:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">3. Quotation:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">4. Split Line:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">5.Figure:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">6. Hyperlink:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">7. List:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">8. Table:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">9. Code:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">10. Formula:</span></a></li></ol>
 </div>
     
 </div>
@@ -141,108 +141,138 @@
 </span>
     </div>
     <div class="post-content ">
-        <h1 id="header">1. Header:</h1>
-<p>The symbol "#" indicates the level of a header, which is shown as follows: # first-level header &gt;"# first-level header": first-level header</p>
-<p>## second-level header &gt;"## second-level header": second-level header</p>
-<p>##### fifth-level Header &gt;"##### fifth-level header": fifth-level header</p>
+        <h1>1. Header:</h1>
+<p>The symbol “#” indicates the level of a header, which is shown as follows:</p>
+<h1>first-level header</h1>
+<blockquote>
+<p>“# first-level header”: first-level header</p>
+</blockquote>
+<h2 id="second-level-header">second-level header</h2>
+<blockquote>
+<p>“## second-level header”: second-level header</p>
+</blockquote>
+<h5 id="fifth-level-Header">fifth-level Header</h5>
+<blockquote>
+<p>“##### fifth-level header”: fifth-level header</p>
+</blockquote>
 <p>And so on.</p>
-<h1 id="typeface">2. Typeface:</h1>
+<h1>2. Typeface:</h1>
 <ul>
-<li><p>Bold: **The text to be bold**</p>
-<p>Result: <strong>The text to be bold</strong></p></li>
-<li><p>Italic: *The test to be italic*</p>
-<p>Result: <em>The text to be italic</em></p></li>
-<li><p>Bold and Italic: ***The test to be bold and italic<em>*</em></p>
-<p>Result: <strong><em>The test to be bold and italic</em></strong></p></li>
-<li><p>Strikethrough: ~~The test to be strikethrough~~</p>
-<p>Result: <del>The test to be trikethough</del></p></li>
-<li><p>Newline: two ' ' in the gap between the 2 texts. Or &lt; br&gt; (No ' ').</p>
-<p>Result: <strong>Tip:</strong> If you want to share your library by copying the files, you need to copy both the .data file and the .enl file. They need to work together.</p>
-<p><br></p></li>
-<li><p>Be placed in the middle: &lt; center&gt;markdown&lt; /center&gt; (No ' ').</p>
-<center>
-<p>markdown</p>
-</center></li>
+<li>
+<p>Bold: *<em>The text to be bold</em>*</p>
+<p>Result: <strong>The text to be bold</strong></p>
+</li>
+<li>
+<p>Italic: *The test to be italic*</p>
+<p>Result: <em>The text to be italic</em></p>
+</li>
+<li>
+<p>Bold and Italic: ***The test to be bold and italic***</p>
+<p>Result: <em><strong>The test to be bold and italic</strong></em></p>
+</li>
+<li>
+<p>Strikethrough: ~~The test to be strikethrough~~</p>
+<p>Result: <s>The test to be trikethough</s></p>
+</li>
+<li>
+<p>Newline: two ’ ’ in the gap between the 2 texts. Or &lt; br&gt; (No ’ ').</p>
+<p>Result:<br>
+<strong>Tip:</strong><br>
+If you want to share your library by copying the files, you need to copy both the .data file and the .enl file. They need to work together.</p>
+  <br>
+</li>
+<li>
+<p>Be placed in the middle: &lt; center&gt;markdown&lt; /center&gt; (No ’ ').</p>
+</li>
 </ul>
-<h1 id="quotation">3. Quotation:</h1>
-<p>The symbol "&gt;" indicates the level of a quotation just as what "#" does.</p>
+<center>markdown</center>
+<h1>3. Quotation:</h1>
+<p>The symbol “&gt;” indicates the level of a quotation just as what “#” does.</p>
 <p>Grammar: &gt; the quotation</p>
-<pre><code>&gt;This is the first-level quotation</code></pre>
+<pre><code>&gt;This is the first-level quotation
+</code></pre>
 <p>And so on.</p>
-<h1 id="split-line">4. Split Line:</h1>
-<p>Symbol: more than 3 "-" or "*", the results are shown as follows:</p>
-<hr />
-<hr />
-<h1 id="figure">5.Figure:</h1>
-<p>Grammar: ![the caption(shown below the figure)](the address of the figure (can be online or offline)"the title of the figure (shown when the mouse is over the figure)")</p>
-<figure>
-<img src="https://pic.36krcnd.com/201801/25121602/9hk589zocc2etptd!heading" title="BCI1" alt="Online" /><figcaption aria-hidden="true">Online</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/BCI2.jpg" title="BCI2" alt="Offline" /><figcaption aria-hidden="true">Offline</figcaption>
-</figure>
+<h1>4. Split Line:</h1>
+<p>Symbol: more than 3 “-” or “*”, the results are shown as follows:</p>
+<hr>
+<hr>
+<h1>5.Figure:</h1>
+<p>Grammar: ![the caption(shown below the figure)](the address of the figure (can be online or offline)“the title of the figure (shown when the mouse is over the figure)”)</p>
+<p><img src="https://pic.36krcnd.com/201801/25121602/9hk589zocc2etptd!heading" alt="Online" title="BCI1"></p>
+<p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/BCI2.jpg" alt="Offline" title="BCI2"></p>
 <p>However, the offline way is not recommended. (Offline way cannot be use in deployment of a website)</p>
-<p>Place the figure in the middle: &lt; div align=center&gt; (No the first ' ').</p>
-<p>![ ]( )</p>
-<p>&lt; div align=left&gt; (No the first ' ')</p>
+<p>Place the figure in the middle:<br>
+&lt; div align=center&gt; (No the first ’ ').</p>
+<p>![  ](   )</p>
+<p>&lt; div align=left&gt; (No the first ’ ')</p>
 <p>Result:</p>
-<div align=center>
-
-<p><embed src="https://latex.codecogs.com/gif.latex?X%5Ccdot%20%5Cfrac%7BX%7D%7BY%7D" /></p>
+  <div align=center>
+<p><img src="https://latex.codecogs.com/gif.latex?X%5Ccdot%20%5Cfrac%7BX%7D%7BY%7D" alt=""></p>
 <div align=left>
-
-<p>set the figure's size: &lt; img <strong>width=200</strong> src="the link of the figure.png" &gt;</p>
+<p>set the figure’s size:<br>
+&lt; img <strong>width=200</strong> src=“the link of the figure.png” &gt;</p>
 <p>Result:</p>
-<p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS6.png" /></p>
-<p><img width=200 src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS6.png" ></p>
-<h1 id="hyperlink">6. Hyperlink:</h1>
-<p>Grammar: [Hyperlink's name](Address "title")</p>
-<p><a target="_blank" rel="noopener" href="https://www.webfx.com/tools/emoji-cheat-sheet/" title="Emoji&#39;s website">Emoji's website</a></p>
-<h1 id="list">7. List:</h1>
+<p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS6.png" alt=""></p>
+  <img width=200 src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS6.png" >
+<h1>6. Hyperlink:</h1>
+<p>Grammar: [Hyperlink’s name](Address “title”)</p>
+<p><a target="_blank" rel="noopener" href="https://www.webfx.com/tools/emoji-cheat-sheet/" title="Emoji's website">Emoji’s website</a></p>
+<h1>7. List:</h1>
 <ul>
-<li>Unordered: symbol ‘-’ or '+' or '*', the result is just like this line.</li>
+<li>Unordered: symbol ‘-’ or ‘+’ or ‘*’, the result is just like this line.</li>
 </ul>
-<ol type="1">
+<ol>
 <li>Ordered: 1. or 2. or 3. and so on, the result is just like this line.</li>
 </ol>
 <ul>
-<li>nesting: three ' '(blank) between the indexes.</li>
+<li>nesting: three ’ '(blank) between the indexes.</li>
 </ul>
-<h1 id="table">8. Table:</h1>
+<h1>8. Table:</h1>
 <p>Grammar:(No blank line!)</p>
 <p>header 1|header 2|deader 3</p>
-<p>---|:--:|---:</p>
+<p>—|:–:|—:</p>
 <p>content 11|content 21|content 31</p>
 <p>content 12|content 22|content 32</p>
 <p>The result is as follows:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>header 1</th>
-<th style="text-align: center;">header 2</th>
-<th style="text-align: right;">deader 3</th>
+<th style="text-align:center">header 2</th>
+<th style="text-align:right">deader 3</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>content 11</td>
-<td style="text-align: center;">content 21</td>
-<td style="text-align: right;">content 31</td>
+<td style="text-align:center">content 21</td>
+<td style="text-align:right">content 31</td>
 </tr>
-<tr class="even">
+<tr>
 <td>content 12</td>
-<td style="text-align: center;">content 22</td>
-<td style="text-align: right;">content 32</td>
+<td style="text-align:center">content 22</td>
+<td style="text-align:right">content 32</td>
 </tr>
 </tbody>
 </table>
-<h1 id="code">9. Code:</h1>
-<p>Grammar: - 'One-line code'</p>
-<p><code>create database hero;</code> - ''' A passage of code'''</p>
-<p><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function <span class="function"><span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">     echo <span class="string">&quot;Hello world!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">fun</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></p>
-<h1 id="formula">10. Formula:</h1>
-<p>Use the website: <a target="_blank" rel="noopener" href="https://www.codecogs.com/latex/eqneditor.php">LateXFormula</a> Create the formula and then Choose 'URL Encoded' option below. Copy the URL and then paste it in Markdown.</p>
-<p>Example: <embed src="https://latex.codecogs.com/gif.latex?X%5Ccdot%20%5Cfrac%7BX%7D%7BY%7D" /> <br/></p>
+<h1>9. Code:</h1>
+<p>Grammar:</p>
+<ul>
+<li>
+<p>‘One-line code’</p>
+<p><code>create database hero;</code></p>
+</li>
+<li>
+<p>‘’’ A passage of code’‘’</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function <span class="function"><span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">     echo <span class="string">&quot;Hello world!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">fun</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1>10. Formula:</h1>
+<p>Use the website: <a target="_blank" rel="noopener" href="https://www.codecogs.com/latex/eqneditor.php">LateXFormula</a><br>
+Create the formula and then Choose ‘URL Encoded’ option below.<br>
+Copy the URL and then paste it in Markdown.</p>
+<p>Example: <img src="https://latex.codecogs.com/gif.latex?X%5Ccdot%20%5Cfrac%7BX%7D%7BY%7D" alt=""><br>
+<br/></p>
 
         
             <div class="donate-container">
