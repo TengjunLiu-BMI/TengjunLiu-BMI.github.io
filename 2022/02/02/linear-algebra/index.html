@@ -93,7 +93,13 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">0. 前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-R-n-%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8F%EF%BC%88Vector%EF%BC%89"><span class="toc-text">1. $R^n$ 中的向量（Vector）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%90%91%E9%87%8F%E7%9A%84%E8%BF%90%E7%AE%97%E5%8F%8A%E5%85%B6%E5%87%A0%E4%BD%95%E8%A1%A8%E7%A4%BA"><span class="toc-text">2. 向量的运算及其几何表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%94%9F%E6%88%90%E7%A9%BA%E9%97%B4-%EF%BC%88Span%EF%BC%89"><span class="toc-text">3. 生成空间 （Span）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B-%EF%BC%88Matrix-Equations%EF%BC%89"><span class="toc-text">4. 矩阵方程 （Matrix Equations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%BA%BF%E6%80%A7%E7%8B%AC%E7%AB%8B%EF%BC%88Linear-Independence%EF%BC%89"><span class="toc-text">5. 线性独立（Linear Independence）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%AD%90%E7%A9%BA%E9%97%B4%E3%80%81%E5%88%97%E7%A9%BA%E9%97%B4%E3%80%81%E9%9B%B6%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%9F%BA%EF%BC%88Subspace-Column-Space-Null-Space-and-Basis%EF%BC%89"><span class="toc-text">6. 子空间、列空间、零空间与基（Subspace, Column Space, Null Space and Basis）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2%EF%BC%88Matrix-Transformations%EF%BC%89"><span class="toc-text">7. 矩阵变换（Matrix Transformations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%EF%BC%88Matrix-Multiplication%EF%BC%89"><span class="toc-text">8. 矩阵乘法（Matrix Multiplication）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86%EF%BC%88Matrix-Inverses%EF%BC%89"><span class="toc-text">9. 矩阵的逆（Matrix Inverses）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">10. 行列式</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">0. 前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rn-%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8Fvector"><span class="toc-text">1. \(R^n\)
+中的向量（Vector）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%BF%90%E7%AE%97%E5%8F%8A%E5%85%B6%E5%87%A0%E4%BD%95%E8%A1%A8%E7%A4%BA"><span class="toc-text">2. 向量的运算及其几何表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A9%BA%E9%97%B4-span"><span class="toc-text">3. 生成空间 （Span）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B-matrix-equations"><span class="toc-text">4. 矩阵方程 （Matrix Equations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%8B%AC%E7%AB%8Blinear-independence"><span class="toc-text">5. 线性独立（Linear
+Independence）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E7%A9%BA%E9%97%B4%E5%88%97%E7%A9%BA%E9%97%B4%E9%9B%B6%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%9F%BAsubspace-column-space-null-space-and-basis"><span class="toc-text">6.
+子空间、列空间、零空间与基（Subspace, Column Space, Null Space and
+Basis）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2matrix-transformations"><span class="toc-text">7. 矩阵变换（Matrix
+Transformations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95matrix-multiplication"><span class="toc-text">8. 矩阵乘法（Matrix
+Multiplication）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86matrix-inverses"><span class="toc-text">9. 矩阵的逆（Matrix Inverses）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">10. 行列式</span></a></li></ol>
 </div>
     
 </div>
@@ -141,256 +147,506 @@
 </span>
     </div>
     <div class="post-content ">
-        <h2 id="0-前置知识">0. 前置知识</h2>
-<p>理解 $R^n$ （n维向量空间），增广矩阵（augmented matrix），主元（pivot），自由变量（free<br>
-variable），维度（Dimension），标量（scalar）与向量（vector）的区别，知道向量、矩阵运算规则，大致知道子空间（Subspace）、基（Basis）、标准基（standard basis）、可逆矩阵（invertible matrix）等概念。其实最好就是上过照本宣科的线代课，对基本概念都有一些了解，想要从几何角度来加深对线代的理解，就可以看看这篇博客。<br></p>
-<h2 id="1-R-n-中的向量（Vector）">1. $R^n$ 中的向量（<strong>Vector</strong>）</h2>
-<p>首先从最基本的概念讲起。一个n维向量在几何上有两种解释：一种是它是n维空间里的一个点（point），另一种则是向量（vector），如下图所示。<br><br>
-<img src="la-1.png" alt=""><br><br>
-在之后的描述中，除非特别声明，否则默认向量起始于原点。但需要注意的是，这只是为了描述的方便，向量在可以在空间中任意位置，它并不一定要以原点为起点。换句话说，一个向量只由它的长度和方向决定，与其位置无关。<br><br>
-当然，向量也可以表示两个点之间的距离，如下图所示。<br><br>
-<img src="la-2.png" alt=""><br></p>
-<h2 id="2-向量的运算及其几何表示">2. 向量的运算及其几何表示</h2>
-<p>向量的相加减结果可由向量间各个维度数值各自相加减得到，如下图所示。<br><br>
-<img src="la-3.png" alt=""><br><br>
-而标量与向量的乘法结果可由标量与向量各个维度数值相乘得到，如下图所示。<br><br>
-<img src="la-4.png" alt=""><br><br>
-所以，从几何角度上看，向量间的线性组合，由各个向量各自的缩放（与标量相乘），再将它们相加得到。<br>
-而向量的线性组合又能反映代数上的什么东西呢？假设有这么一个方程（向量方程，即由向量构成的方程，等价于一个线性代数方程）：<br><br>
-<img src="la-5.png" alt=""><br><br>
-那么我们所要求的解（ $x$ 与 $y$ ），是不是就是两个向量的缩放因子？换句话说，一个向量方程（线性代数方程）有解即意味着等号右边的向量是等号左边向量们的线性组合，而解就是线性组合中的缩放因子。<br></p>
-<h2 id="3-生成空间-（Span）">3. 生成空间 （<strong>Span</strong>）</h2>
-<p>生成空间是一个很重要的概念。简单来说，对于一组向量，以他们为基能张成（线性组合而成）的空间就称为它们的生成空间，可记为：<br><br>
-<img src="la-6.png" alt=""><br><br>
-其中 $x_1$ 到 $x_k$ 为标量（缩放因子），<strong>$v_1$</strong> 到 <strong>$v_k$</strong> 为基向量。<br><br>
-以在 $R^3$ 中为例，一个向量张成的生成空间为一条一维直线，两个不共线的向量张成的生成空间为一个二维平面，三个不共线且不都在一个平面上的向量张成的生成空间则为一个三维空间，而三个不共线但在一个平面内的向量张成的生成空间则为一个二维平面，如下图所示。<br><br>
-<img src="la-7.png" alt=""><br><br>
+        <h2 id="前置知识">0. 前置知识</h2>
+<p>理解 <span class="math inline">\(R^n\)</span>
+（n维向量空间），增广矩阵（augmented
+matrix），主元（pivot），自由变量（free
+variable），维度（Dimension），标量（scalar）与向量（vector）的区别，知道向量、矩阵运算规则，大致知道子空间（Subspace）、基（Basis）、标准基（standard
+basis）、可逆矩阵（invertible
+matrix）等概念。其实最好就是上过照本宣科的线代课，对基本概念都有一些了解，想要从几何角度来加深对线代的理解，就可以看看这篇博客。<br></p>
+<h2 id="rn-中的向量vector">1. <span class="math inline">\(R^n\)</span>
+中的向量（<strong>Vector</strong>）</h2>
+<p>首先从最基本的概念讲起。一个n维向量在几何上有两种解释：一种是它是n维空间里的一个点（point），另一种则是向量（vector），如下图所示。<br>
+<img src="la-1.png" /><br>
+在之后的描述中，除非特别声明，否则默认向量起始于原点。但需要注意的是，这只是为了描述的方便，向量在可以在空间中任意位置，它并不一定要以原点为起点。换句话说，一个向量只由它的长度和方向决定，与其位置无关。<br>
+当然，向量也可以表示两个点之间的距离，如下图所示。<br> <img
+src="la-2.png" /><br></p>
+<h2 id="向量的运算及其几何表示">2. 向量的运算及其几何表示</h2>
+<p>向量的相加减结果可由向量间各个维度数值各自相加减得到，如下图所示。<br>
+<img src="la-3.png" /><br>
+而标量与向量的乘法结果可由标量与向量各个维度数值相乘得到，如下图所示。<br>
+<img src="la-4.png" /><br>
+所以，从几何角度上看，向量间的线性组合，由各个向量各自的缩放（与标量相乘），再将它们相加得到。
+而向量的线性组合又能反映代数上的什么东西呢？假设有这么一个方程（向量方程，即由向量构成的方程，等价于一个线性代数方程）：<br>
+<img src="la-5.png" /><br> 那么我们所要求的解（ <span
+class="math inline">\(x\)</span> 与 <span
+class="math inline">\(y\)</span>
+），是不是就是两个向量的缩放因子？换句话说，一个向量方程（线性代数方程）有解即意味着等号右边的向量是等号左边向量们的线性组合，而解就是线性组合中的缩放因子。<br></p>
+<h2 id="生成空间-span">3. 生成空间 （<strong>Span</strong>）</h2>
+<p>生成空间是一个很重要的概念。简单来说，对于一组向量，以他们为基能张成（线性组合而成）的空间就称为它们的生成空间，可记为：<br>
+<img src="la-6.png" /><br> 其中 <span class="math inline">\(x_1\)</span>
+到 <span class="math inline">\(x_k\)</span>
+为标量（缩放因子），<strong><span
+class="math inline">\(v_1\)</span></strong> 到 <strong><span
+class="math inline">\(v_k\)</span></strong> 为基向量。<br> 以在 <span
+class="math inline">\(R^3\)</span>
+中为例，一个向量张成的生成空间为一条一维直线，两个不共线的向量张成的生成空间为一个二维平面，三个不共线且不都在一个平面上的向量张成的生成空间则为一个三维空间，而三个不共线但在一个平面内的向量张成的生成空间则为一个二维平面，如下图所示。<br>
+<img src="la-7.png" /><br>
 结合上面线性组合相关的讨论，我们又可知道由一组基向量以及它们的生成空间中的任意向量组成的向量方程（代表着一个线性代数方程）有解。<br></p>
-<h2 id="4-矩阵方程-（Matrix-Equations）">4. 矩阵方程 （Matrix Equations）</h2>
-<p>首先回忆一下，一个矩阵 <strong>$A$</strong> 乘上一个向量 <strong>$x$</strong> ，可以视为矩阵 <strong>$A$</strong> 中各向量与向量 <strong>$x$</strong> 中各元素的线性组合，如下公式所示。<br><br>
-<img src="la-8.png" alt=""><br><br>
-其中 $x_1$ 到 $x_k$ 为标量（缩放因子），<strong>$v_1$</strong> 到 <strong>$v_k$</strong> 为向量。所以显然，向量 <strong>$x$</strong> 中元素的数目应与矩阵 <strong>$A$</strong> 中向量的数目相等，即对于 <strong>$Ax = b$</strong> 而言，矩阵 <strong>$A$</strong> 的列数应与 <strong>$x$</strong> 维度一致。而这个 <strong>$Ax = b$</strong> 就被定义为<strong>矩阵方程</strong> （<strong>Matrix Equation</strong>)，其中向量 <strong>$x$</strong> 中各元素大小未知（想想与向量方程的关系？是不是两者是等价且可以相互转换的？）。这也是线性系统的另一种表达方式。<br><br>
-总结一下，目前为止，结合代数中的内容，我们就有四种方式来思考一个线性系统：</p>
-<ul>
-<li>线性代数方程组（代数角度）；</li>
-<li>增广矩阵（代数角度）；</li>
-<li>向量方程（几何角度）；</li>
-<li>矩阵方程（几何角度）。</li>
-</ul>
-<p>上面我们解释了矩阵方程与向量线性组合的关系，再回头看我们之前讨论的线性组合与生成空间的关系，是不是发现又可以串起来了？也就是说，当且仅当向量 <strong>$b$</strong> 在矩阵 <strong>$A$</strong> 中各向量张成的生成空间里，<br>
-<strong>$Ax = b$</strong> 有解。其实这就搭起了代数中方程有解与几何中生成空间的桥梁。下面给一个直观的例子。<br><br>
-假如我们要求 <strong>$Ax = b$</strong> 是否有解？对于：<br>
-$$<br>
-\mathbf{A}  = \begin{pmatrix}<br>
-2 &amp; 1\<br>
--1 &amp; 0\<br>
-1 &amp; -1<br>
-\end{pmatrix},<br>
-\mathbf{B} = \begin{pmatrix}<br>
-0\<br>
-2\<br>
-2<br>
-\end{pmatrix}<br>
-$$<br>
-由上面我们的讨论可知，当且仅当向量 <strong>$b$</strong> 在矩阵 <strong>$A$</strong> 中各向量张成的生成空间里，<br>
-<strong>$Ax = b$</strong> 有解。所以我们将 <strong>$A$</strong> 中各向量张成的生成空间（紫色）与  <strong>$b$</strong> （黑色箭头）画出，可见 <strong>$b$</strong> 并不在 <strong>$A$</strong> 中各向量张成的生成空间中，所以方程无解。<br><br>
-接下来我们考虑 <strong>$Ax = b$</strong> 有解的情况，怎么从几何上去表示其解呢？在回答这个问题之前，我们先考虑一个简单一点的例子：如果 <strong>$b$</strong> 为零向量时解是什么呢？考虑下面的情况：<br><br>
-假设我们要求 <strong>$Ax = 0$</strong> 的解（这类方程至少有一个平凡解(trivial solution) <strong>$x=0$</strong> ），对于：<br>
-$$<br>
-\mathbf{A}  = \begin{pmatrix}<br>
-1 &amp; -1 &amp; 2\<br>
--2 &amp; 2 &amp; -4<br>
-\end{pmatrix}<br>
-$$<br>
-我们用参数化的形式表示它的解，如下所示：<br><br>
-<img src="la-9.png" alt=""><br><br>
-显然我们可以将其转换为向量方程的形式：<br><br>
-<img src="la-10.png" alt=""><br><br>
-所以显然，方程的解为上述两个向量张成的生成空间：<br><br>
-<img src="la-11.png" alt=""><br><br>
-将其可视化如下图所示：<br>
-<img src="la-12.png" alt=""><br><br>
-所以从几何角度上看，方程 <strong>$Ax = 0$</strong> 的解可以表示为某个/组向量张成的生成空间，注意区分好与上文中对于 <strong>$Ax = b$</strong> 讨论的区别（“解是一个生成空间（解是什么）”与“解在生成空间中（有解的条件）”的区别）。顺带回顾一下变量数目与空间维度的关系：在这个例子中，一共有三个变量（构成 <strong>$x$</strong> ），那么方程的解集必在 $R^3$ 或其子空间，而这个例子中只有两个自由变量（free variable），则解集是在一个二维平面上（自由变量的数目等于解集空间的维度）。<br></p>
-<p>接着回到我们之前的问题：假设 <strong>$Ax = b$</strong> 有解，那么它的解如何在几何上表示？它与 <strong>$b$</strong> 为零向量时有什么不同呢？考虑下面情况：<br><br>
-$$<br>
-\mathbf{A}  = \begin{pmatrix}<br>
-1 &amp; -1 &amp; 2\<br>
--2 &amp; 2 &amp; -4<br>
-\end{pmatrix}，<br>
-\mathbf{B} = \begin{pmatrix}<br>
-1\<br>
--2<br>
-\end{pmatrix}<br>
-$$<br>
-类似地，我们可以得到其解为：<br><br>
-<img src="la-13.png" alt=""><br><br>
-对比这个结果与上面 <strong>$b$</strong> 为零向量时的结果，显然可以看出，两者相差的只是一个平移( $x_2$ 与 $x_3$ 为0时的特解) <strong>$p$</strong> ，如下图所示：<br><br>
-<img src="la-14.png" alt=""><br><br>
-当然，这里举的例子都是方程不是有唯一解的情况，而如果方程只有唯一解，其解在空间上表示就只是一个点了（此处 <strong>$Ax = b$</strong> 与 <strong>$Ax = 0$</strong> 相差的依然只是一个平移）。<br><br>
-至此，我们在几何角度上又从两个方面上去描述一个矩阵方程（ <strong>$Ax = b$</strong> ），注意两者的区别：</p>
-<ul>
-<li><strong>$Ax = b$</strong> 有解的条件（<strong>$b$</strong> 在矩阵 <strong>$A$</strong> 中列向量张成的生成空间中，为 <strong>$x$</strong> 选 <strong>$b$</strong>）；</li>
-<li>解集空间（对于确定的 <strong>$b$</strong>，为 <strong>$b$</strong> 选 <strong>$x$</strong>）。</li>
-</ul>
-<h2 id="5-线性独立（Linear-Independence）">5. 线性独立（Linear Independence）</h2>
-<p>首先回忆一下线性独立的定义：如果一组向量 <strong>$v_1$</strong> 到 <strong>$v_k$</strong> ，对于下面的方程有且仅有一个平凡解（$x_1=x_2=…=x_k=0$），则称它们彼此 <strong>线性独立</strong>。<br><br>
-<img src="la-15.png" alt=""><br><br>
-换句话说，就是这组向量中，没有任何一个向量可以由其他向量线性组合得到。下图给出两个 <strong>线性依赖（不独立）</strong> 的例子：<br><br>
-<img src="la-16.png" alt=""><br><br>
-也就是说，从几何角度上看，如果一个向量集合中，有一个向量在其他向量张成的生成空间中，那么这组向量就线性依赖（不独立）；而如果其中任何一个向量都不在其他向量张成的生成空间中，那么这组向量就线性独立。再换个角度想，我们将这些向量一个一个加入向量组中，每加入一个向量组张成的生成空间都增大，那么这组向量就是线性独立的。下面再可视化给出一个线性独立的例子：<br><br>
-<img src="la-17.png" alt=""><br><br>
-而从代数角度上看，矩阵 <strong>$A$</strong> 中各列向量线性独立的条件是化简后每一列都有一个主元（也就是说对于一个列数目大于行数目的矩阵，它必然有线性依赖的列，因为没法做到化简后每一列都有一个主元）。<br></p>
-<h2 id="6-子空间、列空间、零空间与基（Subspace-Column-Space-Null-Space-and-Basis）">6. 子空间、列空间、零空间与基（Subspace, Column Space, Null Space and Basis）</h2>
-<p>什么是<strong>子空间</strong>（<strong>Subspace</strong>）？简单地说，子空间就是满足下面三个条件的 <strong>$R^n$</strong> 里的一些点构成的子集（<strong>Subset</strong>）：</p>
-<ul>
-<li>加法下的封闭性：该子空间中的两个两个向量相加，结果仍在该子空间中；</li>
-<li>标量乘法的封闭性：该子空间中的向量乘上一个标量，其结果仍在该子空间中；</li>
-<li>非空性：零向量在这个子空间中（子空间要存在，势必要包含了零向量）。</li>
-</ul>
-<p>所以显然，由上面的前两个性质，某一子空间中的向量的线性组合（它们的生成空间）结果仍在该子空间中；且由第三个性质，子空间必然会经过原点。换句话说，子空间本身就是一个生成空间，它包含了它之中任何向量张成的生成空间。进一步讲，其本身就是其最大的一个子空间。也就说，随着选中的某一子空间中的向量数目变多，这些向量张成的生成空间也会逐步填满这个子空间。下图给出两个子空间的例子（一维与二维）：<br><br>
-<img src="la-18.png" alt=""><br><br>
-其中黑色箭头表示用于张成生成空间的向量（基向量，下面会进一步讨论），黑点表示原点。下面再给出一些<strong>非</strong>子空间的例子：<br><br>
-<img src="la-19.png" alt=""><br><br>
-其中紫色区域表示定义的“空间”（注意并不是子空间），黑色箭头表示“空间”上的向量，红色箭头表示由“空间”中向量线性组合得到的不在“空间”中的向量。<br><br>
-另外注意区别空间子集（subset）与子空间（subspace）的区别：子空间是一个需要满足上述三个条件的空间子集，也就是空间子集是一个更大的概念。<br><br>
-接下来我们讨论两种重要的子空间：<strong>列空间</strong>（由矩阵 <strong>$A$</strong> 中各列向量张成的子空间/生成空间，记作Col( <strong>$A$</strong> )）与<strong>零空间</strong>（对矩阵 <strong>$A$</strong>，满足 <strong>$Ax=0$</strong> 的解构成的子空间/生成空间，记作Null( <strong>$A$</strong> )）。下面如下矩阵 <strong>$A$</strong> 举例：<br><br>
-$$<br>
-\mathbf{A}  = \begin{pmatrix}<br>
-1 &amp; 1 \<br>
-1 &amp; 1 \<br>
-1 &amp; 1<br>
-\end{pmatrix}<br>
-$$<br>
-它的列空间可以表示为：<br><br>
-<img src="la-20.png" alt=""><br><br>
-它的零空间可以表示为：<br><br>
-<img src="la-21.png" alt=""><br><br>
-留意列空间是一条在三维（维度大小与矩阵的行数目相同）空间中的一维（等于矩阵化简后主元的数目）线，零空间是一条在二维（维度大小与矩阵的列数目相同）空间中的一维（等于矩阵化简后自由变量的数目）线。这边又隐含了一个重要的定理：矩阵的列空间的维度与零空间的维度之和为矩阵列的数目，在这个例子中为 $1+1=2$ 。<br><br>
-上面讲完子空间/生成空间，接下来我们讨论子空间/生成空间中的基。为什么需要基的概念，我想最朴素的原因就是数学家们想用最少数量的向量来表征一个生成空间，而基于这个想法，基向量之间就必须相互独立，不然就会有冗余的向量（可以由其他向量线性组合得到）。而对于同一个非零生成空间，它可以有无数组基（比如一个平面，其上任意两个不共线的向量构成它的一组基），但基向量的数目是确定的（由生成空间的维度决定，这其实也是维度的定义）。下图给出了 $R^2$ 的两组基：<br><br>
-<img src="la-22.png" alt=""><br><br>
-其中左图是一组标准基。<br><br>
-那么如何确定列空间的基呢？对于某个矩阵，它的主元（pivot）所在列就构成了它的一组基，如下举例所示，其中RREF（Reduced row echelon form）表示简化列阶梯形矩阵：<br><br>
-<img src="la-23.png" alt=""><br><br>
-也就是说，列空间的基向量的数目（维度）等于矩阵主元的数目。<br><br>
-而如何确定零空间的基呢？将零空间以参数化向量方程表示出来，也可以很轻易得到它的一组基：<br><br>
-<img src="la-24.png" alt=""><br><br>
-类似地，零空间的基向量的数目（维度）等于矩阵自由变量的数目。也就是说，我们从基的角度出发，再次印证了上面给出的一个定理：矩阵的列空间的维度与零空间的维度之和为矩阵列的数目（主元与自由变量数目之和）。下面给出几个图进一步说明这个关系：<br><br>
-<img src="la-26.png" alt=""><br><br>
-<img src="la-27.png" alt=""><br><br>
-而其实矩阵的 <strong>秩（rank）</strong> 代表的就是其列空间的维度，零化度（nullity）代表的就是其零空间的维度。也就是说，一个矩阵的秩加上其零化度，等于其列向量的个数（$rank(\mathbf{A})+nullity(\mathbf{A})=n$，$n$ 为矩阵 $\mathbf{A}$ 的列数目）。再结合之前的讨论，换一个说法就是，一个矩阵的主元的个数加上其解集的维度（自由变量的个数），等于其拥有的变量的总个数。其实这个关系也反映了我们在选择 <strong>$Ax = b$</strong> 中的 <strong>$x$</strong> 与 <strong>$b$</strong> 的平衡：当我们拥有的选择 <strong>$x$</strong> 的自由越多，那么我们拥有的选择  <strong>$b$</strong> 的自由就越少，而这个关系被矩阵 <strong>$A$</strong> 中列数目所限定。<br><br>
-而很自然地，当基确定之后，我们就可以基于基构建一个新的坐标系。在笛卡尔坐标系下，$u_1 ~ u_4$ 的坐标分别为：<br>
-$$<br>
-u_1 = [3, -1, 0], u_2 = [-3/2, 1, -3/2], u_3 = [5/2, -3/2, 2], u_4 = [3/2, 0, -3/2]<br>
-$$<br>
-现在考虑用 <strong>$v_1, v_2$</strong> 来表示它们，如下图所示：<br><br>
-<img src="la-25.png" alt=""><br><br>
-我们就可以得到以 <strong>$v_1, v_2$</strong> 为基的新坐标系下$u_1 ~ u_4$ 的坐标：<br><br>
-$$<br>
-u_{1\beta} = [1, 1]， u_{2\beta} = [-1, 1/2], u_{3\beta} = [3/2, -1/2], u_{4\beta} = [0, 3/2]<br>
-$$<br>
-由此，相同的几个点在另一个空间中被表示出来，这就完成了一次空间变换。当然，能这么表示的前提是 $u_1 ~ u_4$ 几个点刚好在 <strong>$v_1, V_2$</strong> 的生成空间中。</p>
-<h2 id="7-矩阵变换（Matrix-Transformations）">7. 矩阵变换（Matrix Transformations）</h2>
-<p>对于一个$m$行$n$列的矩阵 <strong>$A$</strong> ，其有 <strong>$b=Ax$</strong> 的关系，我们可以将其视为一个变换（Transformation），将自变量 <strong>$x$</strong> (维度为$n$的向量)，变换为因变量 <strong>$b$</strong> (维度为$m$的向量)。顺便再提一下， <strong>$b$</strong> 在矩阵 <strong>$A$</strong> 的列空间中。下图给出一个例子，其中绿色箭头为 <strong>$x$</strong> ，红色箭头为 <strong>$b$</strong> ，中间的矩阵即为 <strong>$A$</strong> ，紫色直线为矩阵 <strong>$A$</strong> 的列空间，也就是说矩阵 <strong>$A$</strong> 将一个三维空间（定义域，domain）中的向量 <strong>$x$</strong> 与其列向量进行线性组合，将其变换到一个二维平面（取值空间，codomain）上，但在这个二维平面上 <strong>$A$</strong> 的列空间只是一条一维直线（值域，range，其实也就是矩阵 <strong>$A$</strong> 的列空间），上面代表着 <strong>$b$</strong> 能分布的空间。<br><br>
-<img src="la-28.png" alt=""><br><br>
-这边再给出几个矩阵背后代表的几何意义的例子，最好自己先思考再看之后的答案以加深理解：<br><br>
-如果要将三维空间的点( <strong>$x$</strong> )投射（projection）到x-y平面上( <strong>$b$</strong> )，那矩阵 <strong>$A$</strong> 应该是什么样子的呢？<br><br>
-<img src="la-29.png" alt=""><br><br>
-那如果要使一个二维平面上的点关于y轴对称呢（Reflection）？<br><br>
-<img src="la-30.png" alt=""><br><br>
-而如果要使一个二维平面上的点保持不变呢（Identity）？<br><br>
-<img src="la-31.png" alt=""><br><br>
-这也是单位矩阵（Identity Matrix）名字的由来。那如果要将向量进行缩放（Dilation），是不是只需要对单位矩阵乘上一个标量？<br><br>
-接着试着回答一个稍微难一点的问题：如果要将二维平面上的点顺时针旋转90度呢（Rotation）？<br><br>
-<img src="la-32.png" alt=""><br><br>
-留意到这里矩阵 <strong>$A$</strong> 的列向量（[0,1], [-1,0]）是不是刚好是二维笛卡尔坐标系下基向量（[1,0],[0,1]）顺时针旋转90度的结果呢？<br><br>
-而如果要实现下图所示的在x轴上的错切（shear in the x-direction），矩阵 ( <strong>$A$</strong> )应该是什么样的？<br><br>
-<img src="la-33.png" alt=""><br><br>
-可以尝试下面这三个矩阵代表的几何变换分别是什么。<br><br>
-$$<br>
-\mathbf{A_1}  = \begin{pmatrix}<br>
-1 &amp; 1 \<br>
-0 &amp; 1<br>
-\end{pmatrix},<br>
-\mathbf{A_2}  = \begin{pmatrix}<br>
-1 &amp; 0 \<br>
-1 &amp; 1<br>
-\end{pmatrix},<br>
-\mathbf{A_3}  = \begin{pmatrix}<br>
-1 &amp; 1 \<br>
-1 &amp; 1<br>
-\end{pmatrix}<br>
-$$<br>
-（答案是第一个矩阵代表着上面的变换。）<br><br>
-对于某个矩阵变换，我们还需要留意，其对应的是一个一对一（one-to-one）的变换（换个角度就是，矩阵方程有唯一解或无解/ <strong>$Ax=0$</strong> 只有一个平凡解/ 矩阵 <strong>$A$</strong> 的列向量都线性独立/ 矩阵 <strong>$A$</strong> 的每一列都有主元/ 矩阵 <strong>$A$</strong> 的列空间（值域）与定义域维度一致），还是一个多对一的变换，注意没有一对多的变换。下面给出几个图解例子：<br><br>
-首先是一个一对一的矩阵变换例子：<br><br>
-<img src="la-34.png" alt=""><br><br>
-接着看一个多对一的矩阵变换的例子：<br><br>
-<img src="la-35.png" alt=""><br><br>
-这个图中的矩阵 <strong>$A$</strong> 代表着将三维空间中的点投影到x-y平面上，也就是说，在每一条跟z轴平行的线上的点（ <strong>$x$</strong> ）都对应着同样的 <strong>$b$</strong> 。<br><br>
-接下来给出一个稍微复杂一点的例子：<br><br>
-<img src="la-36.png" alt=""><br><br>
-怎么理解这个结果？首先这是一个$R^3$到$R^2$的投射，维度的损失带来的就是多对一的投射（在这个例子中，一条直线（由矩阵的零空间维度决定）投射到一个点）；其次，我们之前讨论过， <strong>$Ax=b$</strong> 的解可以视为 <strong>$Ax=0$</strong> 解（零空间）的平移，在这个例子中， <strong>$Ax=0$</strong> 的解为一条直线（ $x=z$ 与 $y=-z$ 两个平面的交界线，图中紫色虚线），而 <strong>$Ax=b$</strong> 的解即为其平移后的直线（紫色实线），绿色向量即为其平移的大小。<br><br>
-其实也可以看出，如果一个矩阵的列数n多于行数m，这就意味着把一个高维空间的向量投影到一个低维空间（代数角度可以是矩阵没办法每一列都拥有主元，即列向量们线性依赖），这种情况下矩阵的零空间必然不只是零向量，进而 <strong>$Ax=b$</strong> 的解也不只是一个向量，所以此时矩阵就无法实现一对一的投射。<br><br>
-顺带一提，像最后这个例子，矩阵 <strong>$A$</strong> 的列空间（值域）与其取值空间一致（从代数角度其实就是，每一行都有主元，不然有的维度就被丢掉了），这种变换又叫onto变换（不知道怎么准确翻译…）。类似地，如果一个矩阵的列数n少于行数m，那么其取值空间维度（每一列向量含有的变量数目，即行数m）必然大于列空间（n个向量至多只能张成一个n维空间，$n&lt;m$）维度。<br><br>
-对于一般的矩阵，上述两种变换，可以同时满足，也可以同时不满足，也可以只满足其中一个。但对于方阵而言，上述两种变换，必然同时满足，或同时不满足。为什么？对方阵而言，是否每一列都有主元（一对一变换成立）就意味着每一行都有主元（onto变换成立）？反之亦然。<br><br>
-接下来讨论一个问题：矩阵变换与线性变换（Linear Transformations）有什么关系？首先回忆下线性变换的定义，如果一个变换下面两个性质，则称其为线性变换：<br><br>
-$$<br>
-T(x+y)=T(x)+T(y),<br>
-T(cx)=cT(x)<br>
-$$<br>
-显然，每一个矩阵变换都能满足上述性质，也就是说每一个矩阵变换背后都代表着线性变换；而反之，每一个线性变换也都可以用矩阵变换来表示。换句话说，矩阵变换与线性变换是完全等同的。（顺带一提，留意像 $y=x+1$ 这种两个变量之间虽然是线性关系，但其变换并不是线性变换，不要混淆线性关系与线性变换的概念。其实正是这个表达式中的常数项破坏了其线性变换。）<br><br>
-也就是说，一个矩阵可以用下面的形式表示，其中$T$代表着某种线性变换，<strong>$e_1, e_2, …, e_n$</strong> 代表着$R^n$的标准基向量。<br><br>
-<img src="la-37.png" alt=""><br><br>
-怎么理解呢？矩阵 <strong>$A$</strong> 的每一列代表着对 $R^n$ 空间中每一个维度进行的线性变换。有点抽象，举个例子好了：<br><br>
-假如现在要构造一个矩阵，其代表着将$R^3$中的点关于xy平面进行对称映射，再将其投影到yz平面上，那么这个矩阵应该是什么？<br><br>
-首先确定矩阵的第一列，也就是对$R^3$中的 <strong>$e_1$</strong> 进行操作，其在经过上述操作后，会落到零点，所以：<br><br>
-<img src="la-38.png" alt=""><br><br>
-接着确定矩阵的第二列，也就是对$R^3$中的 <strong>$e_2$</strong> 进行操作，其在经过上述操作后，会保持不变，所以：<br><br>
-<img src="la-39.png" alt=""><br><br>
-接着确定矩阵最后一列（变换后的空间仍是$R^3$），也就是对$R^3$中的 <strong>$e_3$</strong> 进行操作，其在经过上述操作后，其方向会取反，所以：<br><br>
-<img src="la-40.png" alt=""><br><br>
-所以最后确定下来矩阵 <strong>$A$</strong> 应该为：<br><br>
-<img src="la-41.png" alt=""><br></p>
-<h2 id="8-矩阵乘法（Matrix-Multiplication）">8. 矩阵乘法（Matrix Multiplication）</h2>
-<p>首先强调一下矩阵乘法（ <strong>$AB$</strong> ）中， 矩阵 <strong>$B$</strong> 的行数必须与矩阵 <strong>$A$</strong> 的列数一致。怎么理解呢？矩阵乘法可以理解为前一个矩阵 <strong>$A$</strong> 对后一个矩阵 <strong>$B$</strong> 的各列向量进行空间变换，如下所示：<br><br>
-<img src="la-42.png" alt=""><br><br>
-假设 <strong>$A$</strong> 的维度为 $m$ x $n$，那么其代表着一个从 $^n$ 到 $R^m$ 的空间变换，那么必然 <strong>$B$</strong> 中列向量的维度也必须为 $n$，也就是矩阵 <strong>$B$</strong> 的行数必须为 $n$。<br><br>
-同样重要的是，一个 $m$ x $n$ 的矩阵 <strong>$A$</strong> 乘上一个  $n$ x $p$ 的矩阵 <strong>$B$</strong>，其结果维度为 $m$ x $p$。这个又怎么理解呢？同样还是矩阵乘法可以理解为前一个矩阵 <strong>$A$</strong> 对后一个矩阵 <strong>$B$</strong> 的各列向量进行空间变换，而前者代表着一个从 $^n$ 到 $R^m$ 的空间变换，也就是变换后的列向量维度为 $m$，即 <strong>$AB$</strong> 结果的行数为 $m$；而原来矩阵 <strong>$B$</strong> 有 $p$ 个列向量，对他们分别进行矩阵变换并不会改变他们的数量，也就是说， <strong>$AB$</strong> 结果的列数为 $p$。<br><br>
-类似地，基于矩阵乘法可以理解为前一个矩阵对后一个矩阵的各列向量进行空间变换，我们也可以理解矩阵乘法不满足交换律（对不同的向量进行不同的变换，他们相等的条件是不是很苛刻？），仅在少数情况下 <strong>$AB$ = $BA$</strong> （但当方阵 <strong>$A$</strong> 与 <strong>$B$</strong> 有 <strong>$AB=I$</strong> 时，直接会有 <strong>$BA=I=AB$</strong>）。<br><br>
-而因为矩阵可以代表着多对一的变换，由 <strong>$AB=AC$</strong> 并不能得到 <strong>$B=C$</strong>，比如下面的例子：<br><br>
-<img src="la-43.png" alt=""><br><br>
+<h2 id="矩阵方程-matrix-equations">4. 矩阵方程 （Matrix Equations）</h2>
+<p>首先回忆一下，一个矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 乘上一个向量 <strong><span
+class="math inline">\(x\)</span></strong> ，可以视为矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 中各向量与向量 <strong><span
+class="math inline">\(x\)</span></strong>
+中各元素的线性组合，如下公式所示。<br> <img src="la-8.png" /><br> 其中
+<span class="math inline">\(x_1\)</span> 到 <span
+class="math inline">\(x_k\)</span> 为标量（缩放因子），<strong><span
+class="math inline">\(v_1\)</span></strong> 到 <strong><span
+class="math inline">\(v_k\)</span></strong> 为向量。所以显然，向量
+<strong><span class="math inline">\(x\)</span></strong>
+中元素的数目应与矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 中向量的数目相等，即对于
+<strong><span class="math inline">\(Ax = b\)</span></strong> 而言，矩阵
+<strong><span class="math inline">\(A\)</span></strong> 的列数应与
+<strong><span class="math inline">\(x\)</span></strong> 维度一致。而这个
+<strong><span class="math inline">\(Ax = b\)</span></strong>
+就被定义为<strong>矩阵方程</strong> （<strong>Matrix
+Equation</strong>)，其中向量 <strong><span
+class="math inline">\(x\)</span></strong>
+中各元素大小未知（想想与向量方程的关系？是不是两者是等价且可以相互转换的？）。这也是线性系统的另一种表达方式。<br>
+总结一下，目前为止，结合代数中的内容，我们就有四种方式来思考一个线性系统：
+- 线性代数方程组（代数角度）； - 增广矩阵（代数角度）； -
+向量方程（几何角度）； - 矩阵方程（几何角度）。</p>
+<p>上面我们解释了矩阵方程与向量线性组合的关系，再回头看我们之前讨论的线性组合与生成空间的关系，是不是发现又可以串起来了？也就是说，当且仅当向量
+<strong><span class="math inline">\(b\)</span></strong> 在矩阵
+<strong><span class="math inline">\(A\)</span></strong>
+中各向量张成的生成空间里， <strong><span class="math inline">\(Ax =
+b\)</span></strong>
+有解。其实这就搭起了代数中方程有解与几何中生成空间的桥梁。下面给一个直观的例子。<br>
+假如我们要求 <strong><span class="math inline">\(Ax =
+b\)</span></strong> 是否有解？对于： <span class="math display">\[
+\mathbf{A}  = \begin{pmatrix}
+2 &amp; 1\\
+-1 &amp; 0\\
+1 &amp; -1
+\end{pmatrix},
+\mathbf{B} = \begin{pmatrix}
+0\\
+2\\
+2
+\end{pmatrix}
+\]</span> 由上面我们的讨论可知，当且仅当向量 <strong><span
+class="math inline">\(b\)</span></strong> 在矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 中各向量张成的生成空间里，
+<strong><span class="math inline">\(Ax = b\)</span></strong>
+有解。所以我们将 <strong><span class="math inline">\(A\)</span></strong>
+中各向量张成的生成空间（紫色）与 <strong><span
+class="math inline">\(b\)</span></strong> （黑色箭头）画出，可见
+<strong><span class="math inline">\(b\)</span></strong> 并不在
+<strong><span class="math inline">\(A\)</span></strong>
+中各向量张成的生成空间中，所以方程无解。<br> 接下来我们考虑
+<strong><span class="math inline">\(Ax = b\)</span></strong>
+有解的情况，怎么从几何上去表示其解呢？在回答这个问题之前，我们先考虑一个简单一点的例子：如果
+<strong><span class="math inline">\(b\)</span></strong>
+为零向量时解是什么呢？考虑下面的情况：<br> 假设我们要求 <strong><span
+class="math inline">\(Ax = 0\)</span></strong>
+的解（这类方程至少有一个平凡解(trivial solution) <strong><span
+class="math inline">\(x=0\)</span></strong> ），对于： <span
+class="math display">\[
+\mathbf{A}  = \begin{pmatrix}
+1 &amp; -1 &amp; 2\\
+-2 &amp; 2 &amp; -4
+\end{pmatrix}
+\]</span> 我们用参数化的形式表示它的解，如下所示：<br> <img
+src="la-9.png" /><br> 显然我们可以将其转换为向量方程的形式：<br> <img
+src="la-10.png" /><br>
+所以显然，方程的解为上述两个向量张成的生成空间：<br> <img
+src="la-11.png" /><br> 将其可视化如下图所示： <img
+src="la-12.png" /><br> 所以从几何角度上看，方程 <strong><span
+class="math inline">\(Ax = 0\)</span></strong>
+的解可以表示为某个/组向量张成的生成空间，注意区分好与上文中对于
+<strong><span class="math inline">\(Ax = b\)</span></strong>
+讨论的区别（“解是一个生成空间（解是什么）”与“解在生成空间中（有解的条件）”的区别）。顺带回顾一下变量数目与空间维度的关系：在这个例子中，一共有三个变量（构成
+<strong><span class="math inline">\(x\)</span></strong>
+），那么方程的解集必在 <span class="math inline">\(R^3\)</span>
+或其子空间，而这个例子中只有两个自由变量（free
+variable），则解集是在一个二维平面上（自由变量的数目等于解集空间的维度）。<br></p>
+<p>接着回到我们之前的问题：假设 <strong><span class="math inline">\(Ax =
+b\)</span></strong> 有解，那么它的解如何在几何上表示？它与 <strong><span
+class="math inline">\(b\)</span></strong>
+为零向量时有什么不同呢？考虑下面情况：<br> <span class="math display">\[
+\mathbf{A}  = \begin{pmatrix}
+1 &amp; -1 &amp; 2\\
+-2 &amp; 2 &amp; -4
+\end{pmatrix}，
+\mathbf{B} = \begin{pmatrix}
+1\\
+-2
+\end{pmatrix}
+\]</span> 类似地，我们可以得到其解为：<br> <img src="la-13.png" /><br>
+对比这个结果与上面 <strong><span
+class="math inline">\(b\)</span></strong>
+为零向量时的结果，显然可以看出，两者相差的只是一个平移( <span
+class="math inline">\(x_2\)</span> 与 <span
+class="math inline">\(x_3\)</span> 为0时的特解) <strong><span
+class="math inline">\(p\)</span></strong> ，如下图所示：<br> <img
+src="la-14.png" /><br>
+当然，这里举的例子都是方程不是有唯一解的情况，而如果方程只有唯一解，其解在空间上表示就只是一个点了（此处
+<strong><span class="math inline">\(Ax = b\)</span></strong> 与
+<strong><span class="math inline">\(Ax = 0\)</span></strong>
+相差的依然只是一个平移）。<br>
+至此，我们在几何角度上又从两个方面上去描述一个矩阵方程（ <strong><span
+class="math inline">\(Ax = b\)</span></strong> ），注意两者的区别： -
+<strong><span class="math inline">\(Ax = b\)</span></strong>
+有解的条件（<strong><span class="math inline">\(b\)</span></strong>
+在矩阵 <strong><span class="math inline">\(A\)</span></strong>
+中列向量张成的生成空间中，为 <strong><span
+class="math inline">\(x\)</span></strong> 选 <strong><span
+class="math inline">\(b\)</span></strong>）； - 解集空间（对于确定的
+<strong><span class="math inline">\(b\)</span></strong>，为
+<strong><span class="math inline">\(b\)</span></strong> 选 <strong><span
+class="math inline">\(x\)</span></strong>）。</p>
+<h2 id="线性独立linear-independence">5. 线性独立（Linear
+Independence）</h2>
+<p>首先回忆一下线性独立的定义：如果一组向量 <strong><span
+class="math inline">\(v_1\)</span></strong> 到 <strong><span
+class="math inline">\(v_k\)</span></strong>
+，对于下面的方程有且仅有一个平凡解（<span
+class="math inline">\(x_1=x_2=...=x_k=0\)</span>），则称它们彼此
+<strong>线性独立</strong>。<br> <img src="la-15.png" /><br>
+换句话说，就是这组向量中，没有任何一个向量可以由其他向量线性组合得到。下图给出两个
+<strong>线性依赖（不独立）</strong> 的例子：<br> <img
+src="la-16.png" /><br>
+也就是说，从几何角度上看，如果一个向量集合中，有一个向量在其他向量张成的生成空间中，那么这组向量就线性依赖（不独立）；而如果其中任何一个向量都不在其他向量张成的生成空间中，那么这组向量就线性独立。再换个角度想，我们将这些向量一个一个加入向量组中，每加入一个向量组张成的生成空间都增大，那么这组向量就是线性独立的。下面再可视化给出一个线性独立的例子：<br>
+<img src="la-17.png" /><br> 而从代数角度上看，矩阵 <strong><span
+class="math inline">\(A\)</span></strong>
+中各列向量线性独立的条件是化简后每一列都有一个主元（也就是说对于一个列数目大于行数目的矩阵，它必然有线性依赖的列，因为没法做到化简后每一列都有一个主元）。<br></p>
+<h2
+id="子空间列空间零空间与基subspace-column-space-null-space-and-basis">6.
+子空间、列空间、零空间与基（Subspace, Column Space, Null Space and
+Basis）</h2>
+<p>什么是<strong>子空间</strong>（<strong>Subspace</strong>）？简单地说，子空间就是满足下面三个条件的
+<strong><span class="math inline">\(R^n\)</span></strong>
+里的一些点构成的子集（<strong>Subset</strong>）： -
+加法下的封闭性：该子空间中的两个两个向量相加，结果仍在该子空间中； -
+标量乘法的封闭性：该子空间中的向量乘上一个标量，其结果仍在该子空间中； -
+非空性：零向量在这个子空间中（子空间要存在，势必要包含了零向量）。</p>
+<p>所以显然，由上面的前两个性质，某一子空间中的向量的线性组合（它们的生成空间）结果仍在该子空间中；且由第三个性质，子空间必然会经过原点。换句话说，子空间本身就是一个生成空间，它包含了它之中任何向量张成的生成空间。进一步讲，其本身就是其最大的一个子空间。也就说，随着选中的某一子空间中的向量数目变多，这些向量张成的生成空间也会逐步填满这个子空间。下图给出两个子空间的例子（一维与二维）：<br>
+<img src="la-18.png" /><br>
+其中黑色箭头表示用于张成生成空间的向量（基向量，下面会进一步讨论），黑点表示原点。下面再给出一些<strong>非</strong>子空间的例子：<br>
+<img src="la-19.png" /><br>
+其中紫色区域表示定义的“空间”（注意并不是子空间），黑色箭头表示“空间”上的向量，红色箭头表示由“空间”中向量线性组合得到的不在“空间”中的向量。<br>
+另外注意区别空间子集（subset）与子空间（subspace）的区别：子空间是一个需要满足上述三个条件的空间子集，也就是空间子集是一个更大的概念。<br>
+接下来我们讨论两种重要的子空间：<strong>列空间</strong>（由矩阵
+<strong><span class="math inline">\(A\)</span></strong>
+中各列向量张成的子空间/生成空间，记作Col( <strong><span
+class="math inline">\(A\)</span></strong>
+)）与<strong>零空间</strong>（对矩阵 <strong><span
+class="math inline">\(A\)</span></strong>，满足 <strong><span
+class="math inline">\(Ax=0\)</span></strong>
+的解构成的子空间/生成空间，记作Null( <strong><span
+class="math inline">\(A\)</span></strong> )）。下面如下矩阵
+<strong><span class="math inline">\(A\)</span></strong> 举例：<br> <span
+class="math display">\[
+\mathbf{A}  = \begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 1 \\
+1 &amp; 1
+\end{pmatrix}
+\]</span> 它的列空间可以表示为：<br> <img src="la-20.png" /><br>
+它的零空间可以表示为：<br> <img src="la-21.png" /><br>
+留意列空间是一条在三维（维度大小与矩阵的行数目相同）空间中的一维（等于矩阵化简后主元的数目）线，零空间是一条在二维（维度大小与矩阵的列数目相同）空间中的一维（等于矩阵化简后自由变量的数目）线。这边又隐含了一个重要的定理：矩阵的列空间的维度与零空间的维度之和为矩阵列的数目，在这个例子中为
+<span class="math inline">\(1+1=2\)</span> 。<br>
+上面讲完子空间/生成空间，接下来我们讨论子空间/生成空间中的基。为什么需要基的概念，我想最朴素的原因就是数学家们想用最少数量的向量来表征一个生成空间，而基于这个想法，基向量之间就必须相互独立，不然就会有冗余的向量（可以由其他向量线性组合得到）。而对于同一个非零生成空间，它可以有无数组基（比如一个平面，其上任意两个不共线的向量构成它的一组基），但基向量的数目是确定的（由生成空间的维度决定，这其实也是维度的定义）。下图给出了
+<span class="math inline">\(R^2\)</span> 的两组基：<br> <img
+src="la-22.png" /><br> 其中左图是一组标准基。<br>
+那么如何确定列空间的基呢？对于某个矩阵，它的主元（pivot）所在列就构成了它的一组基，如下举例所示，其中RREF（Reduced
+row echelon form）表示简化列阶梯形矩阵：<br> <img src="la-23.png" /><br>
+也就是说，列空间的基向量的数目（维度）等于矩阵主元的数目。<br>
+而如何确定零空间的基呢？将零空间以参数化向量方程表示出来，也可以很轻易得到它的一组基：<br>
+<img src="la-24.png" /><br>
+类似地，零空间的基向量的数目（维度）等于矩阵自由变量的数目。也就是说，我们从基的角度出发，再次印证了上面给出的一个定理：矩阵的列空间的维度与零空间的维度之和为矩阵列的数目（主元与自由变量数目之和）。下面给出几个图进一步说明这个关系：<br>
+<img src="la-26.png" /><br> <img src="la-27.png" /><br> 而其实矩阵的
+<strong>秩（rank）</strong>
+代表的就是其列空间的维度，零化度（nullity）代表的就是其零空间的维度。也就是说，一个矩阵的秩加上其零化度，等于其列向量的个数（<span
+class="math inline">\(rank(\mathbf{A})+nullity(\mathbf{A})=n\)</span>，<span
+class="math inline">\(n\)</span> 为矩阵 <span
+class="math inline">\(\mathbf{A}\)</span>
+的列数目）。再结合之前的讨论，换一个说法就是，一个矩阵的主元的个数加上其解集的维度（自由变量的个数），等于其拥有的变量的总个数。其实这个关系也反映了我们在选择
+<strong><span class="math inline">\(Ax = b\)</span></strong> 中的
+<strong><span class="math inline">\(x\)</span></strong> 与 <strong><span
+class="math inline">\(b\)</span></strong> 的平衡：当我们拥有的选择
+<strong><span class="math inline">\(x\)</span></strong>
+的自由越多，那么我们拥有的选择 <strong><span
+class="math inline">\(b\)</span></strong> 的自由就越少，而这个关系被矩阵
+<strong><span class="math inline">\(A\)</span></strong>
+中列数目所限定。<br>
+而很自然地，当基确定之后，我们就可以基于基构建一个新的坐标系。在笛卡尔坐标系下，<span
+class="math inline">\(u_1 ~ u_4\)</span> 的坐标分别为： <span
+class="math display">\[
+u_1 = [3, -1, 0], u_2 = [-3/2, 1, -3/2], u_3 = [5/2, -3/2, 2], u_4 =
+[3/2, 0, -3/2]
+\]</span> 现在考虑用 <strong><span class="math inline">\(v_1,
+v_2\)</span></strong> 来表示它们，如下图所示：<br> <img
+src="la-25.png" /><br> 我们就可以得到以 <strong><span
+class="math inline">\(v_1, v_2\)</span></strong> 为基的新坐标系下<span
+class="math inline">\(u_1 ~ u_4\)</span> 的坐标：<br> <span
+class="math display">\[
+u_{1\beta} = [1, 1]， u_{2\beta} = [-1, 1/2], u_{3\beta} = [3/2, -1/2],
+u_{4\beta} = [0, 3/2]
+\]</span>
+由此，相同的几个点在另一个空间中被表示出来，这就完成了一次空间变换。当然，能这么表示的前提是
+<span class="math inline">\(u_1 ~ u_4\)</span> 几个点刚好在
+<strong><span class="math inline">\(v_1, V_2\)</span></strong>
+的生成空间中。</p>
+<h2 id="矩阵变换matrix-transformations">7. 矩阵变换（Matrix
+Transformations）</h2>
+<p>对于一个<span class="math inline">\(m\)</span>行<span
+class="math inline">\(n\)</span>列的矩阵 <strong><span
+class="math inline">\(A\)</span></strong> ，其有 <strong><span
+class="math inline">\(b=Ax\)</span></strong>
+的关系，我们可以将其视为一个变换（Transformation），将自变量
+<strong><span class="math inline">\(x\)</span></strong> (维度为<span
+class="math inline">\(n\)</span>的向量)，变换为因变量 <strong><span
+class="math inline">\(b\)</span></strong> (维度为<span
+class="math inline">\(m\)</span>的向量)。顺便再提一下， <strong><span
+class="math inline">\(b\)</span></strong> 在矩阵 <strong><span
+class="math inline">\(A\)</span></strong>
+的列空间中。下图给出一个例子，其中绿色箭头为 <strong><span
+class="math inline">\(x\)</span></strong> ，红色箭头为 <strong><span
+class="math inline">\(b\)</span></strong> ，中间的矩阵即为 <strong><span
+class="math inline">\(A\)</span></strong> ，紫色直线为矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 的列空间，也就是说矩阵
+<strong><span class="math inline">\(A\)</span></strong>
+将一个三维空间（定义域，domain）中的向量 <strong><span
+class="math inline">\(x\)</span></strong>
+与其列向量进行线性组合，将其变换到一个二维平面（取值空间，codomain）上，但在这个二维平面上
+<strong><span class="math inline">\(A\)</span></strong>
+的列空间只是一条一维直线（值域，range，其实也就是矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 的列空间），上面代表着
+<strong><span class="math inline">\(b\)</span></strong>
+能分布的空间。<br> <img src="la-28.png" /><br>
+这边再给出几个矩阵背后代表的几何意义的例子，最好自己先思考再看之后的答案以加深理解：<br>
+如果要将三维空间的点( <strong><span
+class="math inline">\(x\)</span></strong>
+)投射（projection）到x-y平面上( <strong><span
+class="math inline">\(b\)</span></strong> )，那矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 应该是什么样子的呢？<br> <img
+src="la-29.png" /><br>
+那如果要使一个二维平面上的点关于y轴对称呢（Reflection）？<br> <img
+src="la-30.png" /><br>
+而如果要使一个二维平面上的点保持不变呢（Identity）？<br> <img
+src="la-31.png" /><br> 这也是单位矩阵（Identity
+Matrix）名字的由来。那如果要将向量进行缩放（Dilation），是不是只需要对单位矩阵乘上一个标量？<br>
+接着试着回答一个稍微难一点的问题：如果要将二维平面上的点顺时针旋转90度呢（Rotation）？<br>
+<img src="la-32.png" /><br> 留意到这里矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 的列向量（[0,1],
+[-1,0]）是不是刚好是二维笛卡尔坐标系下基向量（[1,0],[0,1]）顺时针旋转90度的结果呢？<br>
+而如果要实现下图所示的在x轴上的错切（shear in the x-direction），矩阵 (
+<strong><span class="math inline">\(A\)</span></strong>
+)应该是什么样的？<br> <img src="la-33.png" /><br>
+可以尝试下面这三个矩阵代表的几何变换分别是什么。<br> <span
+class="math display">\[
+\mathbf{A_1}  = \begin{pmatrix}
+1 &amp; 1 \\
+0 &amp; 1
+\end{pmatrix},
+\mathbf{A_2}  = \begin{pmatrix}
+1 &amp; 0 \\
+1 &amp; 1
+\end{pmatrix},
+\mathbf{A_3}  = \begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 1
+\end{pmatrix}
+\]</span> （答案是第一个矩阵代表着上面的变换。）<br>
+对于某个矩阵变换，我们还需要留意，其对应的是一个一对一（one-to-one）的变换（换个角度就是，矩阵方程有唯一解或无解/
+<strong><span class="math inline">\(Ax=0\)</span></strong>
+只有一个平凡解/ 矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 的列向量都线性独立/ 矩阵
+<strong><span class="math inline">\(A\)</span></strong>
+的每一列都有主元/ 矩阵 <strong><span
+class="math inline">\(A\)</span></strong>
+的列空间（值域）与定义域维度一致），还是一个多对一的变换，注意没有一对多的变换。下面给出几个图解例子：<br>
+首先是一个一对一的矩阵变换例子：<br> <img src="la-34.png" /><br>
+接着看一个多对一的矩阵变换的例子：<br> <img src="la-35.png" /><br>
+这个图中的矩阵 <strong><span class="math inline">\(A\)</span></strong>
+代表着将三维空间中的点投影到x-y平面上，也就是说，在每一条跟z轴平行的线上的点（
+<strong><span class="math inline">\(x\)</span></strong> ）都对应着同样的
+<strong><span class="math inline">\(b\)</span></strong> 。<br>
+接下来给出一个稍微复杂一点的例子：<br> <img src="la-36.png" /><br>
+怎么理解这个结果？首先这是一个<span
+class="math inline">\(R^3\)</span>到<span
+class="math inline">\(R^2\)</span>的投射，维度的损失带来的就是多对一的投射（在这个例子中，一条直线（由矩阵的零空间维度决定）投射到一个点）；其次，我们之前讨论过，
+<strong><span class="math inline">\(Ax=b\)</span></strong> 的解可以视为
+<strong><span class="math inline">\(Ax=0\)</span></strong>
+解（零空间）的平移，在这个例子中， <strong><span
+class="math inline">\(Ax=0\)</span></strong> 的解为一条直线（ <span
+class="math inline">\(x=z\)</span> 与 <span
+class="math inline">\(y=-z\)</span> 两个平面的交界线，图中紫色虚线），而
+<strong><span class="math inline">\(Ax=b\)</span></strong>
+的解即为其平移后的直线（紫色实线），绿色向量即为其平移的大小。<br>
+其实也可以看出，如果一个矩阵的列数n多于行数m，这就意味着把一个高维空间的向量投影到一个低维空间（代数角度可以是矩阵没办法每一列都拥有主元，即列向量们线性依赖），这种情况下矩阵的零空间必然不只是零向量，进而
+<strong><span class="math inline">\(Ax=b\)</span></strong>
+的解也不只是一个向量，所以此时矩阵就无法实现一对一的投射。<br>
+顺带一提，像最后这个例子，矩阵 <strong><span
+class="math inline">\(A\)</span></strong>
+的列空间（值域）与其取值空间一致（从代数角度其实就是，每一行都有主元，不然有的维度就被丢掉了），这种变换又叫onto变换（不知道怎么准确翻译...）。类似地，如果一个矩阵的列数n少于行数m，那么其取值空间维度（每一列向量含有的变量数目，即行数m）必然大于列空间（n个向量至多只能张成一个n维空间，<span
+class="math inline">\(n&lt;m\)</span>）维度。<br>
+对于一般的矩阵，上述两种变换，可以同时满足，也可以同时不满足，也可以只满足其中一个。但对于方阵而言，上述两种变换，必然同时满足，或同时不满足。为什么？对方阵而言，是否每一列都有主元（一对一变换成立）就意味着每一行都有主元（onto变换成立）？反之亦然。<br>
+接下来讨论一个问题：矩阵变换与线性变换（Linear
+Transformations）有什么关系？首先回忆下线性变换的定义，如果一个变换下面两个性质，则称其为线性变换：<br>
+<span class="math display">\[
+T(x+y)=T(x)+T(y),
+T(cx)=cT(x)
+\]</span>
+显然，每一个矩阵变换都能满足上述性质，也就是说每一个矩阵变换背后都代表着线性变换；而反之，每一个线性变换也都可以用矩阵变换来表示。换句话说，矩阵变换与线性变换是完全等同的。（顺带一提，留意像
+<span class="math inline">\(y=x+1\)</span>
+这种两个变量之间虽然是线性关系，但其变换并不是线性变换，不要混淆线性关系与线性变换的概念。其实正是这个表达式中的常数项破坏了其线性变换。）<br>
+也就是说，一个矩阵可以用下面的形式表示，其中<span
+class="math inline">\(T\)</span>代表着某种线性变换，<strong><span
+class="math inline">\(e_1, e_2, ..., e_n\)</span></strong> 代表着<span
+class="math inline">\(R^n\)</span>的标准基向量。<br> <img
+src="la-37.png" /><br> 怎么理解呢？矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 的每一列代表着对 <span
+class="math inline">\(R^n\)</span>
+空间中每一个维度进行的线性变换。有点抽象，举个例子好了：<br>
+假如现在要构造一个矩阵，其代表着将<span
+class="math inline">\(R^3\)</span>中的点关于xy平面进行对称映射，再将其投影到yz平面上，那么这个矩阵应该是什么？<br>
+首先确定矩阵的第一列，也就是对<span
+class="math inline">\(R^3\)</span>中的 <strong><span
+class="math inline">\(e_1\)</span></strong>
+进行操作，其在经过上述操作后，会落到零点，所以：<br> <img
+src="la-38.png" /><br> 接着确定矩阵的第二列，也就是对<span
+class="math inline">\(R^3\)</span>中的 <strong><span
+class="math inline">\(e_2\)</span></strong>
+进行操作，其在经过上述操作后，会保持不变，所以：<br> <img
+src="la-39.png" /><br> 接着确定矩阵最后一列（变换后的空间仍是<span
+class="math inline">\(R^3\)</span>），也就是对<span
+class="math inline">\(R^3\)</span>中的 <strong><span
+class="math inline">\(e_3\)</span></strong>
+进行操作，其在经过上述操作后，其方向会取反，所以：<br> <img
+src="la-40.png" /><br> 所以最后确定下来矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 应该为：<br> <img
+src="la-41.png" /><br></p>
+<h2 id="矩阵乘法matrix-multiplication">8. 矩阵乘法（Matrix
+Multiplication）</h2>
+<p>首先强调一下矩阵乘法（ <strong><span
+class="math inline">\(AB\)</span></strong> ）中， 矩阵 <strong><span
+class="math inline">\(B\)</span></strong> 的行数必须与矩阵 <strong><span
+class="math inline">\(A\)</span></strong>
+的列数一致。怎么理解呢？矩阵乘法可以理解为前一个矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 对后一个矩阵 <strong><span
+class="math inline">\(B\)</span></strong>
+的各列向量进行空间变换，如下所示：<br> <img src="la-42.png" /><br> 假设
+<strong><span class="math inline">\(A\)</span></strong> 的维度为 <span
+class="math inline">\(m\)</span> x <span
+class="math inline">\(n\)</span>，那么其代表着一个从 <span
+class="math inline">\(^n\)</span> 到 <span
+class="math inline">\(R^m\)</span> 的空间变换，那么必然 <strong><span
+class="math inline">\(B\)</span></strong> 中列向量的维度也必须为 <span
+class="math inline">\(n\)</span>，也就是矩阵 <strong><span
+class="math inline">\(B\)</span></strong> 的行数必须为 <span
+class="math inline">\(n\)</span>。<br> 同样重要的是，一个 <span
+class="math inline">\(m\)</span> x <span
+class="math inline">\(n\)</span> 的矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 乘上一个 <span
+class="math inline">\(n\)</span> x <span
+class="math inline">\(p\)</span> 的矩阵 <strong><span
+class="math inline">\(B\)</span></strong>，其结果维度为 <span
+class="math inline">\(m\)</span> x <span
+class="math inline">\(p\)</span>。这个又怎么理解呢？同样还是矩阵乘法可以理解为前一个矩阵
+<strong><span class="math inline">\(A\)</span></strong> 对后一个矩阵
+<strong><span class="math inline">\(B\)</span></strong>
+的各列向量进行空间变换，而前者代表着一个从 <span
+class="math inline">\(^n\)</span> 到 <span
+class="math inline">\(R^m\)</span>
+的空间变换，也就是变换后的列向量维度为 <span
+class="math inline">\(m\)</span>，即 <strong><span
+class="math inline">\(AB\)</span></strong> 结果的行数为 <span
+class="math inline">\(m\)</span>；而原来矩阵 <strong><span
+class="math inline">\(B\)</span></strong> 有 <span
+class="math inline">\(p\)</span>
+个列向量，对他们分别进行矩阵变换并不会改变他们的数量，也就是说，
+<strong><span class="math inline">\(AB\)</span></strong> 结果的列数为
+<span class="math inline">\(p\)</span>。<br>
+类似地，基于矩阵乘法可以理解为前一个矩阵对后一个矩阵的各列向量进行空间变换，我们也可以理解矩阵乘法不满足交换律（对不同的向量进行不同的变换，他们相等的条件是不是很苛刻？），仅在少数情况下
+<strong><span class="math inline">\(AB\)</span> = <span
+class="math inline">\(BA\)</span></strong> （但当方阵 <strong><span
+class="math inline">\(A\)</span></strong> 与 <strong><span
+class="math inline">\(B\)</span></strong> 有 <strong><span
+class="math inline">\(AB=I\)</span></strong> 时，直接会有 <strong><span
+class="math inline">\(BA=I=AB\)</span></strong>）。<br>
+而因为矩阵可以代表着多对一的变换，由 <strong><span
+class="math inline">\(AB=AC\)</span></strong> 并不能得到 <strong><span
+class="math inline">\(B=C\)</span></strong>，比如下面的例子：<br> <img
+src="la-43.png" /><br>
 上面是理解矩阵乘法的一个角度，也就是把第二个矩阵当成运算对象。而从另一个角度出发，之前我们提过，一个矩阵代表着一种线性变换，那么显然，两个矩阵相乘其实代表着做完一种线性变换之后接着再做另一种线性变换（链式线性变换）。<br></p>
-<h2 id="9-矩阵的逆（Matrix-Inverses）">9. 矩阵的逆（Matrix Inverses）</h2>
-<p>首先明确，我们只针对<strong>方阵</strong>去讨论可逆的性质。怎么判断矩阵是否可逆？一种方式是可以通过其行列式（determinant）是否为0来判断，为0时矩阵不可逆（后面再进一步讨论矩阵行列式）。另一种方式是将增广矩阵 <strong>$(A|I_n)$</strong> 变换为 <strong>$(I_n|B)$</strong>，那么矩阵 <strong>$B=A^{-1}$</strong>，即 <strong>$B$</strong> 为 <strong>$A$</strong> 的逆（这里隐含的条件是方阵 <strong>$A$</strong> 必须满秩）。 而矩阵的逆是用来求解线性方程的一种很方便的方式（<strong>$x=A^{-1}b$</strong>）。<br><br>
-以上都是一些代数角度的讨论，接下来我们进行一些更几何化的补充。前面我们说了，一个矩阵代表着一种线性变换，那么逆矩阵的作用就是“撤销”这个线性变换。这其实也很好理解，<strong>$A^{-1}Ax=I_nx=x$</strong>，首先 <strong>$A$</strong> 对 <strong>$x$</strong> 进行了一个线性变换，然后 <strong>$A^{-1}$</strong> 又撤销了这个变换（做了一个反向变换），结果就是 <strong>$x$</strong> 经过这两个线性变换之后仍是其自身。下面给几个例子：<br><br>
-比如如果一个矩阵 <strong>$U$</strong> 代表着缩小向量长度为$1/n$，那么其逆矩阵 <strong>$T$</strong> 就代表着放大向量长度至$n$倍：<br><br>
-<img src="la-44.png" alt=""><br><br>
-再比如一个矩阵 <strong>$T$</strong> 代表着逆时针旋转45°，那么其逆矩阵 <strong>$U$</strong> 就代表着顺时针旋转45°：<br><br>
-<img src="la-45.png" alt=""><br><br>
-那又如何理解矩阵不可逆呢？考虑下面这个例子：矩阵 <strong>$A$</strong> 代表着将三维空间中的点投影到xy平面，即: <br><br>
-<img src="la-35.png" alt=""><br><br>
-显然这里的矩阵 <strong>$A$</strong> 并不满秩，也就是说它代表着一个多对一的变换，即在它对矩阵进行线性变换之后，我们就丢掉了在变换之前的信息（我们只能知道哪些点会投影到变换后的点上，但确定不了是哪个点），而上面我们说了，矩阵的逆代表着反向变换，但这个时候矩阵已经不知道应该反到哪个点上了，所以这个矩阵就不可逆了。也就是说，一个方阵只有代表着一对一变换（因为是方阵也代表着onto变换），其才可逆。<br></p>
-<p>结合之前的内容回顾总结一下，一个 $n$ x $n$ 方阵 <strong>$A$</strong> 可逆，其与下列表述等价（它们之间也等价）：</p>
-<ul>
-<li><strong>$A$</strong> 拥有 $n$ 个主元；</li>
-<li><strong>$A$</strong> 的简化列阶梯形矩阵（RREF）是单位矩阵 <strong>$I_n$</strong> ；</li>
-<li><strong>$A$</strong> 的零空间只有{0}；</li>
-<li><strong>$A$</strong> 的列空间是$R^n$；</li>
-<li><strong>$A$</strong> 的列向量线性独立；</li>
-<li><strong>$A$</strong> 的列向量可以张成$R^n$；</li>
-<li><strong>$A$</strong> 的列向量构成了$R^n$的一组基；</li>
-<li><strong>$A$</strong> 的秩是$n$（满秩）；</li>
-<li><strong>$Ax=b$</strong> 对于每个$b$都只有唯一解（且在$R^n$中）；</li>
-<li><strong>$A$</strong> 代表的变换为一对一变换；</li>
-<li><strong>$A$</strong> 代表的变换为onto变换。</li>
-</ul>
+<h2 id="矩阵的逆matrix-inverses">9. 矩阵的逆（Matrix Inverses）</h2>
+<p>首先明确，我们只针对<strong>方阵</strong>去讨论可逆的性质。怎么判断矩阵是否可逆？一种方式是可以通过其行列式（determinant）是否为0来判断，为0时矩阵不可逆（后面再进一步讨论矩阵行列式）。另一种方式是将增广矩阵
+<strong><span class="math inline">\((A|I_n)\)</span></strong> 变换为
+<strong><span class="math inline">\((I_n|B)\)</span></strong>，那么矩阵
+<strong><span class="math inline">\(B=A^{-1}\)</span></strong>，即
+<strong><span class="math inline">\(B\)</span></strong> 为 <strong><span
+class="math inline">\(A\)</span></strong> 的逆（这里隐含的条件是方阵
+<strong><span class="math inline">\(A\)</span></strong> 必须满秩）。
+而矩阵的逆是用来求解线性方程的一种很方便的方式（<strong><span
+class="math inline">\(x=A^{-1}b\)</span></strong>）。<br>
+以上都是一些代数角度的讨论，接下来我们进行一些更几何化的补充。前面我们说了，一个矩阵代表着一种线性变换，那么逆矩阵的作用就是“撤销”这个线性变换。这其实也很好理解，<strong><span
+class="math inline">\(A^{-1}Ax=I_nx=x\)</span></strong>，首先
+<strong><span class="math inline">\(A\)</span></strong> 对 <strong><span
+class="math inline">\(x\)</span></strong> 进行了一个线性变换，然后
+<strong><span class="math inline">\(A^{-1}\)</span></strong>
+又撤销了这个变换（做了一个反向变换），结果就是 <strong><span
+class="math inline">\(x\)</span></strong>
+经过这两个线性变换之后仍是其自身。下面给几个例子：<br> 比如如果一个矩阵
+<strong><span class="math inline">\(U\)</span></strong>
+代表着缩小向量长度为<span
+class="math inline">\(1/n\)</span>，那么其逆矩阵 <strong><span
+class="math inline">\(T\)</span></strong> 就代表着放大向量长度至<span
+class="math inline">\(n\)</span>倍：<br> <img src="la-44.png" /><br>
+再比如一个矩阵 <strong><span class="math inline">\(T\)</span></strong>
+代表着逆时针旋转45°，那么其逆矩阵 <strong><span
+class="math inline">\(U\)</span></strong> 就代表着顺时针旋转45°：<br>
+<img src="la-45.png" /><br>
+那又如何理解矩阵不可逆呢？考虑下面这个例子：矩阵 <strong><span
+class="math inline">\(A\)</span></strong>
+代表着将三维空间中的点投影到xy平面，即: <br> <img src="la-35.png" /><br>
+显然这里的矩阵 <strong><span class="math inline">\(A\)</span></strong>
+并不满秩，也就是说它代表着一个多对一的变换，即在它对矩阵进行线性变换之后，我们就丢掉了在变换之前的信息（我们只能知道哪些点会投影到变换后的点上，但确定不了是哪个点），而上面我们说了，矩阵的逆代表着反向变换，但这个时候矩阵已经不知道应该反到哪个点上了，所以这个矩阵就不可逆了。也就是说，一个方阵只有代表着一对一变换（因为是方阵也代表着onto变换），其才可逆。<br></p>
+<p>结合之前的内容回顾总结一下，一个 <span
+class="math inline">\(n\)</span> x <span
+class="math inline">\(n\)</span> 方阵 <strong><span
+class="math inline">\(A\)</span></strong>
+可逆，其与下列表述等价（它们之间也等价）： - <strong><span
+class="math inline">\(A\)</span></strong> 拥有 <span
+class="math inline">\(n\)</span> 个主元； - <strong><span
+class="math inline">\(A\)</span></strong>
+的简化列阶梯形矩阵（RREF）是单位矩阵 <strong><span
+class="math inline">\(I_n\)</span></strong> ； - <strong><span
+class="math inline">\(A\)</span></strong> 的零空间只有{0}； -
+<strong><span class="math inline">\(A\)</span></strong> 的列空间是<span
+class="math inline">\(R^n\)</span>； - <strong><span
+class="math inline">\(A\)</span></strong> 的列向量线性独立； -
+<strong><span class="math inline">\(A\)</span></strong>
+的列向量可以张成<span class="math inline">\(R^n\)</span>； -
+<strong><span class="math inline">\(A\)</span></strong>
+的列向量构成了<span class="math inline">\(R^n\)</span>的一组基； -
+<strong><span class="math inline">\(A\)</span></strong> 的秩是<span
+class="math inline">\(n\)</span>（满秩）； - <strong><span
+class="math inline">\(Ax=b\)</span></strong> 对于每个<span
+class="math inline">\(b\)</span>都只有唯一解（且在<span
+class="math inline">\(R^n\)</span>中）； - <strong><span
+class="math inline">\(A\)</span></strong> 代表的变换为一对一变换； -
+<strong><span class="math inline">\(A\)</span></strong>
+代表的变换为onto变换。</p>
 <p>也就是说，对一个可逆矩阵，上列表述都成立；而对于一个不可逆矩阵，上列表述都不成立。<br></p>
-<p>顺带一提，要证明矩阵 <strong>$A$</strong> 可逆，只需要证明 <strong>$AB=I_n$</strong> 或 <strong>$BA=I_n$</strong> 中的一个就足够。这里给出一个不完全的证明帮助理解：<br><br>
-<strong>$AB=I_n$</strong> →  <strong>$A^{-1}AB=A^{-1}I_n$</strong> → <strong>$B=A^{-1}$</strong> → <strong>$BA = A^{-1}A$</strong> → <strong>$BA=I_n$</strong></p>
-<h2 id="10-行列式">10. 行列式</h2>
-<hr>
+<p>顺带一提，要证明矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 可逆，只需要证明 <strong><span
+class="math inline">\(AB=I_n\)</span></strong> 或 <strong><span
+class="math inline">\(BA=I_n\)</span></strong>
+中的一个就足够。这里给出一个不完全的证明帮助理解：<br> <strong><span
+class="math inline">\(AB=I_n\)</span></strong> → <strong><span
+class="math inline">\(A^{-1}AB=A^{-1}I_n\)</span></strong> →
+<strong><span class="math inline">\(B=A^{-1}\)</span></strong> →
+<strong><span class="math inline">\(BA = A^{-1}A\)</span></strong> →
+<strong><span class="math inline">\(BA=I_n\)</span></strong></p>
+<h2 id="行列式">10. 行列式</h2>
+<hr />
 <blockquote>
-<p>参考书籍：Interactive Linear Algebra - by Dan Margalit, Joseph Rabinoff (<a target="_blank" rel="noopener" href="https://textbooks.math.gatech.edu/ila/index2.html">https://textbooks.math.gatech.edu/ila/index2.html</a>)</p>
+<p>参考书籍：Interactive Linear Algebra - by Dan Margalit, Joseph
+Rabinoff (https://textbooks.math.gatech.edu/ila/index2.html)</p>
 </blockquote>
 
         
@@ -466,7 +722,7 @@ $$<br>
   
 
     
-      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-MML-AM_CHTML"></script>
       <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {

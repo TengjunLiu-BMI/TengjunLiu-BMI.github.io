@@ -93,7 +93,11 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%9F%E8%AE%A1%EF%BC%9F%EF%BC%88What%E2%80%99s-Statistics-%EF%BC%89"><span class="toc-text">什么是统计？（What’s Statistics?）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E5%A4%8D%E4%B9%A0%EF%BC%88Recap-of-Probability%EF%BC%89"><span class="toc-text">概率论复习（Recap of Probability）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E6%B5%8B%E5%9F%BA%E7%A1%80%EF%BC%88Foundation-of-Inference%EF%BC%89"><span class="toc-text">推测基础（Foundation of Inference）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1%E4%B8%8E%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4%EF%BC%88Parametric-Estimation-and-Confidence-Intervals%EF%BC%89"><span class="toc-text">参数估计与置信区间（Parametric Estimation and Confidence Intervals）</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%9F%E8%AE%A1whats-statistics"><span class="toc-text">什么是统计？（What&#39;s
+Statistics?）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E5%A4%8D%E4%B9%A0recap-of-probability"><span class="toc-text">概率论复习（Recap of
+Probability）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E6%B5%8B%E5%9F%BA%E7%A1%80foundation-of-inference"><span class="toc-text">推测基础（Foundation of
+Inference）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1%E4%B8%8E%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4parametric-estimation-and-confidence-intervals"><span class="toc-text">参数估计与置信区间（Parametric
+Estimation and Confidence Intervals）</span></a></li></ol>
 </div>
     
 </div>
@@ -141,63 +145,93 @@
 </span>
     </div>
     <div class="post-content ">
-        <h2 id="什么是统计？（What’s-Statistics-）">什么是统计？（What’s Statistics?）</h2>
+        <h2 id="什么是统计whats-statistics">什么是统计？（What's
+Statistics?）</h2>
 <p>现在是一个数据驱动的时代，所以深刻地理解数据分析核心的统计学显得尤为重要。</br></p>
 <p>先明确一个问题，统计与数据科学的关系是什么？首先，很多数据科学中的机器学习算法本质上是一些统计原则的有效实现（后文会有具体介绍）。其次，从统计的角度上看：数据来自于一个<strong>随机过程</strong>。所以数据科学的目的是要从有限的数据中理解这个过程如何工作，并基于此做出对未来的预测或理解数据背后揭示的机理。换句话说，在数据科学中，我们需要进行统计建模。</br></p>
-<p>简单来说，统计建模就是：复杂模型 = 简单模型 + 随机噪声。也就是说，一个好的统计模型包含两个部分，一个是简单的（可行的）过程模型，另一个是噪声的分布模型。</br></p>
-<p>而为了理解上述统计学中的随机性（randomness），我们又离不开概率（<strong>Probability</strong>）的支持。那么概率与统计的关系/区别是什么？当随机过程是确定的（比如摇骰子时每一面出现的可能性是1/6），那么我们面对的就是一个概率问题；当随机过程中的参数需要被估计（由数据估计随机过程参数），那么我们面对的就是一个统计问题。如下图所示：</br><br>
-<img src="1.png" alt=""><br>
+<p>简单来说，统计建模就是：复杂模型 = 简单模型 +
+随机噪声。也就是说，一个好的统计模型包含两个部分，一个是简单的（可行的）过程模型，另一个是噪声的分布模型。</br></p>
+<p>而为了理解上述统计学中的随机性（randomness），我们又离不开概率（<strong>Probability</strong>）的支持。那么概率与统计的关系/区别是什么？当随机过程是确定的（比如摇骰子时每一面出现的可能性是1/6），那么我们面对的就是一个概率问题；当随机过程中的参数需要被估计（由数据估计随机过程参数），那么我们面对的就是一个统计问题。如下图所示：</br>
+<img src="1.png" />
 学好统计学离不开对概率的深刻理解，下面先复习相关的部分概率论知识。</p>
-<h2 id="概率论复习（Recap-of-Probability）">概率论复习（Recap of Probability）</h2>
-<p>首先我们要明确，随机变量之间相互独立，且满足相同分布（<strong>Independent Identical Distribution, I.I.D.</strong>）是很多统计学内容的基础（如大数定理、中心极限定理等等），这个前提条件之后不再赘述。</p>
-<p>统计学中很常见的操作就是求期望。用数据的期望来表征数据分布真实的平均的依据是什么？我们需要用到大数定理（<strong>Laws of large numbers, LLN</strong>）。<br>
-<img src="2.png" alt="LLN"><br>
-但这个定理并不能告诉我们我们的期望离数据真实的平均有多近（ How large is the deviation? ），这时候我们就需要用到中心极限定理（<strong>Central Limit Theorem, CLT</strong>）。<br>
-<img src="3.png" alt="CLT"><br>
-也就是说，红框中的左式极大概率的分布会在[-3, 3]之内（由标准正态分布决定，常数3可以依据对精度的要求自行决定），即：<br>
-$$<br>
-|bar(X_n)-\mu| &lt;= 3\sigma/sqrt(n), with high Probability.<br>
-$$<br>
-所以依据中心极限定理，我们就能知道对于特定的样本大小 $n$ （$n$ 要足够大，常见如 $n&gt;=30$），我们得到的期望偏离真正的平均的程度。</br></p>
-<p>而当 $n$ 不够大，CLT无法适用时，我们则需要用到霍夫丁不等式（<strong>Hoeffding’s inequality</strong>）（这也是机器学习研究中很重要的理论基础）。使用霍夫丁不等式的前提条件是样本属于某一确定范围，即 $X \in [a, b]$ 。<br>
-<img src="4.png" alt="Hoeffding's inequality"><br>
-也就是说，在不对样本数做要求情况下，我们可以知道满足某一特定精度要求 $\varepsilon$ 的（分布于某一确定范围内的）样本出现的概率。<br>
-此外要注意的是，相对于CLT，Hoeffding’s inequality会显得更加保守，也没有那么精确。举例来说，相同样本下，CLT估计出的偏差小于某一值的概率（如5%）要小于Hoeffding’s inequality估计的结果（如35%）。这也是为什么多数情况下大家不用其来进行统计陈述的原因。</p>
-<p>回到中心极限定理CLT，它告诉我们的是当数据量足够大时，各种分布的数据的期望最终都会趋近于在真实平均值附近的一个高斯分布，这就显得高斯分布极其重要。<br>
-<img src="5-GD.png" alt="Gaussian Density"><br>
-从概率角度看，高斯概率密度是一个钟形（bell shape）分布，且其下方与x轴包含的面积必然为1（包含了所有可能性），所以当高斯概率密度分布的方差变大，则其最大值必然变小（如上图中的红线之于蓝线）。而当样本取值趋向于负无穷或正无穷，高斯分布的概率会趋向于0（但不等于0，所以不做近似的话是不能应用Hoeffding’s inequality的）。而且高斯概率分布的累积分布函数（Cumulative Distribution Function， CDF）是无法解析表示的，其计算需要依赖计算器计算方法。</br><br>
-上面是高斯分布的简要描述，它还有什么有用的特性呢？假设$X~\mathnormal{N}(\mu, \sigma^2)$，有：</p>
-<ul>
-<li>仿射变换（Affine Transformation）下的不变性。即对于任意实数$a, b$，有：<br>
-$$<br>
-a·X+b ~ \mathnormal{N}(a·\mu+b,a^2·\sigma^2)<br>
-$$<br>
-也就是说，对于一个高斯分布进行仿射变换，其结果仍然服从高斯分布。</li>
-<li>标准化/归一化/Z-score。即：<br>
-$$<br>
-Z = (X-\mu)/\sigma ~ \mathnormal{N}(0,1)<br>
-$$<br>
-这一性质可方便我们进行查表（一般只有标准高斯分布的数值表）。</li>
-<li>对称性。由上面的图可以显然得到。</li>
-</ul>
+<h2 id="概率论复习recap-of-probability">概率论复习（Recap of
+Probability）</h2>
+<p>首先我们要明确，随机变量之间相互独立，且满足相同分布（<strong>Independent
+Identical Distribution,
+I.I.D.</strong>）是很多统计学内容的基础（如大数定理、中心极限定理等等），这个前提条件之后不再赘述。</p>
+<p>统计学中很常见的操作就是求期望。用数据的期望来表征数据分布真实的平均的依据是什么？我们需要用到大数定理（<strong>Laws
+of large numbers, LLN</strong>）。 <img src="2.png" alt="LLN" />
+但这个定理并不能告诉我们我们的期望离数据真实的平均有多近（ How large is
+the deviation? ），这时候我们就需要用到中心极限定理（<strong>Central
+Limit Theorem, CLT</strong>）。 <img src="3.png" alt="CLT" />
+也就是说，红框中的左式极大概率的分布会在[-3,
+3]之内（由标准正态分布决定，常数3可以依据对精度的要求自行决定），即：
+<span class="math display">\[
+|bar(X_n)-\mu| &lt;= 3\sigma/sqrt(n), with high Probability.
+\]</span> 所以依据中心极限定理，我们就能知道对于特定的样本大小 <span
+class="math inline">\(n\)</span> （<span
+class="math inline">\(n\)</span> 要足够大，常见如 <span
+class="math inline">\(n&gt;=30\)</span>），我们得到的期望偏离真正的平均的程度。</br></p>
+<p>而当 <span class="math inline">\(n\)</span>
+不够大，CLT无法适用时，我们则需要用到霍夫丁不等式（<strong>Hoeffding's
+inequality</strong>）（这也是机器学习研究中很重要的理论基础）。使用霍夫丁不等式的前提条件是样本属于某一确定范围，即
+<span class="math inline">\(X \in [a, b]\)</span> 。 <img src="4.png"
+alt="Hoeffding&#39;s inequality" />
+也就是说，在不对样本数做要求情况下，我们可以知道满足某一特定精度要求
+<span class="math inline">\(\varepsilon\)</span>
+的（分布于某一确定范围内的）样本出现的概率。
+此外要注意的是，相对于CLT，Hoeffding's
+inequality会显得更加保守，也没有那么精确。举例来说，相同样本下，CLT估计出的偏差小于某一值的概率（如5%）要小于Hoeffding's
+inequality估计的结果（如35%）。这也是为什么多数情况下大家不用其来进行统计陈述的原因。</p>
+<p>回到中心极限定理CLT，它告诉我们的是当数据量足够大时，各种分布的数据的期望最终都会趋近于在真实平均值附近的一个高斯分布，这就显得高斯分布极其重要。
+<img src="5-GD.png" alt="Gaussian Density" />
+从概率角度看，高斯概率密度是一个钟形（bell
+shape）分布，且其下方与x轴包含的面积必然为1（包含了所有可能性），所以当高斯概率密度分布的方差变大，则其最大值必然变小（如上图中的红线之于蓝线）。而当样本取值趋向于负无穷或正无穷，高斯分布的概率会趋向于0（但不等于0，所以不做近似的话是不能应用Hoeffding's
+inequality的）。而且高斯概率分布的累积分布函数（Cumulative Distribution
+Function， CDF）是无法解析表示的，其计算需要依赖计算器计算方法。</br>
+上面是高斯分布的简要描述，它还有什么有用的特性呢？假设<span
+class="math inline">\(X~\mathnormal{N}(\mu, \sigma^2)\)</span>，有： -
+仿射变换（Affine Transformation）下的不变性。即对于任意实数<span
+class="math inline">\(a, b\)</span>，有： <span class="math display">\[
+a·X+b ~ \mathnormal{N}(a·\mu+b,a^2·\sigma^2)
+\]</span>
+也就是说，对于一个高斯分布进行仿射变换，其结果仍然服从高斯分布。 -
+标准化/归一化/Z-score。即： <span class="math display">\[
+Z = (X-\mu)/\sigma ~ \mathnormal{N}(0,1)
+\]</span> 这一性质可方便我们进行查表（一般只有标准高斯分布的数值表）。 -
+对称性。由上面的图可以显然得到。</p>
 <p>概率的内容就先复习这么多，具体可以参见另外对概率论进行比较详尽讨论的文章。接下来我们开始进入正题：统计。</p>
-<h2 id="推测基础（Foundation-of-Inference）">推测基础（Foundation of Inference）</h2>
-<p>首先明确统计推测的最终目标是确定观测数据的真实分布，具体而言，包含三个陈述：首先是估计（<strong>Estimation</strong>），其次是确定置信区间（<strong>Confidence Intervals</strong>），最后是假设检验（<strong>Hypothesis Testing</strong>）。<br>
-为了完成上面三个统计推测的陈述，首先我们要进行一次统计建模。那么首先，怎么描述一个统计模型？如下所示：<br>
-<img src="6-SM.png" alt=""><br>
-其中， $E$ 表示观测数据所在的样本空间（也是观测数据背后真实分布所有可能产生的结果）， $\left(\mathbb{P}<em>{\theta}\right)</em>{\theta \in \Theta}$ 是一组基于 $E$ 的概率分布，而 $\Theta$ 则是统计模型的参数集。为了不过于抽象，下面举一个伯努利分布的实例（0-1分布）如下：<br>
-$$<br>
-\left({0,1},(\operatorname{Ber}§)_{p \in(0.2,0.4)}\right)<br>
-$$<br>
-在这个实例中，伯努利分布的参数$p$被限定在 $(0.2,0.4)$ 之间。</br></p>
-<p>上面其实只是统计模型的一种类型，那么统计模型又可以怎么分类呢？首先是如上的参数模型（<strong>Parametric Model</strong>），其假设观测数据服从某种真实的分布（参数数量有限，如高斯分布、泊松分布、伯努利分布等等）。而另一种则就是非参数模型（<strong>Nonparametric Model</strong>）了，在这种模型里我们知道数据的分布存在，但不对数据分布进行可有限参数化描述的假设（或者说，数据分布的参数有无限个），下面是一个非参数模型的例子：<br>
-<img src="7-NP.png" alt=""></p>
-<h2 id="参数估计与置信区间（Parametric-Estimation-and-Confidence-Intervals）">参数估计与置信区间（Parametric Estimation and Confidence Intervals）</h2>
-<p>在统计学中，基于观测数据计算某个估计值（如平均值、方差或其他形式）的函数，我们称为估计量（<strong>Estimator</strong>）。但随之而来有一个很重要的问题，我们由此得到的估计值与其对应真实值的差异有多大？这就引入了偏差（<strong>Bias</strong>）的概念：<br>
-$$<br>
-\operatorname{bias}\left(\hat{\theta}<em>{n}\right)=\mathbb{E}\left[\hat{\theta}</em>{n}\right]-\theta<br>
-$$<br>
-其中， $\mathbb{E}\left[\hat{\theta}_{n}\right]$ 代表我们的估计值，而 $\theta$ 代表着真实值。如果偏差为0，那么我们就说我们的估计无偏差（<strong>Unbiased</strong>）。但无偏差估计是否就是最好的？这边还要注意的是，这里的无偏差侧重点在均值上，也就是说，我们的估计值尽管均值与真实值没偏差，但其方差可能很大。</p>
+<h2 id="推测基础foundation-of-inference">推测基础（Foundation of
+Inference）</h2>
+<p>首先明确统计推测的最终目标是确定观测数据的真实分布，具体而言，包含三个陈述：首先是估计（<strong>Estimation</strong>），其次是确定置信区间（<strong>Confidence
+Intervals</strong>），最后是假设检验（<strong>Hypothesis
+Testing</strong>）。
+为了完成上面三个统计推测的陈述，首先我们要进行一次统计建模。那么首先，怎么描述一个统计模型？如下所示：
+<img src="6-SM.png" /> 其中， <span class="math inline">\(E\)</span>
+表示观测数据所在的样本空间（也是观测数据背后真实分布所有可能产生的结果），
+<span class="math inline">\(\left(\mathbb{P}_{\theta}\right)_{\theta \in
+\Theta}\)</span> 是一组基于 <span class="math inline">\(E\)</span>
+的概率分布，而 <span class="math inline">\(\Theta\)</span>
+则是统计模型的参数集。为了不过于抽象，下面举一个伯努利分布的实例（0-1分布）如下：
+<span class="math display">\[
+\left(\{0,1\},(\operatorname{Ber}(p))_{p \in(0.2,0.4)}\right)
+\]</span> 在这个实例中，伯努利分布的参数<span
+class="math inline">\(p\)</span>被限定在 <span
+class="math inline">\((0.2,0.4)\)</span> 之间。</br></p>
+<p>上面其实只是统计模型的一种类型，那么统计模型又可以怎么分类呢？首先是如上的参数模型（<strong>Parametric
+Model</strong>），其假设观测数据服从某种真实的分布（参数数量有限，如高斯分布、泊松分布、伯努利分布等等）。而另一种则就是非参数模型（<strong>Nonparametric
+Model</strong>）了，在这种模型里我们知道数据的分布存在，但不对数据分布进行可有限参数化描述的假设（或者说，数据分布的参数有无限个），下面是一个非参数模型的例子：
+<img src="7-NP.png" /></p>
+<h2
+id="参数估计与置信区间parametric-estimation-and-confidence-intervals">参数估计与置信区间（Parametric
+Estimation and Confidence Intervals）</h2>
+<p>在统计学中，基于观测数据计算某个估计值（如平均值、方差或其他形式）的函数，我们称为估计量（<strong>Estimator</strong>）。但随之而来有一个很重要的问题，我们由此得到的估计值与其对应真实值的差异有多大？这就引入了偏差（<strong>Bias</strong>）的概念：
+<span class="math display">\[
+\operatorname{bias}\left(\hat{\theta}_{n}\right)=\mathbb{E}\left[\hat{\theta}_{n}\right]-\theta
+\]</span> 其中， <span
+class="math inline">\(\mathbb{E}\left[\hat{\theta}_{n}\right]\)</span>
+代表我们的估计值，而 <span class="math inline">\(\theta\)</span>
+代表着真实值。如果偏差为0，那么我们就说我们的估计无偏差（<strong>Unbiased</strong>）。但无偏差估计是否就是最好的？这边还要注意的是，这里的无偏差侧重点在均值上，也就是说，我们的估计值尽管均值与真实值没偏差，但其方差可能很大。</p>
 
         
             <div class="donate-container">
@@ -272,7 +306,7 @@ $$<br>
   
 
     
-      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-MML-AM_CHTML"></script>
       <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {

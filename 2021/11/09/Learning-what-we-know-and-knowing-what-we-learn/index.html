@@ -93,7 +93,10 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Latent-variable-models-in-neuroscience"><span class="toc-text">1. Latent variable models in neuroscience</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Principle-component-analysis-PCA"><span class="toc-text">1.1 Principle component analysis (PCA)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Gassuain-process-factor-analysis-Developed-by-Byron-Yu-et-al"><span class="toc-text">1.2 Gassuain process factor analysis - Developed by Byron Yu, et al.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Gausian-process-latent-variable-models-LVMs"><span class="toc-text">1.3 Gausian process latent variable models (LVMs)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-PfLDS"><span class="toc-text">1.4 PfLDS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-LFADS"><span class="toc-text">1.5 LFADS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Where-do-we-begin-Bayesian-Inference"><span class="toc-text">2. Where do we begin? Bayesian Inference!</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#latent-variable-models-in-neuroscience"><span class="toc-text">1. Latent variable
+models in neuroscience</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#principle-component-analysis-pca"><span class="toc-text">1.1 Principle component
+analysis (PCA)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#where-do-we-begin-bayesian-inference"><span class="toc-text">2. Where do we begin?
+Bayesian Inference!</span></a></li></ol>
 </div>
     
 </div>
@@ -145,31 +148,35 @@
     </div>
     <div class="post-content ">
         <p>Topic: Probabilistic latent variable models</p>
-<h2 id="1-Latent-variable-models-in-neuroscience">1. Latent variable models in neuroscience</h2>
-<h3 id="1-1-Principle-component-analysis-PCA">1.1 Principle component analysis (PCA)</h3>
-<p>sensitive to trial-to-trial noise, so it needs a large amount of trials.<br>
-Linear Assumption between the latent variables and the observations of nerual activity.</p>
-<h3 id="1-2-Gassuain-process-factor-analysis-Developed-by-Byron-Yu-et-al">1.2 Gassuain process factor analysis - Developed by Byron Yu, et al.</h3>
-<p>commonly used to analyze single trial data. It allows information sharing across time, which can help denoise single trial latent trajectories.<br>
-Linear Assumption between the latent variables and the observations of nerual activity.</p>
-<h3 id="1-3-Gausian-process-latent-variable-models-LVMs">1.3 Gausian process latent variable models (LVMs)</h3>
-<p>Allow to fit non-linear observations data.</p>
-<h3 id="1-4-PfLDS">1.4 PfLDS</h3>
-<p>Rely on the rise of deep learning.<br>
-Comine a linear dynamical system with like Kalman Filter, with a readout that is basically a deep network, which can learn by fitting it to a large quantity of neural data.<br>
-linear dynamical system with a nonlinear readout.</p>
-<h3 id="1-5-LFADS">1.5 LFADS</h3>
-<p>nonlinear dynamical system with a linear readout.</p>
-<p>前三个 non-parametric methods, 后两个dynamical system (parametric) methods</p>
-<p>brige this gap: GPFADS (Gaussian Process Factor Analysis with Dynmaical Systems)</p>
-<h2 id="2-Where-do-we-begin-Bayesian-Inference">2. Where do we begin? Bayesian Inference!</h2>
+<h2 id="latent-variable-models-in-neuroscience">1. Latent variable
+models in neuroscience</h2>
+<h3 id="principle-component-analysis-pca">1.1 Principle component
+analysis (PCA)</h3>
+<p>sensitive to trial-to-trial noise, so it needs a large amount of
+trials. Linear Assumption between the latent variables and the
+observations of nerual activity. ### 1.2 Gassuain process factor
+analysis - Developed by Byron Yu, et al. commonly used to analyze single
+trial data. It allows information sharing across time, which can help
+denoise single trial latent trajectories. Linear Assumption between the
+latent variables and the observations of nerual activity. ### 1.3
+Gausian process latent variable models (LVMs) Allow to fit non-linear
+observations data. ### 1.4 PfLDS Rely on the rise of deep learning.
+Comine a linear dynamical system with like Kalman Filter, with a readout
+that is basically a deep network, which can learn by fitting it to a
+large quantity of neural data. linear dynamical system with a nonlinear
+readout. ### 1.5 LFADS nonlinear dynamical system with a linear
+readout.</p>
+<p>前三个 non-parametric methods, 后两个dynamical system (parametric)
+methods</p>
+<p>brige this gap: GPFADS (Gaussian Process Factor Analysis with
+Dynmaical Systems)</p>
+<h2 id="where-do-we-begin-bayesian-inference">2. Where do we begin?
+Bayesian Inference!</h2>
 <p>jpg.</p>
 <p>Primer on Gaussian Processes</p>
-<p>GP1.png<br>
-Clearly the answer depends on prior beliefs.<br>
+<p>GP1.png Clearly the answer depends on prior beliefs.
 比如如果知道noise很大，那么可能就是一条横线。</p>
-<p>GP4<br>
-用covariance来表示smoothness。</p>
+<p>GP4 用covariance来表示smoothness。</p>
 
         
             <div class="donate-container">
