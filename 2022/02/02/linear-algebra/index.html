@@ -99,7 +99,7 @@ Independence）</span></a></li><li class="toc-item toc-level-2"><a class="toc-li
 子空间、列空间、零空间与基（Subspace, Column Space, Null Space and
 Basis）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2matrix-transformations"><span class="toc-text">7. 矩阵变换（Matrix
 Transformations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95matrix-multiplication"><span class="toc-text">8. 矩阵乘法（Matrix
-Multiplication）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86matrix-inverses"><span class="toc-text">9. 矩阵的逆（Matrix Inverses）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">10. 行列式</span></a></li></ol>
+Multiplication）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86matrix-inverses"><span class="toc-text">9. 矩阵的逆（Matrix Inverses）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8Fdeterminant"><span class="toc-text">10. 行列式（Determinant）</span></a></li></ol>
 </div>
     
 </div>
@@ -205,9 +205,9 @@ class="math inline">\(A\)</span></strong> 中向量的数目相等，即对于
 Equation</strong>)，其中向量 <strong><span
 class="math inline">\(x\)</span></strong>
 中各元素大小未知（想想与向量方程的关系？是不是两者是等价且可以相互转换的？）。这也是线性系统的另一种表达方式。<br>
-总结一下，目前为止，结合代数中的内容，我们就有四种方式来思考一个线性系统：
-1. 线性代数方程组（代数角度）； 2. 增广矩阵（代数角度）； 3.
-向量方程（几何角度）； 4. 矩阵方程（几何角度）。</p>
+总结一下，目前为止，结合代数中的内容，我们就有四种方式来思考一个线性系统：<br>
+1. 线性代数方程组（代数角度）；<br> 2. 增广矩阵（代数角度）；<br> 3.
+向量方程（几何角度）；<br> 4. 矩阵方程（几何角度）。<br></p>
 <p>上面我们解释了矩阵方程与向量线性组合的关系，再回头看我们之前讨论的线性组合与生成空间的关系，是不是发现又可以串起来了？也就是说，当且仅当向量
 <strong><span class="math inline">\(b\)</span></strong> 在矩阵
 <strong><span class="math inline">\(A\)</span></strong>
@@ -320,11 +320,11 @@ id="子空间列空间零空间与基subspace-column-space-null-space-and-basis"
 Basis）</h2>
 <p>什么是<strong>子空间</strong>（<strong>Subspace</strong>）？简单地说，子空间就是满足下面三个条件的
 <strong><span class="math inline">\(R^n\)</span></strong>
-里的一些点构成的子集（<strong>Subset</strong>）： 1.
-加法下的封闭性：该子空间中的两个向量相加，结果仍在该子空间中； 2.
-标量乘法的封闭性：该子空间中的向量乘上一个标量，其结果仍在该子空间中；
+里的一些点构成的子集（<strong>Subset</strong>）：<br> 1.
+加法下的封闭性：该子空间中的两个向量相加，结果仍在该子空间中；<br> 2.
+标量乘法的封闭性：该子空间中的向量乘上一个标量，其结果仍在该子空间中；<br>
 3.
-非空性：零向量在这个子空间中（子空间要存在，势必要包含了零向量）。</p>
+非空性：零向量在这个子空间中（子空间要存在，势必要包含了零向量）。<br></p>
 <p>所以显然，由上面的前两个性质，某一子空间中的向量的线性组合（它们的生成空间）结果仍在该子空间中；且由第三个性质，子空间必然会经过原点。换句话说，子空间本身就是一个生成空间，它包含了它之中任何向量张成的生成空间。进一步讲，其本身就是其最大的一个子空间。也就说，随着选中的某一子空间中的向量数目变多，这些向量张成的生成空间也会逐步填满这个子空间。下图给出两个子空间的例子（一维与二维）：<br>
 <img src="la-18.png" /><br>
 其中黑色箭头表示用于张成生成空间的向量（基向量，下面会进一步讨论），黑点表示原点。下面再给出一些<strong>非</strong>子空间的例子：<br>
@@ -579,7 +579,7 @@ class="math inline">\(B=C\)</span></strong>，比如下面的例子：<br> <img
 src="la-43.png" /><br>
 上面是理解矩阵乘法的一个角度，也就是把第二个矩阵当成运算对象。而从另一个角度出发，之前我们提过，一个矩阵代表着一种线性变换，那么显然，两个矩阵相乘其实代表着做完一种线性变换之后接着再做另一种线性变换（链式线性变换）。<br></p>
 <h2 id="矩阵的逆matrix-inverses">9. 矩阵的逆（Matrix Inverses）</h2>
-<p>首先明确，我们只针对<strong>方阵</strong>去讨论可逆的性质。怎么判断矩阵是否可逆？一种方式是可以通过其行列式（determinant）是否为0来判断，为0时矩阵不可逆（后面再进一步讨论矩阵行列式）。另一种方式是将增广矩阵
+<p>首先明确，我们只针对<strong>方阵</strong>去讨论可逆的性质（此章节的矩阵都特指方阵）。怎么判断矩阵是否可逆？一种方式是可以通过其行列式（determinant）是否为0来判断，为0时矩阵不可逆（后面再进一步讨论矩阵行列式）。另一种方式是将增广矩阵
 <strong><span class="math inline">\((A|I_n)\)</span></strong> 变换为
 <strong><span class="math inline">\((I_n|B)\)</span></strong>，那么矩阵
 <strong><span class="math inline">\(B=A^{-1}\)</span></strong>，即
@@ -614,28 +614,28 @@ class="math inline">\(A\)</span></strong>
 class="math inline">\(n\)</span> x <span
 class="math inline">\(n\)</span> 方阵 <strong><span
 class="math inline">\(A\)</span></strong>
-可逆，其与下列表述等价（它们之间也等价）： 1. <strong><span
+可逆，其与下列表述等价（它们之间也等价）：<br> 1. <strong><span
 class="math inline">\(A\)</span></strong> 拥有 <span
-class="math inline">\(n\)</span> 个主元； 2. <strong><span
+class="math inline">\(n\)</span> 个主元；<br> 2. <strong><span
 class="math inline">\(A\)</span></strong>
 的简化列阶梯形矩阵（RREF）是单位矩阵 <strong><span
-class="math inline">\(I_n\)</span></strong> ； 3. <strong><span
-class="math inline">\(A\)</span></strong> 的零空间只有{0}； 4.
+class="math inline">\(I_n\)</span></strong> ；<br> 3. <strong><span
+class="math inline">\(A\)</span></strong> 的零空间只有{0}；<br> 4.
 <strong><span class="math inline">\(A\)</span></strong> 的列空间是<span
-class="math inline">\(R^n\)</span>； 5. <strong><span
-class="math inline">\(A\)</span></strong> 的列向量线性独立； 6.
+class="math inline">\(R^n\)</span>；<br> 5. <strong><span
+class="math inline">\(A\)</span></strong> 的列向量线性独立；<br> 6.
 <strong><span class="math inline">\(A\)</span></strong>
-的列向量可以张成<span class="math inline">\(R^n\)</span>； 7.
+的列向量可以张成<span class="math inline">\(R^n\)</span>；<br> 7.
 <strong><span class="math inline">\(A\)</span></strong>
-的列向量构成了<span class="math inline">\(R^n\)</span>的一组基； 8.
+的列向量构成了<span class="math inline">\(R^n\)</span>的一组基；<br> 8.
 <strong><span class="math inline">\(A\)</span></strong> 的秩是<span
-class="math inline">\(n\)</span>（满秩）； 9. <strong><span
+class="math inline">\(n\)</span>（满秩）；<br> 9. <strong><span
 class="math inline">\(Ax=b\)</span></strong> 对于每个<span
 class="math inline">\(b\)</span>都只有唯一解（且在<span
-class="math inline">\(R^n\)</span>中）； 10. <strong><span
-class="math inline">\(A\)</span></strong> 代表的变换为一对一变换； 11.
-<strong><span class="math inline">\(A\)</span></strong>
-代表的变换为onto变换。</p>
+class="math inline">\(R^n\)</span>中）；<br> 10. <strong><span
+class="math inline">\(A\)</span></strong> 代表的变换为一对一变换；<br>
+11. <strong><span class="math inline">\(A\)</span></strong>
+代表的变换为onto变换。<br></p>
 <p>也就是说，对一个可逆矩阵，上列表述都成立；而对于一个不可逆矩阵，上列表述都不成立。<br></p>
 <p>顺带一提，要证明矩阵 <strong><span
 class="math inline">\(A\)</span></strong> 可逆，只需要证明 <strong><span
@@ -647,7 +647,226 @@ class="math inline">\(A^{-1}AB=A^{-1}I_n\)</span></strong> →
 <strong><span class="math inline">\(B=A^{-1}\)</span></strong> →
 <strong><span class="math inline">\(BA = A^{-1}A\)</span></strong> →
 <strong><span class="math inline">\(BA=I_n\)</span></strong></p>
-<h2 id="行列式">10. 行列式</h2>
+<h2 id="行列式determinant">10. 行列式（Determinant）</h2>
+<p>行列式是许多中文教材中非常吓人的一个概念，看起来定义很复杂，很多人又不知道它到底有什么作用，也就失去了学好它的欲望。但通过下面的讨论，我们应该会发现行列式其实是一个很重要也很有用的工具。<br></p>
+<p>首先我们还是给出行列式很吓人的定义。行列式是一个将方阵转换为实数的函数（det:{square
+matrices} → <span
+class="math inline">\(R\)</span>），其满足下面四个性质：<br> 1. 对方阵
+<strong><span class="math inline">\(A\)</span></strong> 进行行替换（row
+replacement）操作并不会改变其行列式 det(<strong><span
+class="math inline">\(A\)</span></strong>) 大小；<br> 2. 对方阵
+<strong><span class="math inline">\(A\)</span></strong>
+的某一行进行<span
+class="math inline">\(c\)</span>倍缩放（scaling），其行列式也会缩放相应的倍数<span
+class="math inline">\(c\)</span>；<br> 3. 对方阵 <strong><span
+class="math inline">\(A\)</span></strong>
+某两行进行交换（swapping），其行列式会取相反数；<br> 4. 单位矩阵
+<strong><span class="math inline">\(I_n\)</span></strong>
+的行列式等于1。<br></p>
+<blockquote>
+<p>引理：满足上述四个性质的将方阵转换为实数的函数有且仅有一个。进一步说，对于一个方阵，你都会得到一个唯一数值大小的行列式。</p>
+</blockquote>
+<p>为什么要给出这么一个复杂的定义，我们可以从两个角度进行理解：代数角度上方便我们对某方阵
+<strong><span class="math inline">\(A\)</span></strong>
+的行列式det(<strong><span
+class="math inline">\(A\)</span></strong>)进行计算；几何上则更深刻告诉我们这么定义的动机。类似地，在本章节下方的讨论中，矩阵都特指方阵。<br></p>
+<p>代数角度上，由于我们知道单位矩阵的行列式等于1，且满秩的方阵进行一系列的行变换都可以变成单位矩阵，而每一步的行变换对方阵的行列式的影响我们都知道，基于此我们可以很轻松得到一个满秩方阵的行列式。下面举一个例子：<br>
+<img src="la-47.png" /><br>
+首先我们知道最后一步的单位矩阵的行列式等于1，而其是由第四步的矩阵进行行替换操作（<span
+class="math inline">\(R_1=R_1-4R_2\)</span>）得到的，而行替换操作前后的矩阵的行列式保持不变，所以此步操作之前的矩阵的行列式也等于1；而第三步是一个缩放操作（<span
+class="math inline">\(R_2=R_2÷-7\)</span>）得到的，而对矩阵进行缩放同时也会导致其行列式大小的缩放，所以这一步操作之前的矩阵的行列式为<span
+class="math inline">\(1×(-7)=-7\)</span>；以此类推（再考虑行交换操作会使矩阵的行列式取反），我们可以得到原始方阵的行列式为7。<br>
+类似地，基于上述运算，我们能得到一个二维方阵的行列式的计算表达式如下：
+<span class="math display">\[
+\operatorname{det}\left(\begin{array}{ll}
+a &amp; b \\
+c &amp; d
+\end{array}\right)=a d-b c
+\]</span>
+而对于一个阶梯形式方阵，其行列式就是其对角线上元素的乘积（对上/下三角方阵、对角阵都成立）。进一步的，只要一个方阵其某一行或某一列都为0，那么其行列式就为0。更进一步，非满秩的方阵其行列式为0。<br></p>
+<p>记得在教科书中，我们学的行列式的计算方法是一种迭代的运算方式：拉普拉斯展开
+/ 代数余子式展开（Laplace expansion / cofactor
+expansion）。在这种计算方式下，我们可以按行展开：<br> <span
+class="math display">\[
+\operatorname{det}(A)=\sum_{j=1}^{n} a_{i j} C_{i j}=a_{i 1} C_{i
+1}+a_{i 2} C_{i 2}+\cdots+a_{i n} C_{i n}
+\]</span> 也可以按列展开：<br> <span class="math display">\[
+\operatorname{det}(A)=\sum_{i=1}^{n} a_{i j} C_{i j}=a_{1 j} C_{1
+j}+a_{2 j} C_{2 j}+\cdots+a_{n j} C_{n j}
+\]</span> 其中，<span class="math inline">\(a_{ij}\)</span>是矩阵
+<strong><span class="math inline">\(A\)</span></strong> 第<span
+class="math inline">\(i\)</span>行第<span
+class="math inline">\(j\)</span>列的元素，而<span
+class="math inline">\(C_{ij}\)</span>是矩阵 <strong><span
+class="math inline">\(A\)</span></strong> 第<span
+class="math inline">\(i\)</span>行第<span
+class="math inline">\(j\)</span>列的代数余子式（cofactor），其定义如下：<br>
+<span class="math display">\[
+C_{i j}=(-1)^{i+j} \operatorname{det}\left(A_{i j}\right)
+\]</span> 其中<span class="math inline">\(A_{i j}\)</span>是矩阵
+<strong><span class="math inline">\(A\)</span></strong> 删去第<span
+class="math inline">\(i\)</span>行第<span
+class="math inline">\(j\)</span>列后剩下的元素组成的维度为 <span
+class="math inline">\((n-1) × (n-1)\)</span> 的矩阵。<br>
+顺带一提的是，上述第一种运算的计算复杂度也相对较低，不管对人还是对机器而言（<span
+class="math inline">\(O(n^3)\)</span>），而代数余子式展开计算的计算复杂度为<span
+class="math inline">\(O(n !) \approx O\left(n^{n}
+\sqrt{n}\right)\)</span>。那数学家为什么还要开发代数余子式展开这么一套工具，它在什么时候有用呢？第一种情况，如果一个矩阵的某行/列中有很多的零，那么其对应位置的代数余子式就没有计算的意义了，在这种情况下计算可以很大程度被简化；另一种情况，如果一个矩阵里有未知大小的元素，这个时候用上述第一种运算是不太合适的，因为我们并不确定这个未知元素在矩阵约简成阶梯矩阵后是否会是主元。<br></p>
+<p>而在几何角度上，矩阵的行列式与“容积”（volume）大小有着密不可分的关系。行列式计算着平行六面体（paralellepiped）的容积
+，其由 <strong><span class="math inline">\(R^n\)</span></strong>
+中的<span class="math inline">\(n\)</span>个向量 <span
+class="math inline">\(v_1, v_2, ..., v_n\)</span>确定，当<span
+class="math inline">\(n=2\)</span>时，其退化为一个平行四边形。下面举几个例子：<br>
+首先二维与三维空间中的标准正交基组成的平行四边形/平行六面体如下图所示：<br>
+<img src="la-49.png" /><br>
+而对于二维与三维空间中的线性独立的任意二/三个向量组成的平行四边形/平行六面体举例如下图所示：<br>
+<img src="la-50.png" /><br>
+那么如果上述组成平行四边形/平行六面体的向量线性依赖呢？这时几何图形的“容积”为0，如下图所示：<br>
+<img src="la-51.png" /><br>
+这些向量线性依赖，则意味着它们组成的矩阵非满秩，而我们上面已经讨论过，非满秩的矩阵的行列式为0，所以这边我们就得到一个很重要的观察：几个向量组成的平行六面体（包含二维空间下的平行四边形，下面不再赘述）的容积为0，当且仅当它们组成的矩阵（作为行向量或列向量）的行列式为0。更进一步地，其实上述平行六面体（记为P）的容积与上述矩阵的行列式（记为
+<strong><span
+class="math inline">\(A\)</span></strong>）绝对值一直相等：<br> <span
+class="math display">\[
+|\operatorname{det}(A)|=\operatorname{vol}(P)
+\]</span> 直觉上怎么理解呢？回顾行列式的定义，我们有：<br> 1. 对方阵
+<strong><span class="math inline">\(A\)</span></strong> 进行行替换（row
+replacement）操作并不会改变 |det(<strong><span
+class="math inline">\(A\)</span></strong>)| 大小；<br> 2. 对方阵
+<strong><span class="math inline">\(A\)</span></strong>
+的某一行进行<span
+class="math inline">\(c\)</span>倍缩放（scaling），其行列式的绝对值也会缩放相应的倍数|<span
+class="math inline">\(c\)</span>|；<br> 3. 对方阵 <strong><span
+class="math inline">\(A\)</span></strong>
+某两行进行交换（swapping），其行列式绝对值保持不变；<br> 4. 单位矩阵
+<strong><span class="math inline">\(I_n\)</span></strong>
+的行列式等于1。<br>
+而平行六面体的容积如何计算？底（base）×高（height），如下图所示：<br>
+<img src="la-52.png" /><br> 首先，我们考虑对方阵 <strong><span
+class="math inline">\(A\)</span></strong> 进行行替换（row
+replacement）操作对其对应的平行六面体容积的影响：<br> <img
+src="la-53.png" /><br>
+可以发现，行替换操作并不会改变平行六面体的底或高，进而其容积也不会改变。也就是说，一组向量的行替换操作既不会改变其组成的平行六面体的容积，也不会改变其组成的方阵
+<strong><span class="math inline">\(A\)</span></strong>
+行列式绝对值的大小。<br> 其次，我们考虑对方阵 <strong><span
+class="math inline">\(A\)</span></strong> 的某一行进行<span
+class="math inline">\(c\)</span>倍缩放（scaling）操作对其对应的平行六面体容积的影响：<br>
+<img src="la-54.png" /><br>
+可以发现，缩放操作会使平行六面体的高也进行相应的缩放，进而其容积也进行相应的缩放。也就是说，对方阵
+<strong><span class="math inline">\(A\)</span></strong>
+的某一行进行<span
+class="math inline">\(c\)</span>倍缩放（scaling），其行列式的绝对值和对应的平行六面体的容积也会缩放相应的倍数|<span
+class="math inline">\(c\)</span>|。<br> 再者，我们考虑对方阵
+<strong><span class="math inline">\(A\)</span></strong>
+进行行交换（swapping）操作对其对应的平行六面体容积的影响：<br> <img
+src="la-55.png" /><br>
+显然，除了对应方阵行列式的绝对值，行交换操作也不会改变平行六面体容积的大小。<br>
+最后，同样显然的是，单位矩阵内的向量组成的平行六面体的容积也为1。<br></p>
+<p>现在我们已经知道了一个方阵的行列式绝对值等于其内在向量组成的平行六面体的容积，那进一步我们有没有可能摆脱掉这个烦人的绝对值呢？答案当然是有的，只要我们引入有符号的容积（signed
+volume，可正可负的容积，就像在微积分中那样有负的面积）。那这个容积的正负性与对应方阵行列式的正负性关系是什么？<br>
+1.
+对于一个二维方阵，行列式的正负性告诉我们组成它的向量的方向关系。如果行列式为正，则意味着第二个向量在第一个向量的逆时针方向上（角度小于180°，下同）；反之，则在顺时针方向上，如下图所示：<br>
+<img src="la-56.png" /><br> 2.
+对于一个三维方阵，行列式的正负性则由右手定则（right-hand
+rule）决定。如果你把食指（index finger）指向第一个向量，中指（middle
+finger）指向第二个向量，则如果你的拇指（thumb）大致可以指向第三个向量，那么行列式为正；而如果你的拇指大致指向第三个向量的反方向，那么行列式为负，如下图所示：<br>
+<img src="la-57.png" /><br> 3.
+我们已经看到行列式的正负性与有符号容积的正负性有很大的关系，所以在更高维度中，有符号容积的正负性经常由行列式的正负性定义。</p>
+<p>回顾我们之前讨论过的，一个矩阵本身代表着一个线性变换。那么其行列式对这个变换有什么意义呢？这里有一个定理：<strong><span
+class="math inline">\(A\)</span></strong> 是一个<span
+class="math inline">\(n × n\)</span>的方阵，而<span
+class="math inline">\(T\)</span>代表着其对应的线性变换（<span
+class="math inline">\(T(x)=\mathbf{A}x\)</span>，<span
+class="math inline">\(\mathbf{R^n} → \mathbf{R^n}\)</span>），而S是<span
+class="math inline">\(\mathbf{R^n}\)</span>中的一个区域，则有（证明参见参考书籍4.3）：<br>
+<span class="math display">\[
+\operatorname{vol}(T(S))=|\operatorname{det}(A)| \cdot
+\operatorname{vol}(S)
+\]</span>
+这边举一个有趣的例子：用行列式来求解椭圆的面积。我们要求解的椭圆方程为：<br>
+<span class="math display">\[
+\left(\frac{2 x-y}{2}\right)^{2}+\left(\frac{y+3 x}{3}\right)^{2}=1
+\]</span> 它与单位圆（<span
+class="math inline">\(X^2+Y^2=1\)</span>）存在下面的变换关系：<br> <span
+class="math display">\[
+\begin{array}{l}
+X=\frac{2 x-y}{2} \\
+Y=\frac{y+3 x}{3}
+\end{array}
+\]</span> 也就是说，我们可以定义一个线性变换<span
+class="math inline">\(T\)</span>，在经过这个线性变换之后，原本在椭圆上的点会变换到单位圆上：<br>
+<span class="math display">\[
+T\left(\begin{array}{l}
+x \\
+y
+\end{array}\right)=\left(\begin{array}{l}
+(2 x-y) / 2 \\
+(y+3 x) / 3
+\end{array}\right)
+\]</span> 也就是如下图所示：<br> <img src="la-58.png" /><br>
+而单位圆的面积和线性变换矩阵的行列式我们都易求，再根据上面的公式，我们可以轻易求得椭圆的面积：<br>
+<span class="math display">\[
+\pi=\operatorname{vol}(C)=\operatorname{vol}(T(E))=|\operatorname{det}(A)|
+\cdot \operatorname{vol}(E)=\frac{5}{6} \operatorname{vol}(E)
+\]</span> 所以椭圆的面积为<span class="math inline">\(6
+\pi/5\)</span>。</p>
+<p>上面讲完了怎么定义并理解行列式这个概念，那么它到底有什么用呢？<br>
+首先考虑行列式与方阵可逆性的关系我们有，当且仅当一个方阵的行列式不为零时，其可逆。通过在章节9中的分析我们知道，一个方阵不可逆，那么其不满秩，也就是其约简到阶梯式后至少会有一行全为0，那么其行列式就为0。将之前对矩阵可逆条件的讨论结合到一起，我们有下述表述都等价
+(<strong><span class="math inline">\(A\)</span></strong> 为方阵)：<br>
+1. <strong><span class="math inline">\(A\)</span></strong> 拥有 <span
+class="math inline">\(n\)</span> 个主元；<br> 2. <strong><span
+class="math inline">\(A\)</span></strong>
+的简化列阶梯形矩阵（RREF）是单位矩阵 <strong><span
+class="math inline">\(I_n\)</span></strong> ；<br> 3. <strong><span
+class="math inline">\(A\)</span></strong> 的零空间只有{0}；<br> 4.
+<strong><span class="math inline">\(A\)</span></strong> 的列空间是<span
+class="math inline">\(R^n\)</span>；<br> 5. <strong><span
+class="math inline">\(A\)</span></strong> 的列向量线性独立；<br> 6.
+<strong><span class="math inline">\(A\)</span></strong>
+的列向量可以张成<span class="math inline">\(R^n\)</span>；<br> 7.
+<strong><span class="math inline">\(A\)</span></strong>
+的列向量构成了<span class="math inline">\(R^n\)</span>的一组基；<br> 8.
+<strong><span class="math inline">\(A\)</span></strong> 的秩是<span
+class="math inline">\(n\)</span>（满秩）；<br> 9. <strong><span
+class="math inline">\(Ax=b\)</span></strong> 对于每个<span
+class="math inline">\(b\)</span>都只有唯一解（且在<span
+class="math inline">\(R^n\)</span>中）；<br> 10. <strong><span
+class="math inline">\(A\)</span></strong> 代表的变换为一对一变换；<br>
+11. <strong><span class="math inline">\(A\)</span></strong>
+代表的变换为onto变换；<br> 12. <strong><span
+class="math inline">\(A\)</span></strong> 可逆；<br> 13. <strong><span
+class="math inline">\(A\)</span></strong> 的行列式不为零。<br></p>
+<p>再者方阵行/列向量线性独立性与其行列式的关系我们有，当一个方阵的行或列向量线性依赖，那么其行列式为0。如果其行向量线性依赖，则意味着我们可以通过行操作得到一个全为零的行，而有全为0的行的方阵的行列式为0，进而又可以得到原始方阵行列式为0；而如果其列向量线性依赖，则由上述等价条件可以直接得到其行列式为0。比如下列的几个方阵的行列式都为0：<br>
+<img src="la-48.png" /><br></p>
+<p>同时行列式也满足可乘性，即： <span class="math display">\[
+\operatorname{det}(A B)=\operatorname{det}(A) \operatorname{det}(B)
+\]</span> 其中 <strong><span class="math inline">\(A\)</span></strong>
+与 <strong><span class="math inline">\(B\)</span></strong>
+都为方阵。这个性质可以由上述的行列式唯一性引理证明，详细证明可参见参考书籍。而由这个性质，我们又可以得到，对于方阵
+<strong><span class="math inline">\(A\)</span></strong>， 在<span
+class="math inline">\(n≥1\)</span>条件下有：<br> <span
+class="math display">\[
+\operatorname{det}\left(A^{n}\right)=\operatorname{det}(A)^{n}
+\]</span> 而如果方阵 <strong><span
+class="math inline">\(A\)</span></strong> 可逆，上式在<span
+class="math inline">\(n≤0\)</span>时也成立，特别地，我们有：<br> <span
+class="math display">\[
+\operatorname{det}\left(A^{-1}\right)=\frac{1}{\operatorname{det}(A)}
+\]</span></p>
+<p>此外，一个方阵 <strong><span
+class="math inline">\(A\)</span></strong> 转置后的行列式保持不变：<br>
+<span class="math display">\[
+\operatorname{det}(A)=\operatorname{det}\left(A^{T}\right)
+\]</span> 由这个性质，我们又可以引申到：<br> 1. 对方阵 <strong><span
+class="math inline">\(A\)</span></strong> 进行列替换（column
+replacement）操作并不会改变其行列式 det(<strong><span
+class="math inline">\(A\)</span></strong>) 大小；<br> 2. 对方阵
+<strong><span class="math inline">\(A\)</span></strong>
+的某一列进行<span
+class="math inline">\(c\)</span>倍缩放（scaling），其行列式也会缩放相应的倍数<span
+class="math inline">\(c\)</span>；<br> 3. 对方阵 <strong><span
+class="math inline">\(A\)</span></strong>
+某两列进行交换（swapping），其行列式会取相反数。<br></p>
+<p>这就意味着，我们要求解一个方阵的行列式时，行列的操作是等价的。<br></p>
 <hr />
 <blockquote>
 <p>参考书籍：Interactive Linear Algebra - by Dan Margalit, Joseph
