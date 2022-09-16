@@ -99,7 +99,8 @@ Independence）</span></a></li><li class="toc-item toc-level-2"><a class="toc-li
 子空间、列空间、零空间与基（Subspace, Column Space, Null Space and
 Basis）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2matrix-transformations"><span class="toc-text">7. 矩阵变换（Matrix
 Transformations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95matrix-multiplication"><span class="toc-text">8. 矩阵乘法（Matrix
-Multiplication）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86matrix-inverses"><span class="toc-text">9. 矩阵的逆（Matrix Inverses）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8Fdeterminant"><span class="toc-text">10. 行列式（Determinant）</span></a></li></ol>
+Multiplication）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86matrix-inverses"><span class="toc-text">9. 矩阵的逆（Matrix Inverses）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8Fdeterminant"><span class="toc-text">10. 行列式（Determinant）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8Feigenvalues-and-eigenvectors"><span class="toc-text">10.
+特征值与特征向量（Eigenvalues and Eigenvectors）</span></a></li></ol>
 </div>
     
 </div>
@@ -289,15 +290,16 @@ src="la-14.png" /><br>
 <strong><span class="math inline">\(Ax = 0\)</span></strong>
 相差的依然只是一个平移）。<br>
 至此，我们在几何角度上又从两个方面去描述一个矩阵方程（ <strong><span
-class="math inline">\(Ax = b\)</span></strong> ），注意两者的区别： 1.
-<strong><span class="math inline">\(Ax = b\)</span></strong>
+class="math inline">\(Ax = b\)</span></strong> ），注意两者的区别：<br>
+1. <strong><span class="math inline">\(Ax = b\)</span></strong>
 有解的条件（<strong><span class="math inline">\(b\)</span></strong>
 在矩阵 <strong><span class="math inline">\(A\)</span></strong>
 中列向量张成的生成空间中，为 <strong><span
 class="math inline">\(x\)</span></strong> 选 <strong><span
-class="math inline">\(b\)</span></strong>）； 2. 其解集空间（对于确定的
-<strong><span class="math inline">\(b\)</span></strong>，为
-<strong><span class="math inline">\(b\)</span></strong> 选 <strong><span
+class="math inline">\(b\)</span></strong>）；<br> 2.
+其解集空间（对于确定的 <strong><span
+class="math inline">\(b\)</span></strong>，为 <strong><span
+class="math inline">\(b\)</span></strong> 选 <strong><span
 class="math inline">\(x\)</span></strong>）。</p>
 <h2 id="线性独立linear-independence">5. 线性独立（Linear
 Independence）</h2>
@@ -867,6 +869,54 @@ class="math inline">\(c\)</span>；<br> 3. 对方阵 <strong><span
 class="math inline">\(A\)</span></strong>
 某两列进行交换（swapping），其行列式会取相反数。<br></p>
 <p>这就意味着，我们要求解一个方阵的行列式时，行列的操作是等价的。<br></p>
+<h2 id="特征值与特征向量eigenvalues-and-eigenvectors">10.
+特征值与特征向量（Eigenvalues and Eigenvectors）</h2>
+<p>特征值与特征向量在解决许多现实问题的应用中都扮演了举足轻重的角色，但怎么理解它们？它们为什么重要？他们又有什么用？这是我们接下来尝试解答的问题。<br></p>
+<p>首先让我们回忆一下特征值与特征向量的定义(非常重要！)。对于下式：
+<span class="math display">\[
+Av=\lambda v
+\]</span> 其中<span
+class="math inline">\(A\)</span>为<strong>方阵</strong>（只对方阵考虑特征值与特征向量，下述矩阵表述均指方阵），<span
+class="math inline">\(v\)</span>为向量，<span
+class="math inline">\(\lambda\)</span>为标量。如果其有非平凡（非零）解<span
+class="math inline">\(v\)</span>，那么我们称<span
+class="math inline">\(\lambda\)</span>是特征向量<span
+class="math inline">\(v\)</span>对应的特征值。特征值与特征向量就是在描述矩阵<span
+class="math inline">\(A\)</span>的特征。一个矩阵可以有多个特征值/特征向量，但每个特征值与特征向量一一对应。如果接受<span
+class="math inline">\(v\)</span>为零向量作为特征向量，那么其将有无数个对应的特征值，这并不合适；但特征值为0是可能的，比如下面这个例子：
+<span class="math display">\[
+A v=\left(\begin{array}{ll}
+1 &amp; 3 \\
+2 &amp; 6
+\end{array}\right)\left(\begin{array}{c}
+-3 \\
+1
+\end{array}\right)=\left(\begin{array}{l}
+0 \\
+0
+\end{array}\right)=0 v
+\]</span></p>
+<p>几何上来看，上面的定义告诉我们，<span
+class="math inline">\(Av\)</span>、<span class="math inline">\(\lambda
+v\)</span>与原点共线。也就是说，矩阵<span
+class="math inline">\(A\)</span>对其特征向量<span
+class="math inline">\(v\)</span>进行线性变换后，得到<span
+class="math inline">\(\lambda v\)</span>，<span
+class="math inline">\(v\)</span>与<span class="math inline">\(\lambda
+v\)</span>仅仅相差一个缩放因子<span
+class="math inline">\(\lambda\)</span>（标量，即其对应特征值），如下图所示：<br></p>
+<p><img src="la-59.png" /><br></p>
+<p>图中<span class="math inline">\(v\)</span>为矩阵<span
+class="math inline">\(A\)</span>的特征向量，而<span
+class="math inline">\(w\)</span>不是。<br></p>
+<p>此外，矩阵的特征向量有一个很重要的性质：对应不同特征值的特征向量线性独立。一个证明思路是反证法。具体可参见参考书籍5.1。进一步我们有推论：一个<span
+class="math inline">\(n\times n\)</span>矩阵<span
+class="math inline">\(A\)</span>至多拥有<span
+class="math inline">\(n\)</span>个特征值。但这里也要注意的是，一个特征向量仅对应一个特征值，但一个特征值对应多个与原点共线的特征向量（比如，<span
+class="math inline">\(v_1\)</span>是矩阵<span
+class="math inline">\(A\)</span>的特征向量，则<span
+class="math inline">\(cv_1\)</span>也是矩阵<span
+class="math inline">\(A\)</span>的特征向量，且它们对应的特征值相同）。</p>
 <hr />
 <blockquote>
 <p>参考书籍：Interactive Linear Algebra - by Dan Margalit, Joseph

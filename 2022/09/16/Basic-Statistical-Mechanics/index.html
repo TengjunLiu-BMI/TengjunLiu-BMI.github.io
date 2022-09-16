@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tengjun的个人技术博客">
+    <meta name="keyword"  content="BMI">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        统计力学基础入门（Introduction to Basic Statistical Mechanics） - Tengjun的个人技术博客 | 脑机接口-BMI
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 记录自己在探索脑机接口技术中的点滴 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Tengjun Liu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 记录自己在探索脑机接口技术中的点滴 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+<div class="post-container">
+    <div class="post-title">
+        统计力学基础入门（Introduction to Basic Statistical Mechanics）
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-09-16 14:38:14</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#计算神经科学" title="计算神经科学">计算神经科学</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#理论物理" title="理论物理">理论物理</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>统计力学/热动力学并不是一个很新的概念，可以说是前现代（pre-modern）物理，但是在我们的生活中随处可见。统计力学的一个核心思想是：宏观系统由很多微观粒子（如分子）组成，我们对这样的系统的行为基于最大概率进行预测。所以概率论是其很重要的一个基础。在进行统计力学的学习之前，需要先确保自己对概率论足够熟悉。</p>
+<p>我们先回顾热力学的内容当作热身。首先，一个热力学中很重要的定律就是能量守恒定律（热力学第一定律），对一个封闭系统其可以由下面公式简单描述：
+<span class="math display">\[
+\frac{dE}{dt} = 0
+\]</span> 其中<span
+class="math inline">\(E\)</span>为系统的能量，t为时间。其另一种表述为：
+<span class="math display">\[
+\text{d}E = \text{d}W + \text{d}Q
+\]</span> 其中<span
+class="math inline">\(\text{d}W\)</span>表示运动做功带来的能量变化，<span
+class="math inline">\(\text{d}Q\)</span>表示热传递带来的内能的变化。他们都依赖于变化路径，而不只是依赖于状态。</p>
+<p>另外一个很重要的概念——熵（entropy），它描述了一个系统的混乱程度。从统计力学的角度，其可以由下面的公式定义：
+<span class="math display">\[
+S=\ln \Omega, \Omega \in N^+
+\]</span> <span
+class="math inline">\(\Omega\)</span>则为该宏观系统中所包含的微观状态的数量（取值为正整数）。这个公式也被称为玻尔兹曼原理，它描述了系统中的微观特性（<span
+class="math inline">\(\Omega\)</span>）与其热力学特性（<span
+class="math inline">\(S\)</span>）的关系。另外这里的熵与香农信息论中定义的熵相差了一个玻尔兹曼常数（<span
+class="math inline">\(S_{Shannon}=k_BS\)</span>）。<br></p>
+<p>所以什么是微观状态的数量<span
+class="math inline">\(\Omega\)</span>呢？它指的是一个宏观系统中的微观粒子可能出现的排列关系（出现概率不为0）。假设现在有两个均匀的不断在被抛的硬币（类比为微观粒子）构成一个宏观系统，那么这个宏观系统就会有4种微观状态（HH、HT、TH、TT，H为head表示正面，T为tail表示反面）。但如果其中第一个硬币并不均匀，使得其只能抛出正面，那么这个宏观系统就只会有两个微观状态（HH、HT）。所以可以看出微观状态的数量与这个特定系统的性质有关。而同样考虑上述的硬币不均匀的例子，假设我们并不知道它的这个性质，那么我们就不知道TH、TT两种微观状态出现的概率为0，也无法判断出其仅有两个微观状态。可见，微观状态的数量也与我们对宏观系统的了解程度有关。<br></p>
+<p>当然，上述的统计力学的熵的定义也可以由其下述更普遍的定义推导得到，这里不赘述，感兴趣的话可以参考<a
+target="_blank" rel="noopener" href="https://youtu.be/D1RzvXDXyqA">视频</a>（1:12:56 to 1:38:09）。
+<span class="math display">\[
+S = - \sum_i p(i)\log p(i)
+\]</span> 其中<span class="math inline">\(i\)</span>为微观状态，<span
+class="math inline">\(p(i)\)</span>为其出现的概率。这里的概率就体现了熵的大小与我们对宏观系统了解程度有关。另外有个事实：上述的概率分布依赖于宏观系统的能量，能量越高，p(i)的分布越广，熵越大（能量和熵的大小是单调正相关的）。根据这个公式，我们也可以得到能量与熵的关系：<br>
+<span class="math display">\[
+S(E)=- \sum_i p(i,E)\log p(i,E)
+\]</span> 而<span
+class="math inline">\(p(i)\)</span>如何得到？我们可以把一个系统分割成足够多的<span
+class="math inline">\(N\)</span>个子系统，<span
+class="math inline">\(n_i\)</span>表示其中占有状态<span
+class="math inline">\(i\)</span>的子系统的数目（occupation
+number），则有： <span class="math display">\[
+p(i) = \frac{n_i}{N}
+\]</span></p>
+<p>对于熵，我们又有热力学第二定律：熵随着时间一直在增加或至少保持不变，即：<br>
+<span class="math display">\[
+dS\ge0
+\]</span>
+基于热二定律我们可以有一个推论：当一个系统是隔热的（adiabatic）/在缓慢变化，那么其熵变为0。另外，热二定律与混沌理论也有一定的关系：事物随时间会分叉/变得更加混沌，熵就也变得更大（讨论见<a
+target="_blank" rel="noopener" href="https://youtu.be/sg15UClUY48">视频</a>（1:11:00 to
+end））。<br></p>
+<p>而我们日常生活中经常提到的温度（temperature），其对宏观系统的描述并没有能量、熵那么根本。温度其实对能量数量的一个描述，他们的关系如下：
+<span class="math display">\[
+\bar{E} = \frac{3}{2}kT_k
+\]</span> 其中<span
+class="math inline">\(T_k\)</span>为温度（单位为开尔文<span
+class="math inline">\(K\)</span>），<span
+class="math inline">\(k\)</span>为玻尔兹曼常数（<span
+class="math inline">\(k=1.4\times
+10^{-23}J/K\)</span>）。简化起见，后面我们定义<span
+class="math inline">\(T=k_BT_k\)</span>。更根本地说，温度由一个系统的能量（即内能）和熵定义如下：
+<span class="math display">\[
+T = \frac {d\bar{E}}{dS}
+\]</span></p>
+<p>在比热力学第一、第二定律更根本的，是热力学第零定律（热平衡定律）：若两个热力学系统均与第三个系统处于热平衡状态，那么这两个系统也必定相互处于热平衡。而对于不处于热平衡状态的两个系统，能量必定从温度高的系统流向温度低的系统，直到在一定时间后达到热平衡（系统的温度相同）。三个定律的关系的推导可以参见<a
+target="_blank" rel="noopener" href="https://youtu.be/EmM1jOV1uSY">视频</a>（15:00 to 24:30）。<br></p>
+<p>我们再回到对于微观状态排列方式的讨论。假设现在有3个子系统，要将他们分配到3个状态中，每个状态有1个子系统，则这样的排列方式数目有：
+<span class="math display">\[
+\text{number of arrangement} = \frac{N!}{\prod_i
+n_i!}=\frac{N!}{n_1!n_2!n_3!} = \frac{3!}{1!1!1!}=6
+\]</span> 上述的公式告诉我们，重排列<span
+class="math inline">\(N\)</span>个子系统到<span
+class="math inline">\(i\)</span>状态中的方式的数目。这个数目越大，则意味着某种排列的出现概率越大。也就是说，在两个限制条件下（<span
+class="math inline">\(\sum_i n_i = N\)</span> &amp; <span
+class="math inline">\(\sum_i
+n_iE_i=E_{total}\)</span>），我们想找到一种<span
+class="math inline">\(N\)</span>个子系统在<span
+class="math inline">\(i\)</span>中最可能的分布方式（也就是<span
+class="math inline">\(n_i\)</span>的大小）。但如果<span
+class="math inline">\(N\)</span>变得非常大，这时我们就需要借助Stirling's
+Approximation（<span class="math inline">\(N!\approx
+N^Ne^{-N}\)</span>，证明可参见<a
+target="_blank" rel="noopener" href="https://youtu.be/EmM1jOV1uSY">视频</a>（56:00 to
+1:04:30））。基于这个估计，取对数，我们有（证明可参见<a
+target="_blank" rel="noopener" href="https://youtu.be/EmM1jOV1uSY">视频</a>（1:10:00 to 1:16:30））：
+<span class="math display">\[
+\log{(\text{number of arrangement)}} = -N\sum_ip_i\log{p_i}
+\]</span> 也就是说，<span
+class="math inline">\(N\)</span>足够大，在限制条件（<span
+class="math inline">\(\sum_i p_i = 1\)</span> &amp; <span
+class="math inline">\(\sum_i
+p_iE_i=E_{total}/N\)</span>）下，求上述排列方式数目的最大值，就是求<span
+class="math inline">\(p_i\)</span>取值是多少时，熵取得最大值。<br></p>
+<p>而为了求<span
+class="math inline">\(p_i\)</span>，我们又需要拉格朗日乘数（Lagrange
+multipliers，证明、直观理解及例子参见<a
+target="_blank" rel="noopener" href="https://youtu.be/EmM1jOV1uSY">视频</a>（1:27:15 to
+end）），这是一个在有限制的优化问题中非常重要的算法。比如，要求<span
+class="math inline">\(f(x, y)\)</span>在<span
+class="math inline">\(g(x,y)=0\)</span>时的局部极值时，我们可以引入新变量拉格朗日乘数<span
+class="math inline">\(\lambda\)</span>
+，这时我们只需要求下列拉格朗日函数的局部极值： <span
+class="math display">\[
+\mathcal{L}(x, y, \lambda)=f(x, y)-\lambda \cdot g(x, y)
+\]</span> 或者更一般地， <span class="math display">\[
+\mathcal{L}\left(x_{1}, \ldots, x_{n}, \lambda_{1}, \ldots,
+\lambda_{k}\right)=f\left(x_{1}, \ldots, x_{n}\right)-\sum_{i=1}^{k}
+\lambda_{i} g_{i}\left(x_{1}, \ldots, x_{n}\right)
+\]</span> 直观上说，<span
+class="math inline">\(\lambda\)</span>是为了让新组成的函数能够在限制条件下取得最小值。而对于求最大值的问题，我们只需要对原始方程取个反再求最小值。<br></p>
+<p>回到我们具体的问题： <span class="math display">\[
+\max -N\sum_ip_i\log{p_i}, \text{ s.t. }
+\left\{
+\begin{array}{l}
+\sum_i p_i = 1 \\
+\sum_i p_iE_i=\frac{E_{total}}{N}=\bar{E}\\
+\end{array}
+\right.
+\]</span> 基于拉格朗日乘数，我们可以构造一个新的函数： <span
+class="math display">\[
+F(p) = N\sum_ip_i\log{p_i}+\alpha (\sum_i p_i-1)+\beta(\sum_i
+p_iE_i-\bar{E})
+\]</span>
+其中，为了将求最大值问题转变为求最小值问题，第一项的负号变为正号，<span
+class="math inline">\(\alpha\)</span>与<span
+class="math inline">\(\beta\)</span>为两个拉格朗日乘数。为了求上式的最小值，我们令上式的导数为0，对每一个<span
+class="math inline">\(p_i\)</span>有： <span class="math display">\[
+\frac{\partial F}{\partial p_i} = \log p_i +1 + \alpha + \beta E_i = 0
+\]</span> 接着我们可以得到： <span class="math display">\[
+p_i = z^{-1}e^{-\beta E_i}
+\]</span> 这个公式描述了玻尔兹曼分布（Boltzman
+Distribution·），其中<span
+class="math inline">\(z=e^{1+\alpha}\)</span>为一个与<span
+class="math inline">\(E_i\)</span>无关的参数。代入第一个限制条件，我们会发现其依赖于<span
+class="math inline">\(\beta\)</span>： <span class="math display">\[
+z = \sum_i e^{-\beta E_i} \\
+\]</span> 这个公式被称为配分函数（partition function）。<br></p>
+<p>留意到，<span class="math inline">\(\beta\)</span>越大，<span
+class="math inline">\(p_i\)</span>衰减得越快，系统中微观状态更集中分布于<span
+class="math inline">\(E_i\)</span>比较小的状态，则<span
+class="math inline">\(\bar{E}\)</span>越小，反之亦然。将上式代入到我们的限制条件与熵的定义式中，再经过一些技巧性变换（参见<a
+target="_blank" rel="noopener" href="https://youtu.be/rhFkYjaM5kE">视频</a>（18:30 to
+45:00）），我们得到两个很有趣的公式： <span class="math display">\[
+\bar{E} = - \frac{ \partial \log z}{\partial \beta} \\
+S = \beta \bar{E} + \log z
+\]</span> 于是我们有： <span class="math display">\[
+dS = \beta d\bar{E} + \bar{E} d\beta + \frac{\partial \log z}{\partial
+\beta} d\beta = \beta d\bar{E} + \bar{E} d\beta -\bar{E} d\beta = \beta
+d\bar{E}
+\]</span> 回顾温度的定义，我们有： <span class="math display">\[
+\beta = \frac{dS}{d\bar{E}}=\frac{1}{T}
+\]</span> 可以发现，<span
+class="math inline">\(\beta\)</span>有其物理含义，即逆温度（inverse
+temperature）。对这些公式的实际物理问题（理想气体）应用参见<a
+target="_blank" rel="noopener" href="https://youtu.be/rhFkYjaM5kE">视频</a>（57:00 to end）。<br></p>
+<p>由上面的公式，我们又能得到： <span class="math display">\[
+\bar E-TS = - T\log z
+\]</span> 其中式子左边被称为亥姆霍兹自由能<span
+class="math inline">\(A\)</span>（Helmholtz free energy）： <span
+class="math display">\[
+A = \bar{E}-TS
+\]</span></p>
+<p>之后我们介绍一个定理（证明参见<a
+target="_blank" rel="noopener" href="https://youtu.be/2BJYXuZZK3c">视频</a>（26:00 to 36:40））： <span
+class="math display">\[
+\left.\frac{\partial \bar E}{\partial V}\right|_{S}=\left.\frac{\partial
+\bar E}{\partial V}\right|_{T}-\left.\left.\frac{\partial \bar
+E}{\partial S}\right|_{V} \frac{\partial S}{\partial V}\right|_{T}
+\]</span>
+这个定理能告诉我们什么？首先当我们要对一个系统进行观测的时候，维持熵不变很难观测得到，我们可以将其转换为更好观测的温度和体积。另外考虑一个绝热系统（熵不变）的压力（pressure，如气压）为<span
+class="math inline">\(p=\left.\frac{\partial \bar E}{\partial
+V}\right|_{S}\)</span>，且<span class="math inline">\(T=\frac{d\bar
+E}{dS}\)</span>，再基于上面三个公式，我们可以得到一个非常基本的表达式：
+<span class="math display">\[
+p=-\left.\frac{\partial(\bar E-T S)}{\partial V}\right|_{T} =
+-\left.\frac{\partial A}{\partial V}\right|_{T}=\left.T \frac{\partial
+\log z}{\partial V}\right|_{T}
+\]</span>
+这个公式适用于任何绝热系统。特别地，对于理想气体，我们可以得到理想气体公式（证明参见<a
+target="_blank" rel="noopener" href="https://youtu.be/2BJYXuZZK3c">视频</a>（1:04:00 to 1:08:00））：
+<span class="math display">\[
+pV=NT
+\]</span> 留意到这里的<span
+class="math inline">\(T\)</span>吸收了玻尔兹曼常数<span
+class="math inline">\(k_b\)</span>。<br></p>
+<p>接下来我们回到更微观的情况，假如我们考虑粒子间的势能（仅考虑一对粒子间的相互作用，其他更高阶的相互作用概率相对低至可忽略不计），我们有：
+<span class="math display">\[
+\log z = \log z_{0}-\frac{B N^{2}}{2 V} u_{0}
+\]</span> 其中<span
+class="math inline">\(z_0\)</span>对应着内能/温度，<span
+class="math inline">\(u_0\)</span>是每对粒子在系统里的平均势能。进一步地，我们有：
+<span class="math display">\[
+E=-\frac{\partial \log z}{\partial \beta}=\left[\frac{3}{2} \cdot
+T+\frac{\rho}{2} u_{0}\right] N \\
+p = \left. T \frac{\partial \log z} {\partial V} \right|_{T} = \rho
+T+\frac{1}{2} \rho^{2} u_{0}
+\]</span> 具体的推导见<a
+target="_blank" rel="noopener" href="https://youtu.be/bW30Rj6w8VI">视频</a>（0:16:45 to 1:20:00）。</p>
+<p>接下来我们讨论简谐振荡子（harmonic oscillator）运动，如下图所示：
+<img src="HO.png" /><br> 其中弹簧的弹力系数为<span
+class="math inline">\(k\)</span>，砝码的质量为<span
+class="math inline">\(m\)</span>，那么这个振荡子的能量是多少？ <span
+class="math display">\[
+E = \frac{p^2}{2m} + \frac{kx^2}{2}
+\]</span> 其中<span
+class="math inline">\(p\)</span>为砝码的动量（momentum）。接着按照之前的思路，我们将能量大小代入配分函数：
+<span class="math display">\[
+z = \int e^{-\beta\frac{p^2}{2m}}e^{-\beta\frac{kx^2}{2}}
+\text{d}p\text{d}x = \int e^{-\beta\frac{p^2}{2m}}\text{d}p \int
+e^{-\beta\frac{kx^2}{2}} \text{d}x
+\]</span> 由换元法，我们可以得到（具体的推导见<a
+target="_blank" rel="noopener" href="https://youtu.be/sg15UClUY48">视频</a>（23:00 to 28:00））： <span
+class="math display">\[
+z = 2\pi \sqrt{\frac{m}{k}} \frac{1}{\beta}= 2\pi \sqrt{\frac{m}{k}} T
+\]</span> 所以为了求能量，我们对<span
+class="math inline">\(z\)</span>取对数，有： <span
+class="math display">\[
+E = -\frac{\log z}{\beta}=T
+\]</span> 类似的思路也可以用于求解量子简谐振荡子的能量（具体的推导见<a
+target="_blank" rel="noopener" href="https://youtu.be/sg15UClUY48">视频</a>（39:00 to 1:11:00））。</p>
+<p>接着我们讨论理想化/理论上的一维磁体（magnet）。假设磁体由<span
+class="math inline">\(N\)</span>个仅能指向上或下两个方向（<span
+class="math inline">\(\sigma_i=\pm1\)</span>表示）且彼此不相互影响的小磁体构成，且他们排成一列。每个小磁体有一个与磁场强度<span
+class="math inline">\(H\)</span>有关的磁矩<span
+class="math inline">\(\mu\)</span>，则这个小磁体的能量为： <span
+class="math display">\[
+E_i = \sigma_i\mu H
+\]</span> 故整个磁体的能量为: <span class="math display">\[
+E = \sum_i^NE_i=(n-m)\mu H
+\]</span> 其中<span
+class="math inline">\(n\)</span>为指向上的小磁体的数量，<span
+class="math inline">\(m\)</span>为指向下的小磁体的数量（<span
+class="math inline">\(n+m=N\)</span>）。所以这<span
+class="math inline">\(N\)</span>个小磁体有多少种排列方式使得有<span
+class="math inline">\(n\)</span>个指向上、<span
+class="math inline">\(m\)</span>个指向下？或者说，这个系统可以有几种状态？
+<span class="math display">\[
+\text{\# state} = \frac{N!}{n!m!}
+\]</span> 接着我们求解配分函数，根据二项式展开（bionomial expension）：
+<span class="math display">\[
+z = \sum^{\text{\# state}}_{n,m}e^{-\beta \mu H(n-m)} = \sum_n^N
+\frac{N!}{n!(N-n)!} (e^{-\beta\mu H})^n (e^{\beta \mu H})^{N-n} =
+(e^{-\beta\mu H}+e^{\beta\mu H})^N = 2^N\cosh {(\beta\mu H)}^N
+\]</span> 另外根据（平均）磁化强度<span
+class="math inline">\(M\)</span>的定义（<span
+class="math inline">\(M=(n-m)/N\)</span>），我们有<span
+class="math inline">\(\bar E=NM\mu H\)</span>，所以知道了平均能量<span
+class="math inline">\(\bar E\)</span>，我们就能求解<span
+class="math inline">\(M\)</span>。为了求解<span
+class="math inline">\(\bar E\)</span>，我们对<span
+class="math inline">\(z\)</span>取对数有： <span class="math display">\[
+\bar E = - \frac{\partial \log z}{\partial \beta} = -N\mu H\frac{\sinh
+{(\beta \mu H)}}{\cosh {(\beta \mu H)}}
+\]</span> 所以我们有： <span class="math display">\[
+M = - \frac{\sinh {(\beta \mu H)}}{\cosh {(\beta \mu H)}}=-\tanh {(\beta
+\mu H)}
+\]</span> 回忆一下双曲正切函数的形状： <img src="tanh.png" /><br>
+所以当温度<span class="math inline">\(T\)</span>很低的时候，<span
+class="math inline">\(\beta\)</span>很大，这时候<span
+class="math inline">\(M=-1\)</span>；而当温度<span
+class="math inline">\(T\)</span>很高的时候，<span
+class="math inline">\(\beta\)</span>趋近于0，这时候<span
+class="math inline">\(M=0\)</span>。留意到这个系统里没有<span
+class="math inline">\(M\)</span>没有突变（也即后文描述的相变）。
+稍微做一点推广，假设相邻的单元（如上文的小磁体，spin）会相互影响，我们就得到了非常出名的一维Ising模型。当相邻的两个单元指向同一个方向，那么其能量为负（也就是系统的偏好朝向——系统总是偏好处于低能状态）；而当相邻的两个单元指向相反方向，那么其能量为正，所以对于整个系统有：
+<span class="math display">\[
+E = -j\sum_i^{N-1} \sigma_i\sigma_{i+1}
+\]</span> 其中<span
+class="math inline">\(j\)</span>为一个描述能量大小的常量（如上一个例子的<span
+class="math inline">\(\mu
+H\)</span>）。留意到这个系统中存在对称性：相邻的单元的指向同时取反，能量大小不会改变。如果我们定义一个描述独立的相邻单元相互作用的变量<span
+class="math inline">\(\mu_i=\sigma_i\sigma_{i+1}\)</span>，我们得到一个与上面的例子类似的能量表达式：
+<span class="math display">\[
+E =  -j\sum_i^{N-1} \mu_i
+\]</span> 接着类似地，我们可以得到配分函数与平均的相互作用大小<span
+class="math inline">\(\bar \mu\)</span>： <span class="math display">\[
+z=(2\cosh {(\beta j)})^{N-1} \\
+\bar \mu = \tanh {\beta j}
+\]</span> 这里的<span class="math inline">\(\bar
+\mu\)</span>也可以理解为两个相邻单元的指向相同的概率。所以假设我们在一个信息传递的游戏中，如果我们要求一列单元中的第<span
+class="math inline">\(i\)</span>个准确将信息传递到第<span
+class="math inline">\(i+d\)</span>个单元的概率即为（要求这个过程中传递的信息没有发生变化）：
+<span class="math display">\[
+p = ( \tanh {\beta j})^{N-1}
+\]</span> 同样，留意到这个系统里没有<span
+class="math inline">\(M\)</span>没有突变（也即后文描述的相变）。<br></p>
+<p>接下来，我们进一步拓展，分析<span
+class="math inline">\(D\)</span>维的Ising模型，这时候各单元排列在一个<span
+class="math inline">\(D\)</span>维空间中，这时空间中每个单元会有<span
+class="math inline">\(2D\)</span>个相邻单元。为了分析这个问题，我们需要用到平均场估计（mean
+field approximation）。即这时，对于系统中第<span
+class="math inline">\(i\)</span>个单元有： <span class="math display">\[
+E_i = -j \sigma_i\sum_{\text{neighbor}} \sigma = -j \sigma_i \times 2D
+\bar \sigma =  -2D j \bar \sigma \sigma_i
+\]</span> 接着我们求解<span
+class="math inline">\(\bar{\sigma_i}\)</span>，基于平均场估计对于一个自洽的系统（self-consistent）：
+<span class="math display">\[
+\bar{\sigma_i} = \bar{\sigma} = \tanh {((2Dj\beta)\bar {\sigma})}
+\]</span> 为了更直观求解这个方程，我们进行变量替换，<span
+class="math inline">\(y=(2Dj\beta)\bar{\sigma}\)</span>，又<span
+class="math inline">\(\beta=1/T\)</span>，我们有： <span
+class="math display">\[
+\frac{T}{2Dj}y=\tanh y
+\]</span> 接着画出等号两边的函数，有： <img src="ytanhy.png" /><br>
+可以看出，当温度很高，线性函数的斜率很大（斜率大于1），这时候上述方程只有<span
+class="math inline">\(\bar \sigma =
+0\)</span>一个解，这也跟直观印象吻合，因为温度很高的时候，各个单元随机朝向，最终平均下来即为0；而当温度比较低（斜率小于1），这时候上述方程除了<span
+class="math inline">\(\bar \sigma =
+0\)</span>还有其他解，这另外的解代表着磁化现象。<span
+class="math inline">\(T_{c}=2Dj\)</span>为系统的临界点（critical
+point），高于这个温度，系统中各单元倾向于均匀分布（<span
+class="math inline">\(\bar
+\sigma=0\)</span>），而低于这个温度，系统可以出现一定的偏向（<span
+class="math inline">\(\bar \sigma \ne0\)</span>）。<br>
+之后，我们考虑对系统施加一个外部细微场，这时每个单元会被施加一个细微的干扰，这个干扰的大小仅依赖于其自身状态，即：
+<span class="math display">\[
+E_i = -2D j \bar \sigma \sigma_i + B\sigma_i = (-2D j \bar \sigma +
+B)\sigma_i
+\]</span> 类似地，我们会得到： <span class="math display">\[
+\frac{T}{2Dj}y=\tanh {(y+ B/T)}
+\]</span> 考虑到<span
+class="math inline">\(B/T\)</span>为正，上图中的黑色曲线会向左平移（平移量也会取决于温度的大小），那么此时<span
+class="math inline">\(\bar \sigma=0\)</span>的解就消失了，仅剩下<span
+class="math inline">\(\bar \sigma &gt;0\)</span>的解。而无论<span
+class="math inline">\(B\)</span>多小，上述结论都成立，于是突变/相变（phase
+transition）又出现了。</p>
+<hr />
+<blockquote>
+<p>参考课程：Series of Statistical Mechanics Lectures - by Leonard
+Susskind, Stanford University (https://youtu.be/D1RzvXDXyqA)</p>
+</blockquote>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/腾俊-刘-08bb61180">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+  
+
+    
+      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-MML-AM_CHTML"></script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+        });
+      </script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+          var all = MathJax.Hub.getAllJax(), i;
+          for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+          }
+        });
+      </script>
+    
+
+    
+
+  
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81Mzc3MS8zMDI0NA==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
