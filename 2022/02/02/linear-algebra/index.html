@@ -100,7 +100,7 @@ Independence）</span></a></li><li class="toc-item toc-level-2"><a class="toc-li
 Basis）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2matrix-transformations"><span class="toc-text">7. 矩阵变换（Matrix
 Transformations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95matrix-multiplication"><span class="toc-text">8. 矩阵乘法（Matrix
 Multiplication）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86matrix-inverses"><span class="toc-text">9. 矩阵的逆（Matrix Inverses）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8Fdeterminant"><span class="toc-text">10. 行列式（Determinant）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8Feigenvalues-and-eigenvectors"><span class="toc-text">10.
-特征值与特征向量（Eigenvalues and Eigenvectors）</span></a></li></ol>
+特征值与特征向量（Eigenvalues and Eigenvectors）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E6%80%A7orthogonality"><span class="toc-text">11. 正交性（Orthogonality）</span></a></li></ol>
 </div>
     
 </div>
@@ -909,14 +909,1210 @@ class="math inline">\(\lambda\)</span>（标量，即其对应特征值），如
 <p>图中<span class="math inline">\(v\)</span>为矩阵<span
 class="math inline">\(A\)</span>的特征向量，而<span
 class="math inline">\(w\)</span>不是。<br></p>
-<p>此外，矩阵的特征向量有一个很重要的性质：对应不同特征值的特征向量线性独立。一个证明思路是反证法。具体可参见参考书籍5.1。进一步我们有推论：一个<span
+<p>此外，矩阵的特征向量有一个很重要的性质：对应不同特征值的特征向量线性独立。一个证明思路是反证法。具体可参见参考书籍5.1。</p>
+<p>上面我们讨论了怎么判断一个给定的向量<span
+class="math inline">\(v\)</span>是否是方阵<span
+class="math inline">\(A\)</span>的特征向量，接着反过来，我们讨论怎么判断一个给定的数值<span
+class="math inline">\(\lambda\)</span>是否是方阵<span
+class="math inline">\(A\)</span>的特征值，且是的话求其对应的特征向量。对于特征值、特征向量的定义式，我们有：
+<span class="math display">\[
+A v=\lambda v \Longleftrightarrow \left(A-\lambda I_{n}\right) v=0
+\]</span> 也就是说，如果上式存在非平凡解，或者说零空间Null(<span
+class="math inline">\(A-\lambda
+I_n\)</span>)中存在非零向量，那么这些非零解就是矩阵<span
+class="math inline">\(A\)</span>的特征向量；而如果上式不存在非平凡解，则<span
+class="math inline">\(\lambda\)</span>不是<span
+class="math inline">\(A\)</span>的特征值。上述的零空间（Null(<span
+class="math inline">\(A-\lambda I_n\)</span>)）即为方阵<span
+class="math inline">\(A\)</span>的 <strong><span
+class="math inline">\(\lambda\)</span>-特征空间（Eigenspace）</strong>，注意其中也包含了零向量，但零向量不是矩阵<span
+class="math inline">\(A\)</span>的特征向量。进一步我们有推论：一个<span
 class="math inline">\(n\times n\)</span>矩阵<span
 class="math inline">\(A\)</span>至多拥有<span
-class="math inline">\(n\)</span>个特征值。但这里也要注意的是，一个特征向量仅对应一个特征值，但一个特征值对应多个与原点共线的特征向量（比如，<span
+class="math inline">\(n\)</span>个特征值，因为在上述特征空间中至多有<span
+class="math inline">\(n\)</span>个线性独立的非零向量（即特征向量）。但这里也要注意的是，一个特征向量仅对应一个特征值，但一个特征值对应多个与原点共线的特征向量（比如，<span
 class="math inline">\(v_1\)</span>是矩阵<span
 class="math inline">\(A\)</span>的特征向量，则<span
 class="math inline">\(cv_1\)</span>也是矩阵<span
-class="math inline">\(A\)</span>的特征向量，且它们对应的特征值相同）。</p>
+class="math inline">\(A\)</span>的特征向量，且它们对应的特征值相同），因为在特征空间中一个非零子空间（即特征向量所在的子空间）是无限大的。另外，与之前对零空间的讨论联系起来，一个<span
+class="math inline">\(A\)</span>的特征值对应的特征向量的数量为方程<span
+class="math inline">\((A-\lambda I_{n})
+v=0\)</span>化简为阶梯式后的自由变量的数量。下面举一个实例：<br> <span
+class="math display">\[
+A_1=
+\left[\begin{array}{ccc}
+3.50 &amp; 0.00 &amp; 3.00 \\
+-1.50 &amp; 2.00 &amp; -3.00 \\
+-1.50 &amp; 0.00 &amp; -1.00
+\end{array}\right]
+\]</span> 它有两个特征值：<span
+class="math inline">\(\lambda_1=0.5\)</span>与<span
+class="math inline">\(\lambda_2=2\)</span>。<span
+class="math inline">\(\lambda_1\)</span>-特征空间为下图中的绿色一维空间（一个特征向量），而<span
+class="math inline">\(\lambda_2\)</span>-特征空间为下图中的紫色二维空间（两个特征向量）。<br>
+<img src="la-60.png" /><br></p>
+<p>而如果考虑0-特征空间，其即为Null(<span
+class="math inline">\(A\)</span>)，这时当且仅当Null(<span
+class="math inline">\(A\)</span>)不只是{0}，0是矩阵<span
+class="math inline">\(A\)</span>的特征值，也就是说需要矩阵<span
+class="math inline">\(A\)</span>不可逆。回顾之前的可逆矩阵定理，现在我们又可以添加一条等价地表述（14）：
+1. <strong><span class="math inline">\(A\)</span></strong> 拥有 <span
+class="math inline">\(n\)</span> 个主元；<br> 2. <strong><span
+class="math inline">\(A\)</span></strong>
+的简化列阶梯形矩阵（RREF）是单位矩阵 <strong><span
+class="math inline">\(I_n\)</span></strong> ；<br> 3. <strong><span
+class="math inline">\(A\)</span></strong> 的零空间只有{0}；<br> 4.
+<strong><span class="math inline">\(A\)</span></strong> 的列空间是<span
+class="math inline">\(R^n\)</span>；<br> 5. <strong><span
+class="math inline">\(A\)</span></strong> 的列向量线性独立；<br> 6.
+<strong><span class="math inline">\(A\)</span></strong>
+的列向量可以张成<span class="math inline">\(R^n\)</span>；<br> 7.
+<strong><span class="math inline">\(A\)</span></strong>
+的列向量构成了<span class="math inline">\(R^n\)</span>的一组基；<br> 8.
+<strong><span class="math inline">\(A\)</span></strong> 的秩是<span
+class="math inline">\(n\)</span>（满秩）；<br> 9. <strong><span
+class="math inline">\(Ax=b\)</span></strong> 对于每个<span
+class="math inline">\(b\)</span>都只有唯一解（且在<span
+class="math inline">\(R^n\)</span>中）；<br> 10. <strong><span
+class="math inline">\(A\)</span></strong> 代表的变换为一对一变换；<br>
+11. <strong><span class="math inline">\(A\)</span></strong>
+代表的变换为onto变换；<br> 12. <strong><span
+class="math inline">\(A\)</span></strong> 可逆；<br> 13. <strong><span
+class="math inline">\(A\)</span></strong> 的行列式不为零；<br> 14.
+0不是矩阵 <strong><span class="math inline">\(A\)</span></strong>
+的特征值。<br></p>
+<p>接下来，我们要考虑的就是怎么直接求解一个矩阵的特征值了，这里我们要用到的一个工具是<strong>特征多项式（Characteristic
+Polynomial）</strong>。对于<span class="math inline">\(n \times
+n\)</span>方阵<span
+class="math inline">\(A\)</span>，其特征多项式定义为： <span
+class="math display">\[
+f(\lambda)=\operatorname{det}\left(A-\lambda I_{n}\right)
+\]</span> 举个例子，对于矩阵<span
+class="math inline">\(A=\left(\begin{array}{ccc} 0 &amp; 6 &amp; 8 \\
+\frac{1}{2} &amp; 0 &amp; 0 \\ 0 &amp; \frac{1}{2} &amp; 0
+\end{array}\right)\)</span>，我们求其特征多项式： <span
+class="math display">\[
+\begin{aligned}
+f(\lambda)=\operatorname{det}\left(A-\lambda I_3\right)
+&amp;=\operatorname{det}\left(\begin{array}{ccc}
+-\lambda &amp; 6 &amp; 8 \\
+\frac{1}{2} &amp; -\lambda &amp; 0 \\
+0 &amp; \frac{1}{2} &amp; -\lambda
+\end{array}\right) \\
+&amp;=8\left(\frac{1}{4}-0 \cdot-\lambda\right)-\lambda\left(\lambda^2-6
+\cdot \frac{1}{2}\right) \\
+&amp;=-\lambda^3+3 \lambda+2 .
+\end{aligned}
+\]</span>
+可以看出，特征多项式是一个以特征值为自变量的多项式。它有什么用呢？这边我们有一个很漂亮的定理：特征多项式的根就是对应矩阵的特征值（具体证明可参见参考书籍5.2）。也就是说：
+<span class="math display">\[
+\lambda_0 \text { is an eigenvalue of } A \Longleftrightarrow
+f(\lambda_0)=0
+\]</span> 对于上面的矩阵<span
+class="math inline">\(A\)</span>，我们就可以按照这个定理求得其特征值：
+<span class="math display">\[
+f(\lambda)=-\lambda^3+3 \lambda+2=-(\lambda-2)(\lambda+1)^2
+\]</span> 所以矩阵<span class="math inline">\(A\)</span>的特征值为<span
+class="math inline">\(2,-1\)</span>。接着我们依据之前的求特定特征值对应特征向量的方法，可以得到其特征向量：
+<span class="math display">\[
+A-2 I_3=\left(\begin{array}{ccc}
+-2 &amp; 6 &amp; 8 \\
+\frac{1}{2} &amp; -2 &amp; 0 \\
+0 &amp; \frac{1}{2} &amp; -2
+\end{array}\right) \quad
+\stackrel{\mathrm{RREF}}{\longrightarrow}\left(\begin{array}{ccc}
+1 &amp; 0 &amp; -16 \\
+0 &amp; 1 &amp; -4 \\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span> 即： <span class="math display">\[
+\left\{\begin{array}{l}
+x=16 z \\
+y=4 z \\
+z=z
+\end{array} \longrightarrow\left(\begin{array}{l}
+x \\
+y \\
+z
+\end{array}\right)=z\left(\begin{array}{c}
+16 \\
+4 \\
+1
+\end{array}\right) .\right.
+\]</span> 所以<span class="math inline">\(A\)</span>的2-特征空间为：
+<span class="math display">\[
+\operatorname{Span}\left\{\left(\begin{array}{c}
+16 \\
+4 \\
+1
+\end{array}\right)\right\}
+\]</span> 类似地，我们可以得到<span
+class="math inline">\(A\)</span>的-1-特征空间为： <span
+class="math display">\[
+\operatorname{Span}\left\{\left(\begin{array}{c}
+4 \\
+-2 \\
+1
+\end{array}\right)\right\}
+\]</span> 至此，我们已经有能力去求某个矩阵的特征值与特征向量了。<br></p>
+<p>接下来，我们考虑一种特殊情况——对角阵。这时候求解特征值非常简单，一个对角阵的特征值即为其对角线上的元素。比如对于矩阵<span
+class="math inline">\(A=\left(\begin{array}{cccc} 1 &amp; 7 &amp; 2
+&amp; 4 \\ 0 &amp; 1 &amp; 3 &amp; 11 \\ 0 &amp; 0 &amp; \pi &amp; 101
+\\ 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\)</span>，其特征值即为<span class="math inline">\(1,
+\pi, 0\)</span>。<br></p>
+<p>在一开始介绍特征值特征向量的时候我们说它很重要，那它到底有什么用？接下来我们要尝试回答这个问题。首先我们先介绍
+<strong>相似矩阵（Similar Matrices）</strong> 的概念：如果存在一个<span
+class="math inline">\(n \times n\)</span> <strong>可逆</strong>矩阵<span
+class="math inline">\(C\)</span>使得： <span class="math display">\[
+A=CBC^{-1}
+\]</span> 那么就称<span class="math inline">\(n \times
+n\)</span>矩阵<span class="math inline">\(A\)</span>、<span
+class="math inline">\(B\)</span>为相似矩阵。相似矩阵具有自反性（Reflexivity，矩阵与其自身相似）、对称性（Symmetry，矩阵<span
+class="math inline">\(A\)</span>与<span
+class="math inline">\(B\)</span>相似即矩阵<span
+class="math inline">\(B\)</span>与<span
+class="math inline">\(A\)</span>相似）与传递性（Transitivity，矩阵<span
+class="math inline">\(A\)</span>与<span
+class="math inline">\(B\)</span>相似，矩阵<span
+class="math inline">\(B\)</span>与<span
+class="math inline">\(C\)</span>相似，即矩阵<span
+class="math inline">\(A\)</span>与<span
+class="math inline">\(C\)</span>相似）。<br></p>
+<p>为何相似矩阵重要？在下面的讨论中，我们可以看到，从几何上看，相似矩阵在<strong>不同的坐标系</strong>下执行<strong>相同的操作</strong>。为什么我们要求定义中的<span
+class="math inline">\(n \times n\)</span>矩阵<span
+class="math inline">\(C\)</span>可逆？回顾我们之前的矩阵可逆定理，我们有<span
+class="math inline">\(C\)</span>中各列可作为基张成<span
+class="math inline">\(R^n\)</span>空间。也就是说我们有： <span
+class="math display">\[
+C[x]_{\mathcal{B}} = I_n x = x \quad \text { and } \quad C^{-1}
+x=[x]_{\mathcal{B}}
+\]</span> 其中<span
+class="math inline">\(x\)</span>表示一个向量在标准正交基（也就是乘上单位矩阵<span
+class="math inline">\(I_n\)</span>）下的坐标，而<span
+class="math inline">\([x]_{\mathcal{B}}\)</span>则表示以<span
+class="math inline">\(C\)</span>中各列为基的空间（<span
+class="math inline">\(\mathcal{B}\)</span>-坐标系）中该向量的坐标。换句话说，<span
+class="math inline">\(C\)</span>将<span
+class="math inline">\(\mathcal{B}\)</span>-坐标系下的坐标变换为了标准正交坐标系下的坐标，而<span
+class="math inline">\(C^{-1}\)</span>把标准正交坐标系下的坐标变换为了<span
+class="math inline">\(\mathcal{B}\)</span>-坐标系下的坐标。基于这样的理解，对于相似矩阵<span
+class="math inline">\(A\)</span>、<span
+class="math inline">\(B\)</span>： <span class="math display">\[
+y = Ax = CBC^{-1}x = C(B(C^{-1}x))
+\]</span> 我们先计算<span
+class="math inline">\(C^{-1}x\)</span>，也就是将标准正交坐标系下的坐标变换为了<span
+class="math inline">\(\mathcal{B}\)</span>-坐标系下的坐标；接着对运算结果乘上<span
+class="math inline">\(B\)</span>，也就是在<span
+class="math inline">\(\mathcal{B}\)</span>-坐标系下进行矩阵运算；最后再在结果上乘上<span
+class="math inline">\(C\)</span>，将运算结果坐标转换为标准正交坐标系下的坐标。如图所示：<br>
+<img src="la-61.png" /><br> 总结而言，<span
+class="math inline">\(B\)</span>在<span
+class="math inline">\(\mathcal{B}\)</span>-坐标系下进行与<span
+class="math inline">\(A\)</span>在标准正交坐标系下相同的矩阵变换。下面给一个具体的简单例子。对于：
+<span class="math display">\[
+A=\left(\begin{array}{cc}
+1 / 2 &amp; 3 / 2 \\
+3 / 2 &amp; 1 / 2
+\end{array}\right) \quad B=\left(\begin{array}{cc}
+2 &amp; 0 \\
+0 &amp; -1
+\end{array}\right) \quad C=\left(\begin{array}{cc}
+1 &amp; 1 \\
+1 &amp; -1
+\end{array}\right)
+\]</span> 我们有<span class="math inline">\(A =
+CBC^{-1}\)</span>。首先矩阵<span
+class="math inline">\(B\)</span>是一个对角阵，其执行的操作很简单，对第一个维度方向的坐标放大两倍，对第二个维度方向的坐标取反，如图所示:<br>
+<img src="la-62.png" /><br> 下图中我们以标准正交坐标系下<span
+class="math inline">\(x=\left(\begin{array}{c} 0 \\ -2
+\end{array}\right)\)</span>为例（右图绿色），先对其乘上<span
+class="math inline">\(C^{-1}\)</span>得到<span
+class="math inline">\(\mathcal{B}\)</span>下的坐标<span
+class="math inline">\([x]_{\mathcal{B}}=\left(\begin{array}{c} -1 \\ 1
+\end{array}\right)\)</span>（左图绿色），接着对 <span
+class="math inline">\([x]_\mathcal{B}\)</span>
+执行矩阵变换，即横坐标放大两倍，纵坐标取反，得到 <span
+class="math inline">\(B[x]_\mathcal{B}\)</span>（左图红色），最后再对其乘上<span
+class="math inline">\(C\)</span>，得到标准正交坐标系下的<span
+class="math inline">\(Ax\)</span>（右图红色）。<br></p>
+<p>而对于相似矩阵，它们的特征值相同、迹（trace）相同、行列式相同（证明可见参考书籍5.3）。一个方阵的迹是其对角线上各元素的累计和：
+<span class="math display">\[
+\operatorname{Tr}\left(\begin{array}{ccccc}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1, n-1} &amp; a_{1 n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2, n-1} &amp; a_{2 n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+a_{n-1,1} &amp; a_{n-1,2} &amp; \cdots &amp; a_{n-1, n-1} &amp; a_{n-1,
+n} \\
+a_{n 1} &amp; a_{n 2} &amp; \cdots &amp; a_{n, n-1} &amp; a_{n n}
+\end{array}\right)=a_{11}+a_{22}+\cdots+a_{n n} .
+\]</span> 而相似矩阵的特征向量之间相差着一个矩阵变换：对于<span
+class="math inline">\(A=CBC^{-1}\)</span>，如果<span
+class="math inline">\(v\)</span>是<span
+class="math inline">\(A\)</span>的一个特征向量则<span
+class="math inline">\(C^{-1}v\)</span>是<span
+class="math inline">\(B\)</span>的一个特征向量，如果<span
+class="math inline">\(v\)</span>是<span
+class="math inline">\(B\)</span>的一个特征向量则<span
+class="math inline">\(Cv\)</span>为<span
+class="math inline">\(A\)</span>的一个特征向量。或者说，对于<span
+class="math inline">\(A=CBC^{-1}\)</span>，<span
+class="math inline">\(C^{-1}\)</span>把矩阵<span
+class="math inline">\(A\)</span>的<span
+class="math inline">\(\lambda\)</span>-特征空间变换到<span
+class="math inline">\(B\)</span>的<span
+class="math inline">\(\lambda\)</span>-特征空间；而<span
+class="math inline">\(C\)</span>把矩阵<span
+class="math inline">\(B\)</span>的<span
+class="math inline">\(\lambda\)</span>-特征空间变换到<span
+class="math inline">\(A\)</span>的<span
+class="math inline">\(\lambda\)</span>-特征空间。</p>
+从上面的例子中，我们可以看到，如果一个矩阵与一个对角阵相似，那么我们就可以比较轻易理解它的空间变换行为。对于这样有趣的矩阵，我们给他一个名字：<strong>可对角化矩阵（diagonalizable
+matrix）</strong>。很自然地，接下来我们就想问，怎么判断一个矩阵是否可对角化？这里我们就引入对角化定理（Diagonalization
+Theorem）（证明见参考书籍5.4）：当且仅当<span class="math inline">\(n
+\times n\)</span>矩阵<span class="math inline">\(A\)</span>有<span
+class="math inline">\(n\)</span>个线性独立特征向量时，其可对角化，即对于<span
+class="math inline">\(A=CDC^{-1}\)</span>有： <span
+class="math display">\[
+C=\left(\begin{array}{cccc}
+\mid &amp; \mid &amp; &amp; \mid \\
+v_{1} &amp; v_{2} &amp; \cdots &amp; v_{n} \\
+\mid &amp; \mid &amp; &amp; \mid
+\end{array}\right) \quad D=\left(\begin{array}{cccc}
+\lambda_{1} &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; \lambda_{2} &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; \lambda_{n}
+\end{array}\right)
+\]</span> 其中<span class="math inline">\(v_i\)</span>为<span
+class="math inline">\(A\)</span>线性独立的特征向量，而<span
+class="math inline">\(\lambda_i\)</span>为各特征向量对应的特征值，<span
+class="math inline">\(i \in [1, n]\)</span>。特别地，对于一个<span
+class="math inline">\(n \times n\)</span>的矩阵，如果它有<span
+class="math inline">\(n\)</span>个不相等的特征值，则其可对角化；但矩阵可对角化，其不一定有<span
+class="math inline">\(n\)</span>个不相等的特征值。留意到对角化并不唯一，只要对应好特征向量与特征值的位置关系：
+<span class="math display">\[
+\begin{aligned}
+A &amp;=\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+v_{1} &amp; v_{2} &amp; v_{3} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)\left(\begin{array}{ccc}
+\lambda_{1} &amp; 0 &amp; 0 \\
+0 &amp; \lambda_{2} &amp; 0 \\
+0 &amp; 0 &amp; \lambda_{3}
+\end{array}\right)\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+v_{1} &amp; v_{2} &amp; v_{3} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)^{-1} \\
+&amp;=\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+v_{3} &amp; v_{2} &amp; v_{1} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)\left(\begin{array}{ccc}
+\lambda_{3} &amp; 0 &amp; 0 \\
+0 &amp; \lambda_{2} &amp; 0 \\
+0 &amp; 0 &amp; \lambda_{1}
+\end{array}\right)\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+v_{3} &amp; v_{2} &amp; v_{1} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)^{-1}
+\end{aligned}
+\]</span> 或者单纯缩放特征向量，也可以得到另外的对角化方式： <span
+class="math display">\[
+\begin{aligned}
+A &amp;=\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+v_{1} &amp; v_{2} &amp; v_{3} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)\left(\begin{array}{ccc}
+\lambda_{1} &amp; 0 &amp; 0 \\
+0 &amp; \lambda_{2} &amp; 0 \\
+0 &amp; 0 &amp; \lambda_{3}
+\end{array}\right)\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+v_{1} &amp; v_{2} &amp; v_{3} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)^{-1} \\
+&amp;=\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+c v_{1} &amp; v_{2} &amp; v_{3} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)\left(\begin{array}{ccc}
+\lambda_{1} &amp; 0 &amp; 0 \\
+0 &amp; \lambda_{2} &amp; 0 \\
+0 &amp; 0 &amp; \lambda_{3}
+\end{array}\right)\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+c v_{1} &amp; v_{2} &amp; v_{3} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)^{-1}
+\end{aligned}
+\]</span> 举一个具体的例子，比如对于<span
+class="math inline">\(A=\left(\begin{array}{ll} 1 / 2 &amp; 3 / 2 \\ 3 /
+2 &amp; 1 / 2
+\end{array}\right)\)</span>，我们可以求得其特征值分别为-1、2，对应的特征值为[-1,
+1]与[1, 1]，所以我们有： <span class="math display">\[
+A=C D C^{-1} \quad \text { for } \quad C=\left(\begin{array}{cc}
+-1 &amp; 1 \\
+1 &amp; 1
+\end{array}\right) \quad D=\left(\begin{array}{cc}
+-1 &amp; 0 \\
+0 &amp; 2
+\end{array}\right)
+\]</span> 或者 <span class="math display">\[
+A=C^{\prime} D^{\prime}\left(C^{\prime}\right)^{-1} \quad \text { for }
+\quad C^{\prime}=\left(\begin{array}{cc}
+1 &amp; -1 \\
+1 &amp; 1
+\end{array}\right) \quad D^{\prime}=\left(\begin{array}{cc}
+2 &amp; 0 \\
+0 &amp; -1
+\end{array}\right)
+\]</span> 或者 <span class="math display">\[
+A=C^{\prime\prime} D^{\prime\prime}\left(C^{\prime\prime}\right)^{-1}
+\quad \text { for } \quad C^{\prime}=\left(\begin{array}{cc}
+2 &amp; -1 \\
+2 &amp; 1
+\end{array}\right) \quad D^{\prime}=\left(\begin{array}{cc}
+2 &amp; 0 \\
+0 &amp; -1
+\end{array}\right)
+\]</span> 另外，留意到当<span
+class="math inline">\(A\)</span>不可逆时，对角阵<span
+class="math inline">\(D\)</span>上会有零。如对于$A=(
+<span class="math display">\[\begin{array}{rr}
+2 / 3 &amp; -4 / 3 \\
+-2 / 3 &amp; 4 / 3
+\end{array}\]</span>
+<p>) $，我们有： <span class="math display">\[
+A=C D C^{-1} \quad \text { for } \quad C=\left(\begin{array}{cc}
+2 &amp; 1 \\
+1 &amp; -1
+\end{array}\right) \quad D=\left(\begin{array}{ll}
+0 &amp; 0 \\
+0 &amp; 2
+\end{array}\right)
+\]</span> 下面再给出一个矩阵不可对角化的例子。对于<span
+class="math inline">\(A=\left(\begin{array}{lll} 1 &amp; 1 &amp; 0 \\ 0
+&amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 2
+\end{array}\right)\)</span>，其特征值为1、2，其1-特征空间为： <span
+class="math display">\[
+\left(A-I_{3}\right) v=0 \Longleftrightarrow\left(\begin{array}{lll}
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 2
+\end{array}\right)\left(\begin{array}{l}
+x \\
+y \\
+z
+\end{array}\right)=0 \Longleftrightarrow y=z=0
+\]</span> 即x坐标轴。其2-特征空间为： <span class="math display">\[
+\left(A-2 I_{3}\right) v=0 \Longleftrightarrow\left(\begin{array}{ccc}
+-1 &amp; 1 &amp; 0 \\
+0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right)\left(\begin{array}{l}
+x \\
+y \\
+z
+\end{array}\right)=0 \Longleftrightarrow x=y=0
+\]</span> 即z-坐标轴。所以该矩阵线性独立的特征向量只有两个（<span
+class="math inline">\(&lt;n=3\)</span>），所以矩阵不可对角化。另外，矩阵是否可对角化与矩阵是否可逆没有关系。<br></p>
+<p>为了更好理解可对角化矩阵，接下来我们再从几何角度对其进行讨论。上面说过，从几何上看，相似矩阵在不同的坐标系下执行相同的操作。而一个对角矩阵执行的操作其实很简单：对各个坐标轴执行缩放操作。综上，也就是说，对于一个可对角化矩阵（特化的相似矩阵），它在另一个坐标系下执行着对新的坐标轴执行缩放的操作；更具体地，对于一个可对角化的<span
+class="math inline">\(n \times n\)</span>矩阵<span
+class="math inline">\(A\)</span>，<span class="math inline">\(v_1, v_2,
+..., v_n\)</span>是其线性独立的<span
+class="math inline">\(n\)</span>个特征向量，那么<span
+class="math inline">\(A\)</span>执行的线性变换的操作即为：在<span
+class="math inline">\(v_i\)</span>向量方向上执行<span
+class="math inline">\(\lambda_i\)</span>倍的缩放。于是，特征向量（方向）与特征值（大小）描述着一个矩阵执行的线性变换的重要特征。下面以两组不同特征值为例（<span
+class="math inline">\(A = CDC^{-1}\)</span>）：<br> 1. 对于<span
+class="math inline">\(A=\frac{1}{10}\left(\begin{array}{cc} 11 &amp; 6
+\\ 9 &amp; 14 \end{array}\right)\)</span>，我们有<span
+class="math inline">\(C=\left(\begin{array}{cc} 2 / 3 &amp; -1 \\ 1
+&amp; 1 \end{array}\right)、 \quad D=\left(\begin{array}{cc} 2 &amp; 0
+\\ 0 &amp; 1 / 2 \end{array}\right)\)</span>，也就是说，当<span
+class="math inline">\(A\)</span>乘上一个向量，会使其在<span
+class="math inline">\(\left(\begin{array}{cc} 2 / 3 \\ 1
+\end{array}\right)\)</span>代表的方向上的坐标放大2倍，使其在<span
+class="math inline">\(\left(\begin{array}{cc} -1 \\ 1
+\end{array}\right)\)</span>代表的方向上的坐标缩小为1/2，如图所示，其中蓝色曲线表示<span
+class="math inline">\(A\)</span>执行空间变换的大致方向：<br> <img
+src="la-63.png" /><br> 2. 对于<span
+class="math inline">\(A=\frac{1}{5}\left(\begin{array}{cc} 13 &amp; -2
+\\ -3 &amp; 12 \end{array}\right)\)</span>，我们有<span
+class="math inline">\(C=\left(\begin{array}{cc} 2 / 3 &amp; -1 \\ 1
+&amp; 1 \end{array}\right)、 \quad D=\left(\begin{array}{ll} 2 &amp; 0
+\\ 0 &amp; 3 \end{array}\right)\)</span>，也就是说，当<span
+class="math inline">\(A\)</span>乘上一个向量，会使其在<span
+class="math inline">\(\left(\begin{array}{cc} 2 / 3 \\ 1
+\end{array}\right)\)</span>代表的方向上的坐标放大2倍，使其在<span
+class="math inline">\(\left(\begin{array}{cc} -1 \\ 1
+\end{array}\right)\)</span>代表的方向上的坐标放大3倍，如图所示，其中蓝色曲线表示<span
+class="math inline">\(A\)</span>执行空间变换的大致方向：<br> <img
+src="la-64.png" /><br>
+以此类推，我们可以以特征向量和特征值去描述一个矩阵的线性空间变换行为。<br></p>
+<p>在上面的讨论中，我们只允许实数特征值的出现，在这种情况下，我们会看到矩阵在执行的都是缩放操作。而如果我们允许虚数特征值的存在，情况又会是怎样的呢？下面我们对此进行讨论。<br>
+首先我们先介绍如何求解得到复特征值和复特征向量。类似地，我们求解一个矩阵的特征行列式。对于一个<span
+class="math inline">\(n \times n\)</span>的矩阵，其特征行列式也为<span
+class="math inline">\(n\)</span>阶，则其对应的复特征值会有<span
+class="math inline">\(n\)</span>个（虚部可能为0）。根据求得的复特征值，我们同样求解Null(<span
+class="math inline">\(A-\lambda
+I_n\)</span>)，即可得到复特征向量。下面以矩阵<span
+class="math inline">\(A=\left(\begin{array}{cc} 1 &amp; -1 \\ 1 &amp; 1
+\end{array}\right)\)</span>为例，我们先求得其特征行列式为： <span
+class="math display">\[
+f(\lambda)=\lambda^2-2\lambda+2
+\]</span> 于是我们求解得到： <span class="math display">\[
+\lambda=\frac{2 \pm \sqrt{4-8}}{2}=1 \pm i
+\]</span> 我们先对第一个特征值<span
+class="math inline">\(\lambda_1=1+i\)</span>求其相应特征向量： <span
+class="math display">\[
+A-(1+i) I_{2}=\left(\begin{array}{cc}
+1-(1+i) &amp; -1 \\
+1 &amp; 1-(1+i)
+\end{array}\right)=\left(\begin{array}{cc}
+-i &amp; -1 \\
+1 &amp; -i
+\end{array}\right)
+\]</span> 再对其进行行列操作： <span class="math display">\[
+\left(\begin{array}{cc}
+-i &amp; -1 \\
+1 &amp; -i
+\end{array}\right) \stackrel{R_{2}=R_{2}-i
+R_{1}}{\longrightarrow}\left(\begin{array}{cc}
+-i &amp; -1 \\
+0 &amp; 0
+\end{array}\right) \stackrel{R_{1}=R_{1}
+\div-i}{\longrightarrow}\left(\begin{array}{cc}
+1 &amp; -i \\
+0 &amp; 0
+\end{array}\right)
+\]</span> 于是我们得到<span
+class="math inline">\(\left(\begin{array}{cc} x \\ y \end{array}\right)
+= y\left(\begin{array}{cc} i \\ 1 \end{array}\right)\)</span>，即<span
+class="math inline">\(\lambda_1\)</span>对应的特征向量<span
+class="math inline">\(v_1 = \left(\begin{array}{cc} i \\ 1
+\end{array}\right)\)</span>。同理对于<span
+class="math inline">\(\lambda_2 = 1-i\)</span>，我们可以得到<span
+class="math inline">\(v_2 = \left(\begin{array}{cc} -i \\ 1
+\end{array}\right)\)</span>。<br>
+另外，因为我们只考虑实数矩阵，那么特征行列式里的系数只会是实数，而对于系数为实数的多项式，其含虚数的复数解总是共轭出现的，如上面例子中的<span
+class="math inline">\(\lambda_1=\bar{\lambda_2}\)</span>、<span
+class="math inline">\(v_1=\bar{v_2}\)</span>。<br></p>
+<p>接下来我们讨论复特征值和复特征向量的几何意义，先从一种简单但又很重要的矩阵开始——旋转缩放矩阵（rotation-scaling
+matrices）讲起。其定义为一个有如下形式的<span class="math inline">\(2
+\times 2\)</span>矩阵，其中<span class="math inline">\(a\)</span>与<span
+class="math inline">\(b\)</span>都是实数且不都等于0： <span
+class="math display">\[
+\left(\begin{array}{cc}
+a &amp; -b \\
+b &amp; a
+\end{array}\right)
+\]</span> 对于这样一个矩阵，其可以视为一个旋转矩阵<span
+class="math inline">\(R\)</span>（空间变换操作为将向量逆时针旋转角度<span
+class="math inline">\(\theta\)</span>）与一个缩放矩阵<span
+class="math inline">\(S\)</span>的乘积： <span class="math display">\[
+R = \left(\begin{array}{cc}
+\cos \theta &amp; -\sin \theta \\
+\sin \theta &amp; \cos \theta
+\end{array}\right) \quad \text {,} \quad S=\left(\begin{array}{ll}
+r &amp; 0 \\
+0 &amp; r
+\end{array}\right) \text {. }
+\]</span> 其中缩放系数<span class="math inline">\(r\)</span>： <span
+class="math display">\[
+r=\sqrt{\operatorname{det}(A)}=\sqrt{a^{2}+b^{2}}
+\]</span>
+也就是说，从几何上看，一个旋转缩放矩阵乘上一个向量，会对其进行一个角度<span
+class="math inline">\(\theta\)</span>的旋转并对其缩放<span
+class="math inline">\(r\)</span>倍。这样一个矩阵的特征值为<span
+class="math inline">\(\lambda=a\pm bi\)</span>。下面还是以<span
+class="math inline">\(A=\left(\begin{array}{cc} 1 &amp; -1 \\ 1 &amp; 1
+\end{array}\right)\)</span>为例，我们可视化它的作用。首先<span
+class="math inline">\(r=\sqrt{\operatorname{det}(A)}=\sqrt{2}\)</span>，接着<span
+class="math inline">\(\cos \theta = a/r = 1/\sqrt{2}, \sin \theta = b/r
+= 1/\sqrt{2}\)</span>，即<span class="math inline">\(\theta = 45
+\degree\)</span>。所以矩阵<span
+class="math inline">\(A\)</span>执行的空间变换：对向量进行<span
+class="math inline">\(\sqrt{2}\)</span>倍的缩放并逆时针旋转<span
+class="math inline">\(45\degree\)</span>，如下图所示：<br> <img
+src="la-65.png" /><br> 但要注意的是，角度不能直接用<span
+class="math inline">\(\arctan(·)\)</span>求解，因为其输出的角度只在第一四象限之间，如果旋转后的向量在第二三象限的话，我们会得到错误的角度。如对于矩阵<span
+class="math inline">\(\left(\begin{array}{cc} -\sqrt{3} &amp; -1 \\ 1
+&amp; -\sqrt{3} \end{array}\right)\)</span>旋转的角度为<span
+class="math inline">\(150\degree\)</span>，但如果直接使用<span
+class="math inline">\(\arctan(·)\)</span>求解我们会得到<span
+class="math inline">\(-30\degree\)</span>。<br> <img
+src="la-66.png" /><br></p>
+<p>有复特征值和复特征向量的矩阵与旋转缩放矩阵又有什么关系呢？这就要引入旋转缩放定理：对于一个<span
+class="math inline">\(2 \times 2\)</span>的实数矩阵<span
+class="math inline">\(A\)</span>，其一个非实数复特征向量为<span
+class="math inline">\(\lambda\)</span>，对应的特征向量为<span
+class="math inline">\(v\)</span>，则对于： <span class="math display">\[
+C=\left(\begin{array}{cc}
+\mid &amp; \mid \\
+\operatorname{Re}(v) &amp; \operatorname{Im}(v) \\
+\mid &amp; \mid
+\end{array}\right) \quad \text { and } \quad B=\left(\begin{array}{cc}
+\operatorname{Re}(\lambda) &amp; \operatorname{Im}(\lambda) \\
+-\operatorname{Im}(\lambda) &amp; \operatorname{Re}(\lambda)
+\end{array}\right)
+\]</span> 有<span
+class="math inline">\(A=CBC^{-1}\)</span>（证明参见参考书籍5.5）。可以发现，<span
+class="math inline">\(B\)</span>为一个旋转缩放矩阵。特别地，其对应的缩放系数为特征值的模<span
+class="math inline">\(|\lambda|\)</span>。上式中Re与Im分别表示实部与虚部，即：
+<span class="math display">\[
+\operatorname{Re}(a+b i)=a \quad \operatorname{Im}(a+b i)=b \quad
+\operatorname{Re}\left(\begin{array}{c}
+x+y i \\
+z+w i
+\end{array}\right)=\left(\begin{array}{l}
+x \\
+z
+\end{array}\right) \quad \operatorname{Im}\left(\begin{array}{l}
+x+y i \\
+z+w i
+\end{array}\right)=\left(\begin{array}{l}
+y \\
+w
+\end{array}\right)
+\]</span> 下面以矩阵<span
+class="math inline">\(A=\left(\begin{array}{cc} 2 &amp; -1 \\ 2 &amp; 0
+\end{array}\right)\)</span>为例，介绍其表示的空间变换。首先我们可以求得其特征值<span
+class="math inline">\(\lambda = 1\pm i\)</span>，取<span
+class="math inline">\(\lambda = 1-i\)</span>求其特征向量为<span
+class="math inline">\(v=\left(\begin{array}{c} 1 \\ 1+i
+\end{array}\right)\)</span>。接着按照上面的定理我们对<span
+class="math inline">\(A\)</span>进行分解，得到： <span
+class="math display">\[
+\begin{aligned}
+C &amp;=\left(\operatorname{Re}\left(\begin{array}{c}
+1 \\
+1+i
+\end{array}\right) \quad \operatorname{Im}\left(\begin{array}{c}
+1 \\
+1+i
+\end{array}\right)\right)=\left(\begin{array}{ll}
+1 &amp; 0 \\
+1 &amp; 1
+\end{array}\right) \\
+B &amp;=\left(\begin{array}{cc}
+\operatorname{Re}(\lambda) &amp; \operatorname{Im}(\lambda) \\
+-\operatorname{Im}(\lambda) &amp; \operatorname{Re}(\lambda)
+\end{array}\right)=\left(\begin{array}{cc}
+1 &amp; -1 \\
+1 &amp; 1
+\end{array}\right)
+\end{aligned}
+\]</span> 由<span class="math inline">\(B\)</span>可以知道，矩阵<span
+class="math inline">\(A\)</span>也是在进行一个与上面例子相同的旋转缩放操作，只不过是在<span
+class="math inline">\(C\)</span>列向量对应坐标系下进行。更具体地，当<span
+class="math inline">\(A\)</span>乘上一个向量，先将其转到一个新的坐标系下（<span
+class="math inline">\(C^{-1}\)</span>），接着对其旋转缩放（<span
+class="math inline">\(B\)</span>），之后再将其转回原来的坐标系下（<span
+class="math inline">\(C\)</span>），如下图所示：<br> <img
+src="la-67.png" /><br> 再以空间点为例子，将其可视化如下： <img
+src="la-68.png" /><br> 图中橘色线表示每乘上一个<span
+class="math inline">\(A\)</span>，空间点的变换方向。所以类似地，我们也可以讨论不同<span
+class="math inline">\(\lambda\)</span>对应空间变换的意义。当矩阵<span
+class="math inline">\(A\)</span>的<span
+class="math inline">\(|\lambda|&gt;1\)</span>，不断乘上<span
+class="math inline">\(A\)</span>会使得向量向外伸张，如下图所示：<br>
+<img src="la-69.png" /><br> 而如果矩阵<span
+class="math inline">\(A\)</span>的<span
+class="math inline">\(|\lambda|=1\)</span>，不断乘上<span
+class="math inline">\(A\)</span>会使得向量在一个椭圆环上旋转，如下图所示：<br>
+<img src="la-70.png" /><br> 而如果矩阵<span
+class="math inline">\(A\)</span>的<span
+class="math inline">\(|\lambda|&lt;1\)</span>，不断乘上<span
+class="math inline">\(A\)</span>会使得向量向原点收缩，如下图所示：<br>
+<img src="la-71.png" /><br></p>
+<p>以上的讨论我们都基于二维矩阵，而如果矩阵的维度更大的情况会如何？这边就要引入区块对角化定理（block
+diagonalization theorem）。对于一个<span class="math inline">\(n \times
+n\)</span>矩阵<span
+class="math inline">\(A\)</span>，如果其特征向量的个数与特征值个数一致，那么其可以分解为<span
+class="math inline">\(A=CBC^{-1}\)</span>，其中<span
+class="math inline">\(B\)</span>是区块对角化矩阵，实特征值对应其对角线上一个数，一组共轭复特征值（选其中一个）对应其对角线上及附近的区块，<span
+class="math inline">\(C\)</span>为它们各自对应的特征向量。以三维矩阵为例，假设其有一组复特征值（其中一个<span
+class="math inline">\(\lambda_1\)</span>）与一个实特征值<span
+class="math inline">\(\lambda_2\)</span>，那么其对应的<span
+class="math inline">\(C\)</span>和<span
+class="math inline">\(B\)</span>分别为：<br> <span
+class="math display">\[
+C=\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+\operatorname{Re}\left(v_{1}\right) &amp;
+\operatorname{Im}\left(v_{1}\right) &amp; v_{2} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right) \quad B=\left(\begin{array}{ccc}
+\operatorname{Re}\left(\lambda_{1}\right) &amp;
+\operatorname{Im}\left(\lambda_{1}\right) &amp; 0 \\
+-\operatorname{Im}\left(\lambda_{1}\right) &amp;
+\operatorname{Re}\left(\lambda_{1}\right) &amp; 0 \\
+0 &amp; 0 &amp; \lambda_{2}
+\end{array}\right)
+\]</span> 举一个实例，如对于矩阵<span
+class="math inline">\(A=\frac{1}{29}\left(\begin{array}{ccc} 33 &amp;
+-23 &amp; 9 \\ 22 &amp; 33 &amp; -23 \\ 19 &amp; 14 &amp; 50
+\end{array}\right)\)</span>，其特征值为<span
+class="math inline">\(\lambda_1 = 1-i, \bar{\lambda_1} = 1+i,
+\lambda_2=2\)</span>，根据特征值又可以求得<span
+class="math inline">\(v_{1}=\left(\begin{array}{c} -7-i \\ 2-9 i \\ 5
+\end{array}\right), v_{2}=\left(\begin{array}{c} 2 \\ -1 \\ 3
+\end{array}\right)\)</span>。所以<span
+class="math inline">\(A=CBC^{-1}\)</span>，其中： <span
+class="math display">\[
+\begin{array}{l}
+C=\left(\begin{array}{ccc}
+\mid &amp; \mid &amp; \mid \\
+\operatorname{Re}\left(v_{1}\right) &amp;
+\operatorname{Im}\left(v_{1}\right) &amp; v_{2} \\
+\mid &amp; \mid &amp; \mid
+\end{array}\right)=\left(\begin{array}{ccc}
+-7 &amp; -1 &amp; 2 \\
+2 &amp; -9 &amp; -1 \\
+5 &amp; 0 &amp; 3
+\end{array}\right) \\
+B=\left(\begin{array}{ccc}
+\operatorname{Re}\left(\lambda_{1}\right) &amp;
+\operatorname{Im}\left(\lambda_{1}\right) &amp; 0 \\
+-\operatorname{Im}\left(\lambda_{1}\right) &amp;
+\operatorname{Re}\left(\lambda_{1}\right) &amp; 0 \\
+0 &amp; 0 &amp; 2
+\end{array}\right)=\left(\begin{array}{ccc}
+1 &amp; -1 &amp; 0 \\
+1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 2
+\end{array}\right) .
+\end{array}
+\]</span> 矩阵<span
+class="math inline">\(B\)</span>表示的意义是在标准坐标系xy轴方向上对向量旋转<span
+class="math inline">\(45\degree\)</span>并缩放<span
+class="math inline">\(\sqrt{2}\)</span>倍，并对z轴上缩放<span
+class="math inline">\(2\)</span>倍。矩阵<span
+class="math inline">\(A\)</span>执行的是相同的操作，只是在<span
+class="math inline">\(C\)</span>对应的坐标系下完成。<br></p>
+<h2 id="正交性orthogonality">11. 正交性（Orthogonality）</h2>
+<p>正交性也是线性代数中很重要的一个概念。我们为什么要在最后提到它呢？它有什么用呢？下面我们将对此进行讨论。<br></p>
+<p>说到正交，我们很容易就联想到我们高中就学过的点积运算，对两个向量<span
+class="math inline">\(x, y\)</span>而言： <span class="math display">\[
+x \cdot y=\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right) \cdot\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n} .
+\]</span> 当向量<span class="math inline">\(x,
+y\)</span>满足下面条件，我们有<span class="math inline">\(x,
+y\)</span>正交： <span class="math display">\[
+x·y = \|x\|\|y\|\cos \alpha = 0
+\]</span> 其中<span class="math inline">\(\alpha为向量\)</span>x, y<span
+class="math inline">\(之间的夹角，\)</span><span
+class="math inline">\(\|·\|\)</span>表示向量的长度： <span
+class="math display">\[
+\|x\|=\sqrt{x \cdot x}=\sqrt{x_{1}^{2}+x_{2}^{2}+\cdots+x_{n}^{2}}
+\]</span>
+长度为1的向量被称为单位向量。另外两点之间的距离即它们组成向量的长度：
+<span class="math display">\[
+\operatorname{dist}(x, y)=\|y-x\|
+\]</span></p>
+<p>在知道了两个向量的正交条件之后，进一步地，我们讨论对于一个子空间的正交——<strong>正交补空间（Orthogonal
+Complement）</strong>。对于<span
+class="math inline">\(R^n\)</span>的子空间<span
+class="math inline">\(W\)</span>而言，其正交补空间为： <span
+class="math display">\[
+W^{\perp}=\left\{v \text { in } \mathbf{R}^{n} \mid v \cdot w=0 \text {
+for all } w \text { in } W\right\}
+\]</span> 也就是说，<span
+class="math inline">\(W^{\perp}\)</span>是正交于<span
+class="math inline">\(W\)</span>中所有向量的所有<span
+class="math inline">\(R^n\)</span>中的向量的集合。例如，在<span
+class="math inline">\(R^2\)</span>里一条直线的正交补空间是与它垂直的一条直线，在<span
+class="math inline">\(R^3\)</span>中一条直线的正交补空间是与它垂直的一个平面，在<span
+class="math inline">\(R^3\)</span>中一个平面的正交补空间是与它垂直的一条直线。<br>
+<img src="la-72.png" /><br> 从上图我们也可以看出，$(W<sup>{})</sup>{}=W,
+(W)+(W^{})=n <span
+class="math inline">\(。在明确正交补空间的概念之后，接下来我们介绍如何计算它。首先设定\)</span>W<span
+class="math inline">\(是矩阵\)</span>A<span
+class="math inline">\(的列空间（\)</span>W=(A)$），则有（证明参见参考书籍6.2）：
+<span class="math display">\[
+W^{\perp}=\text{Nul}(A^T)
+\]</span> 举个例子，比如对于<span class="math inline">\(v_1,
+v_2\)</span>张成的空间（我们可以将它们拼接成一个矩阵，即可以将它们理解为一个矩阵的列空间）：
+<span class="math display">\[
+v_{1}=\left(\begin{array}{l}
+1 \\
+7 \\
+2
+\end{array}\right) \quad v_{2}=\left(\begin{array}{c}
+-2 \\
+3 \\
+1
+\end{array}\right)
+\]</span> 其正交补空间为： <span class="math display">\[
+\text{Nul} \left(\begin{array}{l}
+-v_{1}^{T}- \\
+-v_{2}^{T}-
+\end{array}\right)=\text{Nul} \left(\begin{array}{ccc}
+1 &amp; 7 &amp; 2 \\
+-2 &amp; 3 &amp; 1
+\end{array}\right)
+\]</span> 即求解下列方程组： <span class="math display">\[
+\left\{\begin{aligned}
+x_{1}+7 x_{2}+2 x_{3} &amp;=0 \\
+-2 x_{1}+3 x_{2}+x_{3} &amp;=0 .
+\end{aligned}\right.
+\]</span> 最终我们可以计算得到： <span class="math display">\[
+W^{\perp}=\operatorname{Span}\left\{\left(\begin{array}{c}
+1 \\
+-5 \\
+17
+\end{array}\right)\right\}
+\]</span> 而如果我们考虑矩阵<span
+class="math inline">\(A\)</span>的行空间<span
+class="math inline">\(\text{Row}(A)=\text{Col}(A^T)\)</span>，则有<span
+class="math inline">\(\operatorname{Row}(A)^{\perp}=\operatorname{Nul}(A)\)</span>。总结有：
+<span class="math display">\[
+\begin{aligned}
+\operatorname{Row}(A)^{\perp} &amp;=\operatorname{Nul}(A) &amp;
+\operatorname{Nul}(A)^{\perp} &amp;=\operatorname{Row}(A) \\
+\operatorname{Col}(A)^{\perp} &amp;=\operatorname{Nul}\left(A^{T}\right)
+&amp; \operatorname{Nul}\left(A^{T}\right)^{\perp}
+&amp;=\operatorname{Col}(A) .
+\end{aligned}
+\]</span>
+利用上述的性质，我们有时候可以很方便地求解正交补空间。如求解矩阵<span
+class="math inline">\(A=\left(\begin{array}{ccc} 2 &amp; 4 &amp; -1 \\ 3
+&amp; 2 &amp; 0 \\ -2 &amp; 4 &amp; 3
+\end{array}\right)\)</span>的5-特征空间的正交补空间：<br>
+先求解5-特征空间： <span class="math display">\[
+W=\operatorname{Nul}\left(A-5
+I_{3}\right)=\operatorname{Nul}\left(\begin{array}{ccc}
+-3 &amp; 4 &amp; -1 \\
+3 &amp; -3 &amp; 0 \\
+-2 &amp; 4 &amp; -2
+\end{array}\right)
+\]</span> 所以我们直接有： <span class="math display">\[
+W^{\perp}=\operatorname{Row}\left(\begin{array}{ccc}
+-3 &amp; 4 &amp; -1 \\
+3 &amp; -3 &amp; 0 \\
+-2 &amp; 4 &amp; -2
+\end{array}\right)=\operatorname{Span}\left\{\left(\begin{array}{c}
+-3 \\
+4 \\
+-1
+\end{array}\right),\left(\begin{array}{c}
+3 \\
+-3 \\
+0
+\end{array}\right),\left(\begin{array}{c}
+-2 \\
+4 \\
+-2
+\end{array}\right)\right\}
+\]</span></p>
+<p>所以对于<span class="math inline">\(R^n\)</span>中某个向量<span
+class="math inline">\(x\)</span>，其可以分解为在<span
+class="math inline">\(R^n\)</span>中一个子空间<span
+class="math inline">\(W\)</span>上的投影<span
+class="math inline">\(x_W\)</span>及其正交补空间<span
+class="math inline">\(W^{\perp}\)</span>上的一个向量<span
+class="math inline">\(x_{W^{\perp}}\)</span>之和，如下图所示，向量<span
+class="math inline">\(x\)</span>到子空间<span
+class="math inline">\(W\)</span>的距离即为<span
+class="math inline">\(\|x_{W^{\perp}}\|\)</span>。<br> <img
+src="la-73.png" /><br></p>
+<p>接下来我们讨论如何求解<span class="math inline">\(x_W\)</span>与<span
+class="math inline">\(x_{W^{\perp}}\)</span>。这里要引入一个定理（证明见参考书籍6.3）：设<span
+class="math inline">\(W=\operatorname{Col}(A)\)</span>，<span
+class="math inline">\(A\)</span>为一个<span class="math inline">\(m
+\times n\)</span>矩阵，<span class="math inline">\(x\)</span>为<span
+class="math inline">\(R^m\)</span>中一个向量，则有： <span
+class="math display">\[
+A^TAc = A^Tx
+\]</span> 其中，<span
+class="math inline">\(c\)</span>为待求解的未知向量，<span
+class="math inline">\(x_W=Ac\)</span>，<span
+class="math inline">\(x_{W^{\perp}}=x-x_W\)</span>。举个例子，设<span
+class="math inline">\(L=\operatorname{Span}\{u\}\)</span>是<span
+class="math inline">\(R^n\)</span>中一条直线，<span
+class="math inline">\(x\)</span>是<span
+class="math inline">\(R^n\)</span>中一个向量，求解其在<span
+class="math inline">\(L\)</span>上的投影<span
+class="math inline">\(x_L\)</span>。于是我们的问题变为求解<span
+class="math inline">\(u^Tuc=u^Tx\)</span>。在一维的情况下，<span
+class="math inline">\(u^Tu=u·u， u^Tx=u·x\)</span>，所以： <span
+class="math display">\[
+x_L=uc=\frac{(u·x)}{(u·u)}u
+\]</span> 如下图所示：<br> <img src="la-74.png" /><br> 而当<span
+class="math inline">\(W\)</span>维度更高不只是一条直线，我们要做的也很简单：首先求解<span
+class="math inline">\(A^TA\)</span>与<span
+class="math inline">\(A^Tx\)</span>，然后求解线性方程组得到<span
+class="math inline">\(c\)</span>，然后就可以得到<span
+class="math inline">\(x_W=Ac，x_{W^{\perp}}=x-x_W\)</span>。举个例子，比如在<span
+class="math inline">\(R^3\)</span>中将向量<span
+class="math inline">\(x\)</span>投影到一个二维平面<span
+class="math inline">\(W\)</span>： <span class="math display">\[
+W=\operatorname{Span}\left\{\left(\begin{array}{c}
+1 \\
+0 \\
+-1
+\end{array}\right),\left(\begin{array}{l}
+1 \\
+1 \\
+0
+\end{array}\right)\right\} \quad x=\left(\begin{array}{l}
+1 \\
+2 \\
+3
+\end{array}\right)
+\]</span> 首先求解<span class="math inline">\(A^TA\)</span>与<span
+class="math inline">\(A^Tx\)</span>： <span class="math display">\[
+A^{T} A=\left(\begin{array}{ll}
+2 &amp; 1 \\
+1 &amp; 2
+\end{array}\right) \quad A^{T} x=\left(\begin{array}{c}
+-2 \\
+3
+\end{array}\right)
+\]</span> 接着求解<span class="math inline">\(c\)</span>： <span
+class="math display">\[
+\left(\begin{array}{ll|r}
+2 &amp; 1 &amp; -2 \\
+1 &amp; 2 &amp; 3
+\end{array}\right)
+\stackrel{\mathrm{RREF}}{\longrightarrow}\left(\begin{array}{ll|r}
+1 &amp; 0 &amp; -7 / 3 \\
+0 &amp; 1 &amp; 8 / 3
+\end{array}\right) \Longrightarrow c=\frac{1}{3}\left(\begin{array}{c}
+-7 \\
+8
+\end{array}\right)
+\]</span> 于是我们得到： <span class="math display">\[
+x_{W}=A c=\frac{1}{3}\left(\begin{array}{l}
+1 \\
+8 \\
+7
+\end{array}\right) \quad
+x_{W^{\perp}}=x-x_{W}=\frac{1}{3}\left(\begin{array}{c}
+2 \\
+-2 \\
+2
+\end{array}\right)
+\]</span> 将其可视化如下图所示：<br> <img src="la-75.png" /><br></p>
+<p>接下来我们换个角度去思考正交投影这个问题，它本身是一个线性空间变换，那其背后的矩阵应该是什么呢？这里的逻辑其实也很简单，只要我们对原来空间的基向量分别投影到新的空间中，我们就可以知道每个维度上的空间变换，拼接起来就得到正交投影对应的矩阵。举个例子，比如我们要得到代表将<span
+class="math inline">\(R^3\)</span>中标准正交基表示的向量正交投影到直线<span
+class="math inline">\(W=\operatorname{Span}\{u\}\)</span>上的矩阵<span
+class="math inline">\(B\)</span>，其中： <span class="math display">\[
+u=\left(\begin{array}{c}
+-1 \\
+1 \\
+1
+\end{array}\right)
+\]</span> 那么我们要求的就是<span class="math inline">\((e_1)_L,
+(e_2)_L, (e_3)_L\)</span>，根据我们上面得到的公式： <span
+class="math display">\[
+\left.\begin{array}{l}
+\left(e_{1}\right)_{L}=\frac{u \cdot e_{1}}{u \cdot u}
+u=\frac{1}{3}\left(\begin{array}{c}
+1 \\
+-1 \\
+-1
+\end{array}\right) \\
+\left(e_{2}\right)_{L}=\frac{u \cdot e_{2}}{u \cdot u}
+u=\frac{1}{3}\left(\begin{array}{c}
+-1 \\
+1 \\
+1
+\end{array}\right) \\
+\left(e_{3}\right)_{L}=\frac{u \cdot e_{3}}{u \cdot u}
+u=\frac{1}{3}\left(\begin{array}{c}
+-1 \\
+1 \\
+1
+\end{array}\right)
+\end{array}\right\} \quad \Longrightarrow \quad
+B=\frac{1}{3}\left(\begin{array}{ccc}
+1 &amp; -1 &amp; -1 \\
+-1 &amp; 1 &amp; 1 \\
+-1 &amp; 1 &amp; 1
+\end{array}\right)
+\]</span> 类似地，再考虑上面将向量投影到<span
+class="math inline">\(R^3\)</span>中二维平面的例子： <span
+class="math display">\[
+W=\operatorname{Span}\left\{\left(\begin{array}{c}
+1 \\
+0 \\
+-1
+\end{array}\right),\left(\begin{array}{l}
+1 \\
+1 \\
+0
+\end{array}\right)\right\}
+\]</span> 要求其背后的变换矩阵，我们依次求解<span
+class="math inline">\((e_1)_W, (e_2)_W,
+(e_3)_W\)</span>。我们先求解<span
+class="math inline">\(A^TA\)</span>与<span
+class="math inline">\(A^Te_i\)</span>，然后求解<span
+class="math inline">\(c\)</span>，接着我们就能得到<span
+class="math inline">\((e_i)_W=Ac\)</span>： <span
+class="math display">\[
+\left(\begin{array}{ll|l}
+2 &amp; 1 &amp; 1 \\
+1 &amp; 2 &amp; 1
+\end{array}\right)
+\stackrel{\mathrm{RREF}}{\longrightarrow}\left(\begin{array}{ll|l}
+1 &amp; 0 &amp; 1 / 3 \\
+0 &amp; 1 &amp; 1 / 3
+\end{array}\right)
+\Longrightarrow\left(e_{1}\right)_{W}=A\left(\begin{array}{c}
+1 / 3 \\
+1 / 3
+\end{array}\right)=\frac{1}{3}\left(\begin{array}{c}
+2 \\
+1 \\
+-1
+\end{array}\right)
+\]</span> <span class="math display">\[
+\left(\begin{array}{ll|l}
+2 &amp; 1 &amp; 0 \\
+1 &amp; 2 &amp; 1
+\end{array}\right)
+\stackrel{\mathrm{RREF}}{\longrightarrow}\left(\begin{array}{ll|r}
+1 &amp; 0 &amp; -1 / 3 \\
+0 &amp; 1 &amp; 2 / 3
+\end{array}\right)
+\Longrightarrow\left(e_{2}\right)_{W}=A\left(\begin{array}{c}
+-1 / 3 \\
+2 / 3
+\end{array}\right)=\frac{1}{3}\left(\begin{array}{l}
+1 \\
+2 \\
+1
+\end{array}\right)
+\]</span> <span class="math display">\[
+\left(\begin{array}{ll|r}
+2 &amp; 1 &amp; -1 \\
+1 &amp; 2 &amp; 0
+\end{array}\right) \stackrel{\text { RREF
+}}{\longrightarrow}\left(\begin{array}{ll|r}
+1 &amp; 0 &amp; -2 / 3 \\
+0 &amp; 1 &amp; 1 / 3
+\end{array}\right)
+\Longrightarrow\left(e_{3}\right)_{W}=A\left(\begin{array}{c}
+-2 / 3 \\
+1 / 3
+\end{array}\right)=\frac{1}{3}\left(\begin{array}{c}
+-1 \\
+1 \\
+2
+\end{array}\right)
+\]</span> 将它们拼接起来，我们可以得到求解的正交投影变换矩阵<span
+class="math inline">\(B\)</span>： <span class="math display">\[
+B=\frac{1}{3}\left(\begin{array}{ccc}
+2 &amp; 1 &amp; -1 \\
+1 &amp; 2 &amp; 1 \\
+-1 &amp; 1 &amp; 2
+\end{array}\right)
+\]</span> 或者我们直接从代数角度出发，根据上面的定理，我们有： <span
+class="math display">\[
+x_{W}=A\left(A^{T} A\right)^{-1} A^{T} x
+\]</span> 那么正交投影变换矩阵即为：<span class="math inline">\(B =
+A\left(A^{T} A\right)^{-1} A^{T}\)</span>。<br></p>
+<p>那么代表着将向量投影到空间<span
+class="math inline">\(W\)</span>的正交投影变换矩阵<span
+class="math inline">\(B\)</span>有什么性质呢？<br> 1. <span
+class="math inline">\(\operatorname{Col}(B)=W\)</span>，任何向量经过<span
+class="math inline">\(B\)</span>变换后都在<span
+class="math inline">\(W\)</span>上；<br> 2. <span
+class="math inline">\(\operatorname{Nul}(B)=W^{\perp}\)</span>，<span
+class="math inline">\(W^{\perp}\)</span>上的向量经过<span
+class="math inline">\(B\)</span>变换后都为0向量；<br> 3. <span
+class="math inline">\(B^n=B\)</span>，一个向量经过<span
+class="math inline">\(B\)</span>变换到<span
+class="math inline">\(W\)</span>上后，再经过<span
+class="math inline">\(B\)</span>变换会维持不变（<span
+class="math inline">\(W\)</span>上的向量正交投影仍是其自身）；<br> 4.
+如果<span class="math inline">\(W \neq 0\)</span>，那么1是<span
+class="math inline">\(B\)</span>的特征值，<span
+class="math inline">\(W\)</span>就是<span
+class="math inline">\(B\)</span>的1-特征空间；<br> 5. 如果<span
+class="math inline">\(W \neq R^n\)</span>，那么0是<span
+class="math inline">\(B\)</span>的特征值，<span
+class="math inline">\(W^{\perp}\)</span>就是<span
+class="math inline">\(B\)</span>的0-特征空间；<br> 6. <span
+class="math inline">\(B\)</span>与对角线上有<span
+class="math inline">\(m\)</span>个1与<span
+class="math inline">\(n-m\)</span>个0的对角阵相似，其中<span
+class="math inline">\(m\)</span>是<span
+class="math inline">\(W\)</span>维度，<span
+class="math inline">\(n\)</span>为空间维度。<br></p>
+<p>基于这些性质，我们对上面例子的的正交投影矩阵<span
+class="math inline">\(B\)</span>做进一步讨论，首先可以验证： <span
+class="math display">\[
+B^n = B=\frac{1}{3}\left(\begin{array}{ccc}
+2 &amp; 1 &amp; -1 \\
+1 &amp; 2 &amp; 1 \\
+-1 &amp; 1 &amp; 2
+\end{array}\right)
+\]</span> 接着我们可以求解<span
+class="math inline">\(W^{\perp}=\operatorname{Nul}(B)\)</span>，有：
+<span class="math display">\[
+W^{\perp}=\operatorname{Span}\left\{\left(\begin{array}{c}
+1 \\
+-1 \\
+1
+\end{array}\right)\right\}
+\]</span> 又我们已知（或者再通过<span
+class="math inline">\(W=\operatorname{Col}(B)\)</span>求解）： <span
+class="math display">\[
+W=\operatorname{Span}\left\{\left(\begin{array}{c}
+1 \\
+0 \\
+-1
+\end{array}\right),\left(\begin{array}{l}
+1 \\
+1 \\
+0
+\end{array}\right)\right\}
+\]</span> 那么我们就可以直接写出其特征分解式： <span
+class="math display">\[
+B=\left(\begin{array}{ccc}
+1 &amp; 1 &amp; 1 \\
+0 &amp; 1 &amp; -1 \\
+-1 &amp; 0 &amp; 1
+\end{array}\right)\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right)\left(\begin{array}{ccc}
+1 &amp; 1 &amp; 1 \\
+0 &amp; 1 &amp; -1 \\
+-1 &amp; 0 &amp; 1
+\end{array}\right)^{-1}
+\]</span></p>
+接着我们考虑一种特殊情况，<span
+class="math inline">\(W\)</span>中已知的基为正交基（<span
+class="math inline">\(\left\{u_{1}, u_{2}, \ldots,
+u_{m}\right\}\)</span>，每两个向量点乘都为0），那我们可以很轻易地写出<span
+class="math inline">\(x_W\)</span>的形式： <span class="math display">\[
+x_{W}=\frac{x \cdot u_{1}}{u_{1} \cdot u_{1}} u_{1}+\frac{x \cdot
+u_{2}}{u_{2} \cdot u_{2}} u_{2}+\cdots+\frac{x \cdot u_{m}}{u_{m} \cdot
+u_{m}} u_{m}
+\]</span> 这个公式其实很好理解，<span class="math inline">\(x \cdot u_i
+= \|x\|\cos(\theta)\|u_i\|\)</span>，其中<span
+class="math inline">\(\|x\|\cos(\theta)\)</span>表示<span
+class="math inline">\(x\)</span>投影到<span
+class="math inline">\(u_i\)</span>方向的长度，所以<span
+class="math inline">\(\frac{x \cdot u_{i}}{u_{i} \cdot u_{i}}
+u_{i}=\|x\|\cos(\theta) \frac{u_i}{\|u_i\|}\)</span>，<span
+class="math inline">\(\frac{u_i}{\|u_i\|}\)</span>为单位向量，即该式表示<span
+class="math inline">\(x\)</span>分解后在<span
+class="math inline">\(u_i\)</span>方向上的向量，而这些分解后的向量相加之后即可得到<span
+class="math inline">\(x\)</span>。而如果已知的基为标准正交基（每两个向量点乘都为0，向量的大小为1），则这个公式会变得更加简单：
+<span class="math display">\[
+x_{W}=\left(x \cdot u_{1}\right) u_{1}+\left(x \cdot u_{2}\right)
+u_{2}+\cdots+\left(x \cdot u_{m}\right) u_{m}
+\]</span> 下面举个例子，比如要将<span
+class="math inline">\(x\)</span>转到以<span
+class="math inline">\(\mathcal{B}\)</span>为基的空间中得到<span
+class="math inline">\(x_{\mathcal{B}}\)</span>，其中： <span
+class="math display">\[
+\mathcal{B}=\left\{\left(\begin{array}{l}
+1 \\
+2
+\end{array}\right),\left(\begin{array}{c}
+-4 \\
+2
+\end{array}\right)\right\} \quad x=\left(\begin{array}{l}
+0 \\
+3
+\end{array}\right)
+\]</span> 因为<span class="math inline">\(\mathcal{B}\)</span>中<span
+class="math inline">\(u_1, u_2\)</span>是正交的，我们直接有： <span
+class="math display">\[
+x_{\mathcal{B}}=\left(\frac{x \cdot u_{1}}{u_{1} \cdot u_{1}}, \frac{x
+\cdot u_{2}}{u_{2} \cdot u_{2}}\right)=\left(\frac{3 \cdot
+2}{1^{2}+2^{2}}, \frac{3 \cdot
+2}{(-4)^{2}+2^{2}}\right)=\left(\frac{6}{5}, \frac{3}{10}\right)
+\]</span> 如下图所示：<br> <img src="la-76.png" /><br>
+从上面的讨论中，我们可以看到如果知道一个子空间的正交基，要求一个向量到其上的投影是很简便的。那么，如果我们只知道一个子空间的不正交的基，我们有没有可能将它们转换为一组等价的正交基呢？这我们就要引入Gram-Schmidt过程：假设<span
+class="math inline">\(\left\{v_{1}, v_{2}, \ldots,
+v_{m}\right\}\)</span>为<span
+class="math inline">\(R^n\)</span>子空间的<span
+class="math inline">\(W\)</span>的一组基，定义： <span
+class="math display">\[
+\begin{aligned}
+&amp;1.   u_{1}=v_{1} \\
+&amp;2.   u_{2}=\left(v_{2}\right)_{\operatorname{span}\left\{u_{1}\right\}^{\perp}}
+\quad=v_{2}-\frac{v_{2} \cdot u_{1}}{u_{1} \cdot u_{1}} u_{1} \\
+&amp;3.  u_{3}=\left(v_{3}\right)_{\text {span }\left\{u_{1},
+u_{2}\right\}^{\perp}} \quad=v_{3}-\frac{v_{3} \cdot u_{1}}{u_{1} \cdot
+u_{1}} u_{1}-\frac{v_{3} \cdot u_{2}}{u_{2} \cdot u_{2}} u_{2}\\
+&amp; \vdots \\
+&amp;m.  u_{m}=\left(v_{m}\right)_{\operatorname{span}\left\{u_{1},
+u_{2}, \ldots, u_{m-1}\right\}^{\perp}}=v_{m}-\sum_{i=1}^{m-1}
+\frac{v_{m} \cdot u_{i}}{u_{i} \cdot u_{i}} u_{i} \\
+\end{aligned}
+\]</span> 这样我们得到的<span class="math inline">\(\left\{u_{1}, u_{2},
+\ldots, u_{m}\right\}\)</span>就是<span
+class="math inline">\(W\)</span>的一组正交基。举个例子，比如对于<span
+class="math inline">\(W=\operatorname{Span}\left\{v_{1}, v_{2},
+v_{3}\right\}=\mathbf{R}^{3}\)</span>，其中： <span
+class="math display">\[
+v_{1}=\left(\begin{array}{l}
+1 \\
+1 \\
+0
+\end{array}\right) \quad v_{2}=\left(\begin{array}{l}
+1 \\
+1 \\
+1
+\end{array}\right) \quad v_{3}=\left(\begin{array}{l}
+3 \\
+1 \\
+1
+\end{array}\right)
+\]</span> 基于上面的Gram-Schmidt过程，我们有： $$
+<span class="math display">\[\begin{aligned}
+&amp; 1.  u_{1}=v_{1}=\left(\begin{array}{l}1 \\ 1 \\
+0\end{array}\right) \\
+&amp; 2.  u_{2}=v_{2}-\frac{v_{2} \cdot u_{1}}{u_{1} \cdot u_{1}}
+u_{1}=\left(\begin{array}{l}1 \\ 1 \\
+1\end{array}\right)-\frac{2}{2}\left(\begin{array}{l}1 \\ 1 \\
+0\end{array}\right)=\left(\begin{array}{l}0 \\ 0 \\
+1\end{array}\right)\\
+&amp; 3.  u_{3}=v_{3}-\frac{v_{3} \cdot u_{1}}{u_{1} \cdot u_{1}}
+u_{1}-\frac{v_{3} \cdot u_{2}}{u_{2} \cdot u_{2}} u_{2}
+
+=\left(\begin{array}{l}
+3 \\
+1 \\
+1
+\end{array}\right)-\frac{4}{2}\left(\begin{array}{l}
+1 \\
+1 \\
+0
+\end{array}\right)-\frac{1}{1}\left(\begin{array}{l}
+0 \\
+0 \\
+1
+\end{array}\right)=\left(\begin{array}{c}
+1 \\
+-1 \\
+0
+\end{array}\right)\\
+\end{aligned}\]</span>
+<p>$$</p>
 <hr />
 <blockquote>
 <p>参考书籍：Interactive Linear Algebra - by Dan Margalit, Joseph
