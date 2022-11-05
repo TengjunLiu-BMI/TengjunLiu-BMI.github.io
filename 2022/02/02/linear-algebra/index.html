@@ -11,7 +11,7 @@
 
     <title>
         
-        线性代数中的几何 （长文..., TBD) - Tengjun的个人技术博客 | 脑机接口-BMI
+        线性代数中的几何 (Geometry in Linear Algebra) - Tengjun的个人技术博客 | 脑机接口-BMI
         
     </title>
 
@@ -130,7 +130,7 @@ Multiplication）</span></a></li><li class="toc-item toc-level-2"><a class="toc-
 
 <div class="post-container">
     <div class="post-title">
-        线性代数中的几何 （长文..., TBD)
+        线性代数中的几何 (Geometry in Linear Algebra)
     </div>
 
     <div class="post-meta">
@@ -2000,7 +2000,7 @@ B=\left(\begin{array}{ccc}
 -1 &amp; 0 &amp; 1
 \end{array}\right)^{-1}
 \]</span></p>
-接着我们考虑一种特殊情况，<span
+<p>接着我们考虑一种特殊情况，<span
 class="math inline">\(W\)</span>中已知的基为正交基（<span
 class="math inline">\(\left\{u_{1}, u_{2}, \ldots,
 u_{m}\right\}\)</span>，每两个向量点乘都为0），那我们可以很轻易地写出<span
@@ -2082,37 +2082,82 @@ v_{1}=\left(\begin{array}{l}
 1 \\
 1
 \end{array}\right)
-\]</span> 基于上面的Gram-Schmidt过程，我们有： $$
-<span class="math display">\[\begin{aligned}
-&amp; 1.  u_{1}=v_{1}=\left(\begin{array}{l}1 \\ 1 \\
-0\end{array}\right) \\
-&amp; 2.  u_{2}=v_{2}-\frac{v_{2} \cdot u_{1}}{u_{1} \cdot u_{1}}
-u_{1}=\left(\begin{array}{l}1 \\ 1 \\
-1\end{array}\right)-\frac{2}{2}\left(\begin{array}{l}1 \\ 1 \\
-0\end{array}\right)=\left(\begin{array}{l}0 \\ 0 \\
-1\end{array}\right)\\
-&amp; 3.  u_{3}=v_{3}-\frac{v_{3} \cdot u_{1}}{u_{1} \cdot u_{1}}
-u_{1}-\frac{v_{3} \cdot u_{2}}{u_{2} \cdot u_{2}} u_{2}
-
-=\left(\begin{array}{l}
-3 \\
-1 \\
-1
-\end{array}\right)-\frac{4}{2}\left(\begin{array}{l}
-1 \\
-1 \\
-0
-\end{array}\right)-\frac{1}{1}\left(\begin{array}{l}
-0 \\
-0 \\
-1
-\end{array}\right)=\left(\begin{array}{c}
-1 \\
+\]</span> 基于上面的Gram-Schmidt过程，我们有： <img
+src="la-77.png" /><br> 当然，如果在这个过程中，<span
+class="math inline">\(\left\{v_{1}, v_{2}, \ldots,
+v_{m}\right\}\)</span>存在线性依赖项，则我们可能得到<span
+class="math inline">\(u_i=0\)</span>，这时候我们丢弃<span
+class="math inline">\(u_i\)</span>即可。<br></p>
+<p>所以总结一下，到目前为止，我们有两种方式去求解一个向量<span
+class="math inline">\(x\)</span>正交投影到子空间<span
+class="math inline">\(W\)</span>上的向量<span
+class="math inline">\(x_W\)</span>：一种需要我们进行矩阵行操作（<span
+class="math inline">\(A^TAc=A^Tx,
+x_W=Ac\)</span>），另一种则需要一组正交基（直接投影到正交基的各个基上进行组合）。<br></p>
+<p>最后简单介绍一下，如果方程<span
+class="math inline">\(Ax=b\)</span>无解，我们如何通过最小二乘法求解其最优近似解。我们首先在几何上理解这个问题：既然<span
+class="math inline">\(Ax=b\)</span>无解，那么<span
+class="math inline">\(b\)</span>不在<span
+class="math inline">\(\operatorname{Col}(A)\)</span>空间中，我们将其投影到<span
+class="math inline">\(\operatorname{Col}(A)\)</span>上得到<span
+class="math inline">\(b_{\operatorname{Col}(A)}\)</span>，于是我们的问题就变为求解<span
+class="math inline">\(A\hat
+x=b_{\operatorname{Col}(A)}\)</span>，其中<span
+class="math inline">\(\hat x\)</span>为我们要求的近似最优解。假设<span
+class="math inline">\(v_1, v_2, \ldots, v_n\)</span>为<span
+class="math inline">\(A\)</span>的列向量，则有： <span
+class="math display">\[
+A \widehat{x}=A\left(\begin{array}{c}
+\widehat{x}_{1} \\
+\widehat{x}_{2} \\
+\vdots \\
+\widehat{x}_{n}
+\end{array}\right)=\widehat{x}_{1} v_{1}+\widehat{x}_{2}
+v_{2}+\cdots+\widehat{x}_{n} v_{n}
+\]</span> 上述各变量的关系如下图所示：<br> <img src="la-78.png" /><br>
+也就是说，只要应用上面我们讨论的正交投影的方法得到<span
+class="math inline">\(b_{\operatorname{Col}(A)}\)</span>，接下来我们需要做的就是求解方程组<span
+class="math inline">\(A\hat
+x=b_{\operatorname{Col}(A)}\)</span>。当然，如果<span
+class="math inline">\(A\)</span>的列向量的个数高于子空间<span
+class="math inline">\(\operatorname{Col}(A)\)</span>的维度，则方程的解不唯一，如下图所示：<br>
+<img src="la-79.png" /><br>
+在实际应用中，我们需要做的就是把任意函数中未知的参数（一次函数、二次函数、三角函数...）视为<span
+class="math inline">\(x\)</span>，数据构成矩阵<span
+class="math inline">\(A\)</span>与向量<span
+class="math inline">\(b\)</span>，接着就可以进行求解了。下面给出一个简单的例子：求拟合数据点<span
+class="math inline">\((-1, 1/2), (-1, 1), (2, -1/2), (3,
+2)\)</span>的最优二次函数<span
+class="math inline">\(y=Bx^2+Cx+D\)</span>。代入数据，我们有： <span
+class="math display">\[
+\begin{aligned}
+\frac{1}{2} &amp;=B(-1)^{2}+C(-1)+D \\
+-1 &amp;=B(1)^{2}+C(1)+D \\
+-\frac{1}{2} &amp;=B(2)^{2}+C(2)+D \\
+2 &amp;=B(3)^{2}+C(3)+D
+\end{aligned}
+\]</span> 于是： <span class="math display">\[
+A=\left(\begin{array}{rrr}
+1 &amp; -1 &amp; 1 \\
+1 &amp; 1 &amp; 1 \\
+4 &amp; 2 &amp; 1 \\
+9 &amp; 3 &amp; 1
+\end{array}\right) \quad x=\left(\begin{array}{l}
+B \\
+C \\
+D
+\end{array}\right) \quad b=\left(\begin{array}{r}
+1 / 2 \\
 -1 \\
-0
-\end{array}\right)\\
-\end{aligned}\]</span>
-<p>$$</p>
+-1 / 2 \\
+2
+\end{array}\right)
+\]</span>
+这样我们就定义出了一个求最优近似解的方程组，应用上面我们讨论的正交投影的方法，可以得到<span
+class="math inline">\(B, C, D\)</span>大小，即有： <span
+class="math display">\[
+y=\frac{53}{88} x^{2}-\frac{379}{440} x-\frac{41}{44}
+\]</span></p>
 <hr />
 <blockquote>
 <p>参考书籍：Interactive Linear Algebra - by Dan Margalit, Joseph
