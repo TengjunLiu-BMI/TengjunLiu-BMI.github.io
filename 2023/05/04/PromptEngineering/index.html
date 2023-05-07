@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tengjun的个人技术博客">
+    <meta name="keyword"  content="BMI">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        大型语言模型的提示工程（Prompt Engineering for LLM） - Tengjun的个人技术博客 | 脑机接口-BMI
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 记录自己在探索脑机接口技术中的点滴 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Tengjun Liu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 记录自己在探索脑机接口技术中的点滴 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+<div class="post-container">
+    <div class="post-title">
+        大型语言模型的提示工程（Prompt Engineering for LLM）
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-05-04 16:52:23</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#科研基本技能" title="科研基本技能">科研基本技能</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>你听说过人工智能可以像人一样聊天吗？不，我不是在跟你开玩笑。这就是大型语言模型（Large
+langauge model,
+LLM）所能实现的事情！它们是一种新型的人工智能技术，可以通过学习大量的文本数据，来理解人类语言的复杂性和变化性。最近，一种名为ChatGPT的大型语言模型正引领着一场新的范式革命。ChatGPT不仅可以像人一样回答你的问题，还能够进行有趣的闲聊，甚至写作文本。它的出现将彻底改变我们与人工智能的互动方式。在本文中，我们会介绍如何有效地对大型语言模型进行提问（Prompt
+Engineering, 提示工程），以获得你想要的信息。<br></p>
+<p>进行有效的提问，我们要先明确几个原则：<br> 1.
+写出清晰明确的指导（Write clear and specific instructions）。<br> -
+使用分隔符（Use delimiters），如"""（triple quote）、'''（triple
+backticks）、---（triple dashes）等；<br> <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例子：Summarize the text delimited <span class="keyword">by</span> triple backticks <span class="keyword">into</span> a single sentence. <span class="string">``</span><span class="string">`&#123;text&#125;`</span><span class="string">``</span></span><br></pre></td></tr></table></figure> -
+要求结构化输出（Ask for a structured output），如JSON, HTML；<br>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例子：Generate <span class="keyword">a</span> list <span class="keyword">of</span> <span class="literal">three</span> made-up book titles along <span class="keyword">with</span> their authors <span class="keyword">and</span> genres. Provide them <span class="keyword">in</span> JSON <span class="built_in">format</span> <span class="keyword">with</span> <span class="keyword">the</span> following <span class="built_in">keys</span>: book_id, title, author, genre. &lt;br&gt;</span><br></pre></td></tr></table></figure> - 验证条件是否满足（Check whether conditions are
+satisfied）；<br> <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例子：You will be provided <span class="keyword">with</span> <span class="keyword">text</span> delimited <span class="keyword">by</span> triple quotes. If <span class="keyword">it</span> <span class="keyword">contains</span> <span class="keyword">a</span> sequence <span class="keyword">of</span> instructions, re-<span class="built_in">write</span> those instructions <span class="keyword">in</span> <span class="keyword">the</span> following <span class="built_in">format</span>:</span><br><span class="line">Step <span class="number">1</span> - ...</span><br><span class="line">Step <span class="number">2</span> - …</span><br><span class="line">…</span><br><span class="line">Step N - …</span><br><span class="line">If <span class="keyword">the</span> <span class="keyword">text</span> does <span class="keyword">not</span> contain <span class="keyword">a</span> sequence <span class="keyword">of</span> instructions, <span class="keyword">then</span> simply <span class="built_in">write</span> <span class="string">&quot;No steps provided.&quot;</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;&#123;text_1&#125;&quot;</span><span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure> - 小样本提示（Few-shot prompting）。<br>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：Your task is <span class="built_in">to</span> answer <span class="keyword">in</span> <span class="keyword">a</span> consistent style.</span><br><span class="line">&lt;child&gt;: Teach me about patience.</span><br><span class="line">&lt;grandparent&gt;: The river that carves <span class="keyword">the</span> deepest valley flows <span class="built_in">from</span> <span class="keyword">a</span> modest spring; <span class="keyword">the</span> grandest symphony originates <span class="built_in">from</span> <span class="keyword">a</span> single note; <span class="keyword">the</span> most intricate tapestry <span class="keyword">begins</span> <span class="keyword">with</span> <span class="keyword">a</span> solitary thread.</span><br><span class="line">&lt;child&gt;: Teach me about resilience.</span><br></pre></td></tr></table></figure> 2. 给模型足够的时间去“思考”（Give the model time to
+“think”）。<br> - 将负责的任务分解成模型好理解的任务。（Specify the
+steps required to complete a task）；</p>
+<p>PS: 本文大部分课程外的文本都由chatGPT生成。</p>
+<hr />
+<blockquote>
+<p>参考课程：ChatGPT Prompt Engineering for Developers - by Isa Fulford,
+Andrew Ng
+(https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)</p>
+</blockquote>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/腾俊-刘-08bb61180">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+  
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81Mzc3MS8zMDI0NA==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
