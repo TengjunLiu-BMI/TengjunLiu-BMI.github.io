@@ -581,7 +581,8 @@ class="math inline">\(B=C\)</span></strong>，比如下面的例子：<br> <img
 src="la-43.png" /><br>
 上面是理解矩阵乘法的一个角度，也就是把第二个矩阵当成运算对象。而从另一个角度出发，之前我们提过，一个矩阵代表着一种线性变换，那么显然，两个矩阵相乘其实代表着做完一种线性变换之后接着再做另一种线性变换（链式线性变换）。<br></p>
 <h2 id="矩阵的逆matrix-inverses">9. 矩阵的逆（Matrix Inverses）</h2>
-<p>首先明确，我们只针对<strong>方阵</strong>去讨论可逆的性质（此章节的矩阵都特指方阵）。怎么判断矩阵是否可逆？一种方式是可以通过其行列式（determinant）是否为0来判断，为0时矩阵不可逆（后面再进一步讨论矩阵行列式）。另一种方式是将增广矩阵
+<p>首先明确，我们只针对<strong>方阵</strong>去讨论可逆的性质（此章节的矩阵都特指方阵）。至于为什么要只考虑方阵，我们先按下不表，在最后理解了“逆”的意思之后我们再进行解释。
+怎么判断矩阵是否可逆？一种方式是可以通过其行列式（determinant）是否为0来判断，为0时矩阵不可逆（后面再进一步讨论矩阵行列式）。另一种方式是将增广矩阵
 <strong><span class="math inline">\((A|I_n)\)</span></strong> 变换为
 <strong><span class="math inline">\((I_n|B)\)</span></strong>，那么矩阵
 <strong><span class="math inline">\(B=A^{-1}\)</span></strong>，即
@@ -649,6 +650,24 @@ class="math inline">\(A^{-1}AB=A^{-1}I_n\)</span></strong> →
 <strong><span class="math inline">\(B=A^{-1}\)</span></strong> →
 <strong><span class="math inline">\(BA = A^{-1}A\)</span></strong> →
 <strong><span class="math inline">\(BA=I_n\)</span></strong></p>
+<p>所以为什么只考虑方阵？更具一般性地说，一个线性变换可逆，意味着它必须在变换后不能有信息的损失，也就是不能是多对一的变换，必须要一对一变换，也就是说，线性变换的目标向量空间
+<strong><span class="math inline">\(W\)</span></strong>
+的维度不能小于输入的向量空间 <strong><span
+class="math inline">\(V\)</span></strong>
+维度，也就是说代表线性变换的矩阵的<strong>列数必须小于等于其行数</strong>；反之对于线性逆变换，如果其作用的空间
+<strong><span class="math inline">\(W\)</span></strong>
+中存在没被正向变换投影到的区域，则逆变换作用在这些区域上会投影到
+<strong><span class="math inline">\(V\)</span></strong>
+上的某处（一般情况下 <strong><span
+class="math inline">\(V\)</span></strong>
+的定义域即为全域），而这些投影到的地方又对应着 <strong><span
+class="math inline">\(W\)</span></strong>
+上其他区域，即逆变换会有多对一情况，即信息损失了不可逆了，所以我们也需要要求线性变换投影覆盖
+<strong><span class="math inline">\(W\)</span></strong>
+全域，即onto变换，这又要求线性变换的目标向量空间 <strong><span
+class="math inline">\(W\)</span></strong> 的维度不能大于输入的向量空间
+<strong><span class="math inline">\(V\)</span></strong>
+维度，也就是说代表线性变换的矩阵的<strong>列数必须大于等于其行数</strong>。所以综上两个条件，矩阵行数列数就只能相等才有可能让“逆”本身成立。</p>
 <h2 id="行列式determinant">10. 行列式（Determinant）</h2>
 <p>行列式是许多中文教材中非常吓人的一个概念，看起来定义很复杂，很多人又不知道它到底有什么作用，也就失去了学好它的欲望。但通过下面的讨论，我们应该会发现行列式其实是一个很重要也很有用的工具。<br></p>
 <p>首先我们还是给出行列式很吓人的定义。行列式是一个将方阵转换为实数的函数（det:{square
